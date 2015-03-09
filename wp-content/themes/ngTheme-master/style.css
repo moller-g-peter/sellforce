@@ -6552,16 +6552,16 @@ button.close {
   border-radius: 4px;
 }
 /* Sticky footer */
-html,
+/*html,
 body {
   height: 100%;
 }
 main {
   min-height: 100%;
-  /* equal to footer height */
+  /* equal to footer height 
   margin-bottom: -142px;
-}
-main:after {
+}*/
+/*main:after {
   content: "";
   display: block;
 }
@@ -6571,4 +6571,4 @@ main:after {
 }
 footer {
   background: orange;
-}
+}*/

@@ -20,15 +20,43 @@ html, body {
 main {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -142px; 
+  margin-bottom: -150px;
 }
 main:after {
   content: "";
   display: block;
 }
 footer, main:after {
-  height: 142px; 
+  height: 200px; 
 }
 footer {
-  background: orange;
+  background: black;
+  color: white;
 }
+footer .clearBoth {
+  clear: both;
+}
+footer ul{
+  float: left;
+  padding: 30px;
+}
+footer ul li{
+  list-style-type:none;
+  font-size: 15px;
+
+}
+footer li > ul {
+  float: left;
+  padding: 0 0 0 10px;
+}
+
+footer a{
+  color: white;
+}
+
+
+
+
+
+
+
