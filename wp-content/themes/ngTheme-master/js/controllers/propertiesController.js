@@ -17,6 +17,8 @@ app.controller("propertiesController", ["$scope", "Pages", "$sce", function($sco
       this is done using the $sce service on the HTML string in JS
       and the ng-bind-html directive in the view
     */
+
+
     $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
