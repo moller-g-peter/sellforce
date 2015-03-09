@@ -20,6 +20,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", function($scope, Pa
       and the ng-bind-html directive in the view
     */
     $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
+    // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
   
 }]);
