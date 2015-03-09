@@ -11,7 +11,6 @@
   </header>
  
   <main ng-view>
-
   </main>
  
   <footer ng-include="'<?php echo(THEME_HTTP_ROOT)?>partials/footer.html'" ng-controller="footerController">
