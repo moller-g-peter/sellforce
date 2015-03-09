@@ -1,5 +1,10 @@
 <section class="container">
-  <h1>
+<!--   <h1>
   	<button type="button" class="btn btn-default" ng-bind-html="trustedHtml"></button>
-  </h1>
+  </h1> -->
+  <ul>
+	<li data-ng-repeat="x in names"><a ng-bind-html="trustedHtml"></a></li>
+</ul>
 </section>
+
+
