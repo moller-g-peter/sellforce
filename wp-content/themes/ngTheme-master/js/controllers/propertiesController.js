@@ -19,7 +19,7 @@ app.controller("propertiesController", ["$scope", "Pages", "$sce", function($sco
     */
 
 
-    $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
+    $scope.allPages = data;
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
   

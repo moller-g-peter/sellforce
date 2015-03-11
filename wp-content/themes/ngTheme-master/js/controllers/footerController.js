@@ -7,7 +7,7 @@ Pages.get();
 $scope.$on("gotPageData", function(event, data) {
     console.log("footerController on gotPageData: ", data);
 
-    $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
+    $scope.allPages = data;
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
 }]);
