@@ -1,5 +1,13 @@
-//"ngTheme" controller.
-app.controller("footerController", ["$scope", function($scope) {
+app.controller("footerController", ["$scope", "Pages", "$sce", "$location", function($scope, Pages, $sce, $location) {
   console.log("footerController is alive!");
 
+Pages.get();
+
+
+$scope.$on("gotPageData", function(event, data) {
+    console.log("footerController on gotPageData: ", data);
+
+    $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
+    // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
+  });
 }]);

@@ -6544,15 +6544,6 @@ button.close {
 .panel-title a {
   cursor: pointer;
 }
-.dropdown-menu > .dropdown > .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-}
-.dropdown:hover > .dropdown-menu {
-  display: block;
-}
 /* Sticky footer */
 html,
 body {
@@ -6561,7 +6552,7 @@ body {
 main {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -142px;
+  margin-bottom: -150px;
 }
 main:after {
   content: "";
@@ -6569,8 +6560,36 @@ main:after {
 }
 footer,
 main:after {
-  height: 142px;
+  height: 200px;
 }
 footer {
-  background: orange;
+  background: black;
+  color: white;
+}
+footer .clearBoth {
+  clear: both;
+}
+footer ul {
+  float: left;
+  padding: 30px;
+}
+footer ul li {
+  list-style-type: none;
+  font-size: 15px;
+}
+footer li > ul {
+  float: left;
+  padding: 0 0 0 10px;
+}
+footer a {
+  color: white;
+}
+.fullImage {
+  height: 100%;
+  width: 100%;
+  background: url(../img/home_page_img1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

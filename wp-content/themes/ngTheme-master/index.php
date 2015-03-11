@@ -2,16 +2,15 @@
 <html>
 <head>
   <!-- base href must correspond to the base path of your wordpress site -->
-  <base href="/ngwp/">
+  <base href="/sellforce/">
   <title>ngTheme</title>
   <?php wp_head(); ?>
 </head>
-<body ng-app="ngTheme">
+<body ng-app="ngTheme"  class="fullImage">
   <header ng-include="'<?php echo(THEME_HTTP_ROOT)?>partials/header.html'" ng-controller="headerController">
   </header>
  
   <main ng-view>
-
   </main>
  
   <footer ng-include="'<?php echo(THEME_HTTP_ROOT)?>partials/footer.html'" ng-controller="footerController">

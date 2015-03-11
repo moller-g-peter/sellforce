@@ -1,39 +1,10 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="" ng-click="goTo('/')">NGWP</a>
-    </div>
+<section class="container">
+<!--   <h1>
+  	<button type="button" class="btn btn-default" ng-bind-html="trustedHtml"></button>
+  </h1> -->
+  <ul>
+	<li data-ng-repeat="x in names"><a ng-bind-html="trustedHtml"></a></li>
+</ul>
+</section>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <!-- 
-        Start of recursive view!
-
-        include a view directly in html using the 
-        $scope.partialsDir value + the string "views/menuRecursor.html"
-        in an ng-include="" directive. Note: No controller assigned!
-      -->
-      <ul class="nav navbar-nav" ng-include="partialsDir+'views/menuRecursor.html'">
-      </ul>
-
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <div class="nav navbar-nav navbar-right">
-        <!-- the admin button causes a hard reload (leaving angular app) -->
-        <button class="btn btn-default navbar-btn" ng-click="goTo('/wp-admin', true)">Admin</button>
-      </div>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>

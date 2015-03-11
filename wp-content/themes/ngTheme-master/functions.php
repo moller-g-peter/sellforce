@@ -22,10 +22,11 @@ define(THEME_HTTP_ROOT, trailingslashit(get_template_directory_uri()));
 function ngThemes_stylesheets()
 {
   // Register the style like this for a theme:
-  wp_register_style( 'allStyles', THEME_HTTP_ROOT . 'css/style.css', array(), '20150225', 'all' );
+  wp_register_style( 'base-style', THEME_HTTP_ROOT . 'css/style.css', array(), '20150225', 'all' );
+  wp_register_style( 'base-style', THEME_HTTP_ROOT . 'style.css', array(), '20150225', 'all' );
 
   // For either a plugin or a theme, you can then enqueue the style:
-  wp_enqueue_style( 'allStyles' );
+  wp_enqueue_style( 'base-style' );
 }
 
 add_action( 'wp_enqueue_scripts', 'ngThemes_stylesheets' );
@@ -195,9 +196,7 @@ function ngTheme_register_required_plugins() {
     tgmpa( $plugins, $config );
  
 }
-add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
 
-//add theme support for menus
 add_theme_support( 'menus' );
 if ( function_exists( 'register_nav_menus' ) ) {
     register_nav_menus(
@@ -207,36 +206,4 @@ if ( function_exists( 'register_nav_menus' ) ) {
     );
 }
 
-//create a custom taxonomy called placement
-function placement_init() {
-  // create a new taxonomy
-  register_taxonomy(
-    'placement',
-    'attachment', //default content type this taxonomy belong to
-    array(
-      'label' => __( 'Placement' ),
-      'rewrite' => array( 'slug' => 'placement' ),
-    )
-  );
-}
-add_action( 'init', 'placement_init' );
-
-//create a custom taxonomy called property
-function properties_init() {
-  // create a new taxonomy
-  register_taxonomy(
-    'property',
-    'page', //default content type this taxonomy belong to
-    array(
-      'label' => __( 'Properties' ),
-      'rewrite' => array( 'slug' => 'property' ),
-    )
-  );
-}
-add_action( 'init', 'properties_init' );
-
-//make custom taxonomy available to attachments (media) as well
-function ngwp_add_property_tax_to_attachments() {
-    register_taxonomy_for_object_type( 'property', 'attachment' );
-}
-add_action( 'init' , 'ngwp_add_property_tax_to_attachments' );
+add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
