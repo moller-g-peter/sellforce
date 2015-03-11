@@ -6,7 +6,7 @@
   <title>ngTheme</title>
   <?php wp_head(); ?>
 </head>
-<body ng-app="ngTheme"  class="fullImage">
+<body ng-app="ngTheme">
   <header ng-include="'<?php echo(THEME_HTTP_ROOT)?>partials/header.html'" ng-controller="headerController">
   </header>
  
