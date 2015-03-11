@@ -1,12 +1,13 @@
-app.controller("propertiesController", ["$scope", "Pages", "$sce", function($scope, Pages, $sce) {
-  console.log("propertiesController alive!");
+app.controller("propertiesController", ["$scope", "Posts", "$sce", function($scope, Posts, $sce) {
+  // console.log("propertiesController alive!");
   //get all pages
-  Pages.get();
+  console.log("postcontrolle alive!!");
+  Posts.get();
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
-  $scope.$on("gotPageData", function(event, data) {
-    console.log("propertiesController on gotPageData: ", data);
+  $scope.$on("gotPostData", function(event, data) {
+    console.log("propertiesController on gotPostData: ", data);
 
     /* 
       angular protects us from "dangerous" HTML by converting it to a string
@@ -19,7 +20,7 @@ app.controller("propertiesController", ["$scope", "Pages", "$sce", function($sco
     */
 
 
-    $scope.allPages = data;
+    $scope.allPosts = data;
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
   

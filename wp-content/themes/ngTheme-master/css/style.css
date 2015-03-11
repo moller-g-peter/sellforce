@@ -6623,3 +6623,6 @@ footer a {
   text-align: center;
   text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
 }
+.space {
+  margin: 10px;
+}

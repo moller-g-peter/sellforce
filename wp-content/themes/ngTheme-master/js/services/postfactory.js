@@ -1,16 +1,15 @@
 //our .factory() service for "Pages" rest calls
-app.factory("Pages", ["WPRest" ,"$sce", function (WPRest, $sce) {
-  WPRest.restCall("/", "GET", {}, "something");
+app.factory("Posts", ["WPRest" ,"$sce", function (WPRest, $sce) {
   //in a .factory() service object literal syntax is required
-  var pageServant = {
-    get : function(pageId) {
-      var callUrl = pageId ? "/pages/"+pageId : "/pages";
+  var postServant = {
+    get : function(postId) {
+      var callUrl = postId ? "/posts/"+postId : "/posts";
 
       WPRest.restCall(callUrl, "GET", {}, {
         //always use a callback function before broadcasting data
         //so we can make all HTML trusted before it gets to a 
         //controller/view
-        broadcastName : "gotPageData",
+        broadcastName : "gotPostData",
         callback : function(data) {
           /*
             angular protects us from "dangerous" HTML by converting it to a string
@@ -36,19 +35,19 @@ app.factory("Pages", ["WPRest" ,"$sce", function (WPRest, $sce) {
       });
     },
     post : function(data) {
-      var callUrl = "/pages";
-      WPRest.restCall(callUrl, "POST", data, "savedNewPage");
+      var callUrl = "/posts";
+      WPRest.restCall(callUrl, "POST", data, "savedNewPost");
     },
-    put : function(pageId, data) {
-      var callUrl = "/pages/"+pageId;
-      WPRest.restCall(callUrl, "PUT", data, "updatedPage");
+    put : function(postId, data) {
+      var callUrl = "/posts/"+postId;
+      WPRest.restCall(callUrl, "PUT", data, "updatedPost");
     },
-    delete : function(pageId) {
-      var callUrl = "/pages/"+pageId;
-      WPRest.restCall(callUrl, "DELETE", {}, "deletedPage");
+    delete : function(postId) {
+      var callUrl = "/posts/"+postId;
+      WPRest.restCall(callUrl, "DELETE", {}, "deletedPost");
     }
   };
 
   //.factory() services MUST return an object
-  return pageServant;
+  return postServant;
 }]);
