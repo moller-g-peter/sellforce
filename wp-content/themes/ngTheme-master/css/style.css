@@ -6544,10 +6544,36 @@ button.close {
 .panel-title a {
   cursor: pointer;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+} 
+
+header .navAlign {
+  height: 300px;
+  position: relative;
+}
+
+header .mainMenu {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+
+.fullImage {
+  padding-top: 300px;
+}
+
+
 /* Sticky footer */
-html,
+
 body {
   height: 100%;
+  margin-top: -32px; /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! */
 }
 main {
   min-height: 100%;
@@ -6604,7 +6630,7 @@ footer a {
 .fullImage {
   height: 100vh;
   width: 100%;
-  background: url(../img/home_page_img1.jpg) no-repeat center center fixed;
+  background: url(../img/home_page_img.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6622,4 +6648,19 @@ footer a {
   color: white;
   text-align: center;
   text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
+}
+
+nav ul.mainMenu {
+  background-color: rgba(0,0,0,0);
+}
+
+.mainMenu a {
+  font-size: 20px;
+  color: #fff;
+  max-width: 200px; 
+  margin-left: 100px;
+}
+
+.mainMenu a:hover {
+  background-color: red;
 }
