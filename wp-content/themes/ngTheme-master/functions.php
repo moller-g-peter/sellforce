@@ -206,4 +206,36 @@ if ( function_exists( 'register_nav_menus' ) ) {
     );
 }
 
+// //create a custom taxonomy called placement
+// function placement_init() {
+//   // create a new taxonomy
+//   register_taxonomy(
+//     'placement',
+//     'attachment', //default content type this taxonomy belong to
+//     array(
+//       'label' => __( 'Placement' ),
+//       'rewrite' => array( 'slug' => 'placement' ),
+//     )
+//   );
+// }
+// add_action( 'init', 'placement_init' );
+
+// //create a custom taxonomy called property
+// function properties_init() {
+//   // create a new taxonomy
+//   register_taxonomy(
+//     'property',
+//     'page', //default content type this taxonomy belong to
+//     array(
+//       'label' => __( 'Properties' ),
+//       'rewrite' => array( 'slug' => 'property' ),
+//     )
+//   );
+// }
+// add_action( 'init', 'properties_init' );
+
+// //make custom taxonomy available to attachments (media) as well
+// function ngwp_add_property_tax_to_attachments() {
+//     register_taxonomy_for_object_type( 'property', 'attachment' );
+// }
 add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
