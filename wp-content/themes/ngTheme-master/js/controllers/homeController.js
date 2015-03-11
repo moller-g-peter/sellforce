@@ -22,6 +22,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", function($scope, Pa
 
     $scope.homePage = data;
 
+
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
   

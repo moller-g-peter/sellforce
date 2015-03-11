@@ -1,7 +1,9 @@
+
 app.controller("footerController", ["$scope", "Pages", "$sce", "$location", function($scope, Pages, $sce, $location) {
+
   // console.log("footerController is alive!");
 
-Pages.get();
+// Pages.get();
 
 
 $scope.$on("gotPageData", function(event, data) {
