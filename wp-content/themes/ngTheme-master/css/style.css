@@ -6654,8 +6654,6 @@ header .mainMenu {
 /* Sticky footer */
 body {
   height: 100%;
-  margin-top: -32px;
-  /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! */
 }
 main {
   min-height: 100%;
@@ -6731,13 +6729,15 @@ footer a {
   text-align: center;
   text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
 }
+/* main menu */
 nav ul.mainMenu {
   background-color: rgba(0, 0, 0, 0);
 }
 .mainMenu a {
-  font-size: 30px;
+  white-space: nowrap;
+  font-size: 1.5em;
   color: #fff;
-  max-width: 300px;
+  max-width: 200px;
   margin-left: 100px;
   text-shadow: -1px 1px 2px #969696;
 }
