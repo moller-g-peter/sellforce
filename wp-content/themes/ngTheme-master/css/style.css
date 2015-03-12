@@ -6544,36 +6544,115 @@ button.close {
 .panel-title a {
   cursor: pointer;
 }
-
+/* Sticky footer */
+html,
+body {
+  height: 100%;
+}
+main {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -200px;
+}
+main:after {
+  content: "";
+  display: block;
+}
+footer,
+main:after {
+  height: 200px;
+}
+footer {
+  background: #0e0e0e;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlMGUwZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk2JSIgc3RvcC1jb2xvcj0iIzUxNTE1MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top, #0d0d0d 0%, #525252 96%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0d0d0d), color-stop(96%, #525252));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #0d0d0d 0%, #525252 96%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #0d0d0d 0%, #525252 96%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #0d0d0d 0%, #525252 96%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #0d0d0d 0%, #525252 96%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e0e0e', endColorstr='#515151', GradientType=0);
+  /* IE6-8 */
+  color: white;
+}
+footer .clearBoth {
+  clear: both;
+}
+footer ul {
+  float: left;
+  padding: 30px;
+}
+footer ul li {
+  list-style-type: none;
+  font-size: 15px;
+}
+footer li > ul {
+  float: left;
+  padding: 0 0 0 10px;
+}
+footer a {
+  color: white;
+}
+.fullImage {
+  height: 100vh;
+  width: 100%;
+  background: url(../img/home_page_img1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.slogan h1 {
+  font-size: 100px;
+  color: white;
+  text-align: center;
+  padding-top: 30vh;
+  text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
+}
+.slogan p {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
+}
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 300px;
-} 
-
+}
 header .navAlign {
   height: 300px;
   position: relative;
 }
-
 header .mainMenu {
   position: absolute;
   bottom: 0;
   z-index: 10;
 }
-
 .fullImage {
   padding-top: 300px;
 }
-
-
 /* Sticky footer */
-
 body {
   height: 100%;
-  margin-top: -32px; /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! */
+  margin-top: -32px;
+  /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! */
 }
 main {
   min-height: 100%;
@@ -6649,19 +6728,16 @@ footer a {
   text-align: center;
   text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
 }
-
 nav ul.mainMenu {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
-
 .mainMenu a {
   font-size: 30px;
   color: #fff;
-  max-width: 300px; 
+  max-width: 300px;
   margin-left: 100px;
-  text-shadow: -1px 1px 2px rgba(150, 150, 150, 1);
+  text-shadow: -1px 1px 2px #969696;
 }
-
 .mainMenu li a:hover {
   color: #000;
   text-shadow: none;
