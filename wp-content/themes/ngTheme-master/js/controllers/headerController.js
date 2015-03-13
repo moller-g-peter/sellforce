@@ -6,7 +6,7 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
   // console.log("SITE_INFO: ", SITE_INFO);
 
   //get the menuLinks for menuId 7 using WPRest
-  Menus.get(2);
+  Menus.get(4);
 
   //listen to the broadcast "gotMenuLinks"
   $scope.$on("gotMenuLinks", function(event, data) {

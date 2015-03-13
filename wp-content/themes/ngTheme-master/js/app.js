@@ -13,7 +13,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/contacts.html",
       controller: "contactsController"
     })
-    .when("/properties", {
+    .when("/bostader", {
       templateUrl: SITE_INFO.partials+"views/properties.html",
       controller: "propertiesController"
     })
