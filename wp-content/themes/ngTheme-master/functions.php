@@ -196,7 +196,9 @@ function ngTheme_register_required_plugins() {
     tgmpa( $plugins, $config );
  
 }
+add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
 
+//add theme support for menus
 add_theme_support( 'menus' );
 if ( function_exists( 'register_nav_menus' ) ) {
     register_nav_menus(
@@ -206,36 +208,73 @@ if ( function_exists( 'register_nav_menus' ) ) {
     );
 }
 
-// //create a custom taxonomy called placement
-// function placement_init() {
-//   // create a new taxonomy
-//   register_taxonomy(
-//     'placement',
-//     'attachment', //default content type this taxonomy belong to
-//     array(
-//       'label' => __( 'Placement' ),
-//       'rewrite' => array( 'slug' => 'placement' ),
-//     )
-//   );
-// }
-// add_action( 'init', 'placement_init' );
+//create a custom taxonomy called property
+function property_init() {
+  // create a new taxonomy
+  register_taxonomy(
+    'property',
+    'attachment', //default content type this taxonomy belong to
+    array(
+      'label' => __( 'Property' ),
+      'rewrite' => array( 'slug' => 'property' ),
+    )
+  );
+}
 
-// //create a custom taxonomy called property
-// function properties_init() {
-//   // create a new taxonomy
-//   register_taxonomy(
-//     'property',
-//     'page', //default content type this taxonomy belong to
-//     array(
-//       'label' => __( 'Properties' ),
-//       'rewrite' => array( 'slug' => 'property' ),
-//     )
-//   );
-// }
-// add_action( 'init', 'properties_init' );
+add_action( 'init', 'property_init' );
 
-// //make custom taxonomy available to attachments (media) as well
-// function ngwp_add_property_tax_to_attachments() {
-//     register_taxonomy_for_object_type( 'property', 'attachment' );
-// }
-add_action( 'tgmpa_register', 'ngTheme_register_required_plugins' );
+
+//make custom taxonomy available to pages as well
+function ngwp_add_property_tax_to_posts() {
+    register_taxonomy_for_object_type( 'property', 'post' );
+}
+
+add_action( 'init' , 'ngwp_add_property_tax_to_posts' );
+
+
+//add support for meta data queries when not logged in
+function addMetaSearch() {
+  global $wp;
+
+  // Add additional key to support.
+  array_push($wp->public_query_vars, 'meta_key');
+  array_push($wp->public_query_vars, 'meta_value');
+}
+add_action("init", "addMetaSearch");
+
+
+add_filter( 'json_prepare_post', function ($data, $post, $context) {
+  /*
+    stad'
+    region
+    pris
+    hyra
+    yta
+    rum
+    trappor
+    hiss
+    balkong
+    typ
+  */
+  //add a new property to the data that is going to AngularJS, 
+  //and fill it with our metadata
+  $data['property_data'] = array(
+    'stad' => get_post_meta( $post['ID'], 'stad', true ),
+    'region' => get_post_meta( $post['ID'], 'region', true ),
+    'pris' => get_post_meta( $post['ID'], 'pris', true ),
+    'hyra' => get_post_meta( $post['ID'], 'hyra', true ),
+    'yta' => get_post_meta( $post['ID'], 'yta', true ),
+    'rum' => get_post_meta( $post['ID'], 'rum', true ),
+    'trappor' => get_post_meta( $post['ID'], 'trappor', true ),
+    'hiss' => get_post_meta( $post['ID'], 'hiss', true ),
+    'balkong' => get_post_meta( $post['ID'], 'balkong', true ),
+    'typ' => get_post_meta( $post['ID'], 'typ', true ),
+  );
+  return $data;
+}, 10, 3 );
+
+
+
+
+
+
