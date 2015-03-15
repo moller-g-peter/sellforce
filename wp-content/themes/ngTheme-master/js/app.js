@@ -3,6 +3,7 @@ var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap"]);
 //app config
 app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeProvider, $locationProvider, SITE_INFO) {
   //route config
+  console.log("when: ",$locationProvider);
   $routeProvider
     .when("/", {
       templateUrl: SITE_INFO.partials+"views/home.html",
@@ -12,7 +13,11 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/contacts.html",
       controller: "contactsController"
     })
-    .when("/properties", {
+    .when("/:name", {
+      templateUrl: SITE_INFO.partials+"views/property.html",
+      controller: "propertyController"
+    })
+    .when("/bostader", {
       templateUrl: SITE_INFO.partials+"views/properties.html",
       controller: "propertiesController"
     })

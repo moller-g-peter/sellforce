@@ -2,7 +2,7 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   //our old friend from bootstrap_play
   function createMenuTree(menuLinkArr) {
-    console.log("menuLinkArr: ", menuLinkArr);
+    // console.log("menuLinkArr: ", menuLinkArr);
     // The menu tree (our new deep structure)
     var menuTree = [];
 
@@ -48,7 +48,7 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
       hash["_"+link.parent].children.push(link);
     }
 
-    console.log("menuTree: ", menuTree);
+    // console.log("menuTree: ", menuTree);
     return menuTree;
   }
 

@@ -1,11 +1,12 @@
-<!-- <section class="container">
+
+<section class="container">
   <div class="row">
-    <article class="col-xs-12 col-sm-10 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
-      <h2>Properties!</h2>
-      <p></p>
-    </article>
+	  <article class="col-xs-12 col-sm-10 col-md-8 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+		  <article  ng-repeat="post in allPosts" class="space col-lg-12 well">
+		    <h3>{{post.title}}</h3>
+		    <div ng-bind-html="post.content"></div>
+			</article>  
+	  </article>
   </div>
 
-  <div class="row" ng-bind-html="trustedHtml"></div>
 </section>
- -->

@@ -1,4 +1,6 @@
-app.controller("footerController", ["$scope", "Pages", "$sce", function($scope, Pages, $sce, $location) {
+
+app.controller("footerController", ["$scope", "Pages", "$sce", "$location", function($scope, Pages, $sce, $location) {
+
   // console.log("footerController is alive!");
 
 // Pages.get();
@@ -7,7 +9,7 @@ app.controller("footerController", ["$scope", "Pages", "$sce", function($scope, 
 $scope.$on("gotPageData", function(event, data) {
     // console.log("footerController on gotPageData: ", data);
 
-    $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
+    $scope.allPages = data;
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
 }]);

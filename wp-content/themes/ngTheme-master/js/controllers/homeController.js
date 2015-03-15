@@ -3,7 +3,7 @@
 app.controller("homeController", ["$scope", "Pages", "$sce", function($scope, Pages, $sce) {
   // console.log("homeController alive!");
   //get all pages
-  Pages.get();
+  Pages.get(10);
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
@@ -20,7 +20,8 @@ app.controller("homeController", ["$scope", "Pages", "$sce", function($scope, Pa
       and the ng-bind-html directive in the view
     */
 
-    $scope.trustedHtml = $sce.trustAsHtml(data[2].content);
+    $scope.homePage = data;
+
 
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
