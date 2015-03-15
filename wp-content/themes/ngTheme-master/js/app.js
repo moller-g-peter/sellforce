@@ -13,6 +13,10 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/contacts.html",
       controller: "contactsController"
     })
+    .when("/:name", {
+      templateUrl: SITE_INFO.partials+"views/property.html",
+      controller: "propertyController"
+    })
     .when("/bostader", {
       templateUrl: SITE_INFO.partials+"views/properties.html",
       controller: "propertiesController"

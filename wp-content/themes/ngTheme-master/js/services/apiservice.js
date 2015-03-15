@@ -12,7 +12,7 @@ app.service("WPRest", ["$http", "$rootScope", "SITE_INFO", "API_ROUTE", function
       data: data,
       responseType: "json"
     }).success(function(data) {
-      console.log("WPRest restCall success: ", data, " broadcast instructions: ", broadcastInstructions);
+      // console.log("WPRest restCall success: ", data, " broadcast instructions: ", broadcastInstructions);
 
       if (typeof broadcastInstructions == "object") {
         //if broadcastInstructions is an Object, it contains callback instruction
