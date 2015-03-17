@@ -6,6 +6,9 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
   console.log("when: ",$locationProvider);
   $routeProvider
     .when("/", {
+      redirectTo: "/home"
+    })
+    .when("/:name", {
       templateUrl: SITE_INFO.partials+"views/home.html",
       controller: "homeController"
     })
@@ -13,7 +16,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/contacts.html",
       controller: "contactsController"
     })
-    .when("/:name", {
+    .when("/property/:name", {
       templateUrl: SITE_INFO.partials+"views/property.html",
       controller: "propertyController"
     })
@@ -22,7 +25,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       controller: "propertiesController"
     })
     .otherwise({
-      redirectTo: "/"
+      redirectTo: "/home"
     });
 
   $locationProvider.html5Mode(true);

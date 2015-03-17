@@ -5,7 +5,7 @@ Pages.get();
 $scope.$on("gotPageData", function(event, data) {
     console.log("contactsController on: ", data);
 
-    $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
+    $scope.trustedHtml = $sce.trustAsHtml(data[1].content);
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
 
