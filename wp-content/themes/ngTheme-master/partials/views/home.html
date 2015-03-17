@@ -1,8 +1,14 @@
 <section class="fullImage">
-
 	<div class="slogan">
-		<h2>{{homePage.title}}</h2>
-	  <div ng-bind-html="homePage.content"></div>
+		<!-- <h2>{{homePage.title}}</h2> -->
+	  <!-- <div ng-bind-html="homePage.content"></div> -->
 	</div>
+</section>
 
+<section class="container">
+  <div class="row">
+    <article ng-include="partialsDir+'views/detailedProperty.html'">
+
+    </article>
+  </div>
 </section>
