@@ -3,7 +3,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
   var propertyServant = {
     // endURL = last peace of the url.. 
     find : function(endURL) {
-      //
+      console.log("endURL: ",endURL);
       console.log("endURL in prop fack: ",endURL);
       //if no endURL, make empty obj so we dont crash!
       endURL = endURL ? endURL : {};
@@ -21,6 +21,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         broadcastName: "bananName",// does this funky name run off for the async to prevent callvacfunction from run of before ig got its inparamter? 
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
+          console.log("postDataaaaaaaa: ", postData);
 
           //if no results
           if (!postData) { return; // if no postData, end this function cause its no use running.. 
