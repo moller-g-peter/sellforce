@@ -10,8 +10,9 @@ app.controller("propertyController", ["$scope", "Property" ,"$routeParams", "SIT
   $scope.carouselInterval = 2000;
 
   $scope.$on("foundProperty", function(event, data) {
-    console.log("propertyController on foundProperty: ", data);
+
     if (!data) { return; }
+    // console.log("peopertyController data: ",data[0]);
     $scope.property = data[0];
   });
 }]);

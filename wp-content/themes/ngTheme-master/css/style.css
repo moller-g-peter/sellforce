@@ -6548,6 +6548,22 @@ button.close {
 html,
 body {
   height: 100%;
+  background: #eeeeee;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #eeeeee 0%, #cccccc 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=1);
+  /* IE6-9 */
 }
 main {
   min-height: 100%;
@@ -6761,4 +6777,16 @@ nav ul.mainMenu {
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   border-top: 23px solid #696969;
+}
+.propertyContentBorder {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  height: 300px;
+}
+.propertyContentBorderAndMargin {
+  background-color: #fff;
+  border: 2px solid #000;
+  margin-top: 40px;
+  border-radius: 5px;
 }
