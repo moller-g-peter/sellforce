@@ -6670,8 +6670,6 @@ header .mainMenu {
 /* Sticky footer */
 body {
   height: 100%;
-  margin-top: -32px;
-  /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! */
 }
 main {
   min-height: 100%;
@@ -6778,15 +6776,8 @@ nav ul.mainMenu {
   border-right: 40px solid transparent;
   border-top: 23px solid #696969;
 }
-.propertyContentBorder {
-  background-color: #fff;
-  border: 2px solid #000;
-  border-radius: 5px;
-  height: 300px;
-}
-.propertyContentBorderAndMargin {
-  background-color: #fff;
-  border: 2px solid #000;
-  margin-top: 40px;
-  border-radius: 5px;
+.propertySlider {
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
