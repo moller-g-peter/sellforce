@@ -46,6 +46,25 @@ app.factory("Pages", ["WPRest" ,"$sce", function (WPRest, $sce) {
     delete : function(pageId) {
       var callUrl = "/pages/"+pageId;
       WPRest.restCall(callUrl, "DELETE", {}, "deletedPage");
+    },
+    search: function(searchParams) {
+      /*
+        searchParams = {
+          filterKey1: filterValue1,
+          filterKey2: filterValue2
+        }
+      */
+      var callUrl = "/pages";
+      var first = true;
+      for (var i in searchParams) {
+        callUrl += first ?
+          "?filter["+i+"]=" + searchParams[i] : //if true
+          "&filter["+i+"]=" + searchParams[i]; //if false
+        first = false;
+      }
+      console.log("pages searching for: ", callUrl);
+
+      WPRest.restCall(callUrl, "GET", {}, "foundPages");
     }
   };
 

@@ -6709,6 +6709,9 @@ footer li > ul {
 footer a {
   color: white;
 }
+footer a:hover {
+  color: red;
+}
 .fullImage {
   height: 100vh;
   width: 100%;
