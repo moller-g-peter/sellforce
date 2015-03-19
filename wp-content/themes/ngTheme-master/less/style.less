@@ -148,15 +148,14 @@ body {
 main {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -200px;
+  margin-bottom: -300px;
 }
 main:after {
   content: "";
   display: block;
 }
-footer,
-main:after {
-  height: 200px;
+footer, main:after {
+  height: 300px;
 }
 footer {
   background: #0e0e0e;
@@ -197,6 +196,11 @@ footer li > ul {
 footer a {
   color: white;
 }
+footer a:hover {
+  color: red;
+}
+
+// background img home page
 .fullImage {
   height: 100vh;
   width: 100%;
@@ -248,7 +252,6 @@ nav ul.mainMenu {
   position: absolute;
   bottom: 100px;
   left: 47%;
-
 }
 .arrow-down {
   width: 0; 
@@ -256,7 +259,6 @@ nav ul.mainMenu {
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   border-top: 23px solid #696969;
-
 }
 
 .propertySlider {
