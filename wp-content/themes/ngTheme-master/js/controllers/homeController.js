@@ -3,7 +3,7 @@
 app.controller("homeController", ["$scope", "Pages", "$sce", "Property" ,"$routeParams", "SITE_INFO", function($scope, Pages, $sce, Property, $routeParams, SITE_INFO) {
   // console.log("homeController alive!");
 
-  Property.find($routeParams);
+  Property.found({name:"home"});
   $scope.partialsDir = SITE_INFO.partials;
 
   console.log("routeParams :",$routeParams);

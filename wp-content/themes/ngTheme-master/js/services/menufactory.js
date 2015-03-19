@@ -1,33 +1,26 @@
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   //our old friend from bootstrap_play
-  function createMenuTree(menuLinkArr) {
-    // console.log("menuLinkArr: ", menuLinkArr);
-    // The menu tree (our new deep structure)
+  function createHashMap(MenuLinksData) {
     var menuTree = [];
+    var hash = {};
 
-    // sort by weight
-    menuLinkArr.sort(function(x,y){
+    MenuLinksData.sort(function(x, y) {
       return x.order > y.order;
     });
 
-    //since JS always assigns properties by reference
-    //we can use separate variables to track the same objects in menuData 
-    //(all our menu links)
-    var hash = {};
 
-    // Loop through original menuData, add all links to hash map,
-    //and add all top level links to the menuTree
-    menuLinkArr.forEach(function(link) {
+    MenuLinksData.forEach(function(link) {
       //with a small modification 
       //(removes http://{{site root}}/ from link urls)
       link.url = link.url.replace(SITE_INFO.http_root, "");
 
-      //give each menu link a new property called children
+      // add an array called children to thisData
       link.children = [];
-
-      //track each link using our hash map
-      hash["_"+link.ID] = link;
+      // thisData contains a value of mlid that getting an underscore before the int. And because we are in a for each loop
+      // it will add to every mlid's value in thisData. The underscore make mlid to a string. 
+      // Now we make sure mlid is a key and by make it a string secure the key from "math" problems.
+        hash["_"+link.ID] = link;
 
       // if i am top level, add to tree right away
       if(link.parent === 0){
@@ -55,13 +48,13 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
   //the callback function for GET requests with a menuId
   //that converts menu.items from a "flat" array into a tree
   function prepareMenu(menuObj) {
-    menuObj.items = createMenuTree(menuObj.items);
+    menuObj.items = createHashMap(menuObj.items);
 
     return menuObj;
   }
 
   //our factory object
-  var menuServant = {
+  var menuObject = {
     get : function(menuId) {
       var callUrl = menuId ? "/menus/" + menuId : "/menus";
 
@@ -79,5 +72,5 @@ app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
     }
   };
 
-  return menuServant;
+  return menuObject;
 }]);

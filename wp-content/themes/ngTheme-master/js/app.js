@@ -8,7 +8,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
     .when("/", {
       redirectTo: "/home"
     })
-    .when("/:name", {
+    .when("/home", {
       templateUrl: SITE_INFO.partials+"views/home.html",
       controller: "homeController"
     })
