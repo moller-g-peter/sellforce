@@ -1,9 +1,24 @@
 //"ngTheme" home controller.
 //dependent on $scope && WPService being injected to run
-app.controller("homeController", ["$scope", "Pages", "$sce", function($scope, Pages, $sce) {
+app.controller("homeController", ["$scope", "Pages", "$sce", "Property" ,"$routeParams", "SITE_INFO", function($scope, Pages, $sce, Property, $routeParams, SITE_INFO) {
   // console.log("homeController alive!");
+
+  Property.found({name:"home"});
+  $scope.partialsDir = SITE_INFO.partials;
+
+  console.log("routeParams :",$routeParams);
+
+  //the interval for all carousels
+  $scope.carouselInterval = 2000;
+
+  $scope.$on("foundProperty", function(event, data) {
+    console.log("propertyController on foundProperty: ", data);
+    if (!data) { return; }
+    $scope.property = data[0];
+  });
+  
   //get all pages
-  Pages.get();
+  Pages.get(10);
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
@@ -20,9 +35,22 @@ app.controller("homeController", ["$scope", "Pages", "$sce", function($scope, Pa
       and the ng-bind-html directive in the view
     */
 
-    $scope.trustedHtml = $sce.trustAsHtml(data[2].content);
+    $scope.homePage = data;
+
+
+    // $scope.trustedHtml = $sce.trustAsHtml(data[2].content);
+
 
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
+
+
+
+  //Property.find() accepts an object with key->value pairs that
+  //map to the search filters we need in our GET request
+
+
   
 }]);
+
+

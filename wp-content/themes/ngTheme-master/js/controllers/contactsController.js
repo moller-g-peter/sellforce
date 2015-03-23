@@ -2,11 +2,29 @@ app.controller("contactsController", ["$scope", "Pages", "$sce", function($scope
 
 // console.log("contactsController workingnbnhvnbvnh!");
 Pages.get();
+
 $scope.$on("gotPageData", function(event, data) {
+<<<<<<< HEAD
     // console.log("contactsController on: ", data);
+=======
+    console.log("- - - contactsController on: ", data);
+>>>>>>> origin/master
 
     $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
+	
+  // console.log("footerController is alive!");
+// Pages.search({name:"footer"});
+// var firstSearch = true;
+
+// $scope.$on("foundPages", function(event, data) {
+//     console.log("fffffffooterController on foundPages: ", data);
+//     if (firstSearch) {
+//     	// $scope.footerContent = $sce.trustAsHtml(data[0].content);
+//     	firstSearch = false;
+//     }
+//     $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
+//   });
 
 }]);

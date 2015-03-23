@@ -1,7 +1,20 @@
-<section class="fullImage">
-
+<section class="fullImage container">
 	<div class="slogan">
-	  <div ng-bind-html="trustedHtml"></div>
+		<!-- <h2>{{homePage.title}}</h2> -->
+	  <!-- <div ng-bind-html="homePage.content"></div> -->
 	</div>
 
+	<!-- arrow-down -->
+	<div class="arrow-down-shadow">
+		<div class="arrow-down"></div>
+	</div>
+
+</section>
+
+<section class="container">
+  <div class="row">
+    <article ng-include="partialsDir+'views/detailedProperty.html'">
+
+    </article>
+  </div>
 </section>

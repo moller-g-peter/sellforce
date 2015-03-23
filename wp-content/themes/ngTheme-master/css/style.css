@@ -6548,15 +6548,22 @@ button.close {
 html,
 body {
   height: 100%;
-}
-main {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -200px;
-}
-main:after {
-  content: "";
-  display: block;
+  background: #eeeeee;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #eeeeee 0%, #cccccc 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=1);
+  /* IE6-9 */
 }
 footer,
 main:after {
@@ -6610,6 +6617,46 @@ footer a {
   -o-background-size: cover;
   background-size: cover;
 }
+.fullImage {
+  padding-top: 300px;
+}
+header .navAlign {
+  position: relative;
+}
+header .mainMenu {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
+/* main menu */
+nav ul.mainMenu {
+  background-color: rgba(0, 0, 0, 0);
+}
+.mainMenu a {
+  white-space: nowrap;
+  font-size: 1.5em;
+  color: #fff;
+  max-width: 200px;
+  margin-left: 100px;
+  text-shadow: -1px 1px 2px #969696;
+}
+.mainMenu li a:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border-top: rgba(0, 0, 0, 0) 1px solid;
+  border-right: rgba(0, 0, 0, 0) 1px solid;
+  border-left: rgba(0, 0, 0, 0) 1px solid;
+  box-shadow: 0px 10px 0px #ffee22;
+}
+main:after {
+  content: "";
+  display: block;
+}
 .slogan h1 {
   font-size: 100px;
   color: white;
@@ -6623,41 +6670,19 @@ footer a {
   text-align: center;
   text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
 }
-.nav,
-.pagination,
-.carousel,
-.panel-title a {
-  cursor: pointer;
-}
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 300px;
-}
-header .navAlign {
-  height: 300px;
-  position: relative;
-}
-header .mainMenu {
-  position: absolute;
-  bottom: 0;
-  z-index: 10;
-}
-.fullImage {
-  padding-top: 300px;
+.space {
+  margin: 10px;
 }
 /* Sticky footer */
 body {
   height: 100%;
   margin-top: -32px;
-  /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! */
+  /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! / removed pixel cause it's no whitespace anymore at my computer.. */
 }
 main {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -200px;
+  margin-bottom: -300px;
 }
 main:after {
   content: "";
@@ -6665,7 +6690,7 @@ main:after {
 }
 footer,
 main:after {
-  height: 200px;
+  height: 300px;
 }
 footer {
   background: #0e0e0e;
@@ -6728,22 +6753,20 @@ footer a {
   text-align: center;
   text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
 }
-/* main menu */
-nav ul.mainMenu {
-  background-color: rgba(0, 0, 0, 0);
+.arrow-down-shadow {
+  width: 0;
+  height: 0;
+  box-shadow: 40px 0px 100px 50px white;
+  position: absolute;
+  bottom: 100px;
+  left: 47%;
 }
-.mainMenu a {
-  white-space: nowrap;
-  font-size: 1.5em;
-  color: #fff;
-  max-width: 200px;
-  margin-left: 100px;
-  text-shadow: -1px 1px 2px #969696;
-}
-.mainMenu li a:hover {
-  color: #000;
-  text-shadow: none;
-  /*background-color: #fff;*/
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 23px solid #696969;
 }
 .searchImage {
   height: 100vh;
@@ -6773,4 +6796,9 @@ input[type='checkbox'] {
 }
 .resetButton button:hover {
   background-color: #87ceeb;
+}
+.propertySlider {
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
