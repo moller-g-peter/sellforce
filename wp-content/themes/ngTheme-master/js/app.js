@@ -16,6 +16,10 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/properties.html",
       controller: "propertiesController"
     })
+    .when("/search", {
+      templateUrl: SITE_INFO.partials+"views/search.html",
+      controller: "searchController"
+    })
     .otherwise({
       redirectTo: "/"
     });

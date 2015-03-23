@@ -1,12 +1,12 @@
 app.controller("propertiesController", ["$scope", "Pages", "$sce", function($scope, Pages, $sce) {
-  console.log("propertiesController alive!");
+  // console.log("propertiesController alive!");
   //get all pages
   Pages.get();
 
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
   $scope.$on("gotPageData", function(event, data) {
-    console.log("propertiesController on gotPageData: ", data);
+    // console.log("propertiesController on gotPageData: ", data);
 
     /* 
       angular protects us from "dangerous" HTML by converting it to a string
