@@ -1,13 +1,8 @@
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   //our old friend from bootstrap_play
-<<<<<<< HEAD
-  function createMenuTree(menuLinkArr) {
-    // console.log("menuLinkArr: ", menuLinkArr);
-    // The menu tree (our new deep structure)
-=======
+
   function createHashMap(MenuLinksData) {
->>>>>>> origin/master
     var menuTree = [];
     var hash = {};
 

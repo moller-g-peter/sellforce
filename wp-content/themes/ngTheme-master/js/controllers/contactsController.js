@@ -4,11 +4,11 @@ app.controller("contactsController", ["$scope", "Pages", "$sce", function($scope
 Pages.get();
 
 $scope.$on("gotPageData", function(event, data) {
-<<<<<<< HEAD
+
     // console.log("contactsController on: ", data);
-=======
+
     console.log("- - - contactsController on: ", data);
->>>>>>> origin/master
+
 
     $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);

@@ -1,5 +1,5 @@
 //app declaration and dependency injection
-var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap"]);
+var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap", "ngSlider"]);
 //app config
 app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeProvider, $locationProvider, SITE_INFO) {
   //route config
@@ -36,3 +36,4 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
 }])
 .constant('SITE_INFO', myLocalized)
 .constant('API_ROUTE', "wp-json");
+
