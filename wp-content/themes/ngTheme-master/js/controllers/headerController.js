@@ -8,6 +8,20 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
   //get the menuLinks for menuId 7 using WPRest
   Menus.get(4);
 
+  $scope.getClass = function(path) {
+    console.log("paths: ", path);
+    console.log("$location.$$url: ",$location.$$url);
+
+
+    if ($location.$$url) {
+      console.log("true");
+      return "";
+    } else {
+      console.log("false");
+      return "";
+
+    }
+};
   //listen to the broadcast "gotMenuLinks"
   $scope.$on("gotMenuLinks", function(event, data) {
     // console.log("headerController on gotMenuLinks: ", data);
@@ -30,6 +44,7 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
       //to change url
       window.location.href = url;
       return;
+
     }
 
     //all "soft" reloads (location change within app) use

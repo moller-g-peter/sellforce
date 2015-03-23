@@ -6622,7 +6622,7 @@ footer a {
   padding-top: 300px;
 }
 section {
-  margin-top: 100px;
+  padding-top: 130px;
 }
 header {
   position: absolute;
@@ -6662,11 +6662,19 @@ nav ul.mainMenu {
   border-top: rgba(0, 0, 0, 0) 1px solid;
   border-right: rgba(0, 0, 0, 0) 1px solid;
   border-left: rgba(0, 0, 0, 0) 1px solid;
-  box-shadow: 0px 10px 0px #fff;
+  box-shadow: 0px 10px 0px #000;
 }
 main:after {
   content: "";
   display: block;
+}
+.activated,
+.btn-default {
+  background-color: rgba(0, 0, 0, 0);
+  border-top: rgba(0, 0, 0, 0) 1px solid;
+  border-right: rgba(0, 0, 0, 0) 1px solid;
+  border-left: rgba(0, 0, 0, 0) 1px solid;
+  box-shadow: 0px 10px 0px #000;
 }
 .slogan h1 {
   font-size: 100px;
