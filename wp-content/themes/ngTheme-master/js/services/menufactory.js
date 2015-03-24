@@ -1,6 +1,7 @@
 app.factory("Menus", ["WPRest", "SITE_INFO", function(WPRest, SITE_INFO) {
 
   //our old friend from bootstrap_play
+
   function createHashMap(MenuLinksData) {
     var menuTree = [];
     var hash = {};

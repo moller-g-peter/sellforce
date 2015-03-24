@@ -1,5 +1,5 @@
 //app declaration and dependency injection
-var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap"]);
+var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap", "ngSlider"]);
 //app config
 app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeProvider, $locationProvider, SITE_INFO) {
   //route config
@@ -23,6 +23,10 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
     .when("/bostader", {
       templateUrl: SITE_INFO.partials+"views/properties.html",
       controller: "propertiesController"
+    })
+    .when("/search", {
+      templateUrl: SITE_INFO.partials+"views/search.html",
+      controller: "searchController"
     })
     .otherwise({
       redirectTo: "/hem"

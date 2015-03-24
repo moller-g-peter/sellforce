@@ -24,9 +24,11 @@ function ngThemes_stylesheets()
   // Register the style like this for a theme:
   wp_register_style( 'base-style', THEME_HTTP_ROOT . 'css/style.css', array(), '20150225', 'all' );
   // wp_register_style( 'base-style', THEME_HTTP_ROOT . 'style.css', array(), '20150225', 'all' );
+  wp_register_style( 'slider-style', THEME_HTTP_ROOT . 'css/ng-slider.min.css', array(), '20150225', 'all' );
 
   // For either a plugin or a theme, you can then enqueue the style:
   wp_enqueue_style( 'base-style' );
+  wp_enqueue_style( 'slider-style' );
 }
 
 add_action( 'wp_enqueue_scripts', 'ngThemes_stylesheets' );
@@ -54,6 +56,10 @@ function ngTheme_scripts() {
   wp_enqueue_script(
     'angularjs-ui-bootstrap',
     THEME_HTTP_ROOT . 'js/libs/ui-bootstrap-tpls-0.12.1.js'
+  );
+  wp_enqueue_script(
+    'sliders',
+    THEME_HTTP_ROOT . 'js/ng-slider.min.js'
   );
   wp_enqueue_script(
     'appjs',
