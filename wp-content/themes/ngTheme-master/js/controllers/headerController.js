@@ -13,13 +13,13 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
     var lastlocation = path.substring(0, path.length - 1);
 
     var activeLocation = $location.$$url.substring($location.$$url.lastIndexOf("/")+1);
-    console.log("lastlocation: ", lastlocation + " path: ",activeLocation);
+    // console.log("lastlocation: ", lastlocation + " path: ",activeLocation);
 
     if (activeLocation === lastlocation) {
-      console.log("true");
+      // console.log("true");
       return "activated";
     } else {
-      console.log("false");
+      // console.log("false");
       return "";
 
     }

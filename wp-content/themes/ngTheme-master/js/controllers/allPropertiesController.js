@@ -1,4 +1,4 @@
-app.controller("propertiesController", ["$scope", "Posts", "$sce", function($scope, Posts, $sce) {
+app.controller("propertiesController", ["$scope", "Posts", "Property", "$sce", function($scope, Posts, $sce) {
   // console.log("propertiesController alive!");
   //get all pages
   console.log("postcontrolle alive!!");
@@ -7,8 +7,7 @@ app.controller("propertiesController", ["$scope", "Posts", "$sce", function($sco
   // EXAMPLE LISTENER TO A $broadcast COMING FROM WPRest SERVICE!!!
   //listening for the "gotPageData" broadcast on $http success
   $scope.$on("gotPostData", function(event, data) {
-    console.log("propertiesController on gotPostData: ", data);
-
+    console.log("properties multiply on gotPostData: ", data);
     /* 
       angular protects us from "dangerous" HTML by converting it to a string
 

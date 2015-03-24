@@ -12,7 +12,6 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "Property" ,"$route
   $scope.carouselInterval = 2000;
 
   $scope.$on("foundProperty", function(event, data) {
-    console.log("propertyController on foundProperty: ", data);
     if (!data) { return; }
     $scope.property = data[0];
   });

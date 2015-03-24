@@ -12,7 +12,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/home.html",
       controller: "homeController"
     })
-    .when("/kontakter", {
+    .when("/om-oss", {
       templateUrl: SITE_INFO.partials+"views/contacts.html",
       controller: "contactsController"
     })
