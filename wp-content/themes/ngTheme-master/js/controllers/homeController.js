@@ -37,14 +37,7 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "Property" ,"$route
 
     $scope.homePage = data;
 
-
-    // $scope.trustedHtml = $sce.trustAsHtml(data[2].content);
-
-
-    // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
-
-
 
   //Property.find() accepts an object with key->value pairs that
   //map to the search filters we need in our GET request

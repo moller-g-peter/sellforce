@@ -6,9 +6,9 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
   console.log("when: ",$locationProvider);
   $routeProvider
     .when("/", {
-      redirectTo: "/home"
+      redirectTo: "/hem"
     })
-    .when("/home", {
+    .when("/hem", {
       templateUrl: SITE_INFO.partials+"views/home.html",
       controller: "homeController"
     })
@@ -25,7 +25,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       controller: "propertiesController"
     })
     .otherwise({
-      redirectTo: "/home"
+      redirectTo: "/hem"
     });
 
   $locationProvider.html5Mode(true);
