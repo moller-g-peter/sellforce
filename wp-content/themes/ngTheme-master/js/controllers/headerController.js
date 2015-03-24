@@ -9,13 +9,15 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
   Menus.get(4);
 
   $scope.getClass = function(path) {
-    console.log("paths: ", path);
-    console.log("$location.$$url: ",$location.$$url);
 
+    var lastlocation = path.substring(0, path.length - 1);
 
-    if ($location.$$url) {
+    var activeLocation = $location.$$url.substring($location.$$url.lastIndexOf("/")+1);
+    console.log("lastlocation: ", lastlocation + " path: ",activeLocation);
+
+    if (activeLocation === lastlocation) {
       console.log("true");
-      return "";
+      return "activated";
     } else {
       console.log("false");
       return "";

@@ -6643,6 +6643,7 @@ nav ul.mainMenu {
   background-color: rgba(0, 0, 0, 0);
 }
 .mainMenu a {
+  text-decoration: none;
   white-space: nowrap;
   font-size: 1.5em;
   color: #fff;
@@ -6651,6 +6652,7 @@ nav ul.mainMenu {
   text-shadow: -1px 1px 2px #969696;
 }
 .mainMenu li a:hover {
+  text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
   border-top: rgba(0, 0, 0, 0) 1px solid;
   border-right: rgba(0, 0, 0, 0) 1px solid;
@@ -6658,23 +6660,24 @@ nav ul.mainMenu {
   box-shadow: 0px 10px 0px #fff;
 }
 .mainMenu li a:active {
+  text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
   border-top: rgba(0, 0, 0, 0) 1px solid;
   border-right: rgba(0, 0, 0, 0) 1px solid;
   border-left: rgba(0, 0, 0, 0) 1px solid;
-  box-shadow: 0px 10px 0px #000;
+  box-shadow: 0px 10px 0px #fff;
 }
 main:after {
   content: "";
   display: block;
 }
-.activated,
-.btn-default {
+.activated {
+  text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
   border-top: rgba(0, 0, 0, 0) 1px solid;
   border-right: rgba(0, 0, 0, 0) 1px solid;
   border-left: rgba(0, 0, 0, 0) 1px solid;
-  box-shadow: 0px 10px 0px #000;
+  box-shadow: 0px 10px 0px #fff;
 }
 .slogan h1 {
   font-size: 100px;
