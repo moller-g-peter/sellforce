@@ -15,6 +15,7 @@
 
 /* Sticky footer */
 html, body {
+  position: relative;
   height: 100%;
 
   background: rgb(238,238,238); /* Old browsers */
@@ -78,36 +79,42 @@ footer a{
 }
 
 
+
+
+
+
+
+
 .fullImage {
   padding-top: 300px;
 }
 
 
 
-
+section{
+  padding-top:130px;
+}
 
 
 
 
 // This is where i work with menus styling!
 header {
-
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // right: 0;
+  position: absolute;
+  top: 50px;
+  height: 100px;
   
 }
 
 header .navAlign {
-  position: relative;
+  
 }
 header .mainMenu {
   // height: 300px;
-  position: absolute;
-  top: 0;
+
   z-index: 10;
 }
+
 .nav,
 .pagination,
 .carousel,
@@ -121,6 +128,7 @@ nav ul.mainMenu {
 }
 
 .mainMenu a {
+  text-decoration: none;
   white-space: nowrap;
   font-size: 1.5em;
   color: #fff;
@@ -130,11 +138,22 @@ nav ul.mainMenu {
 }
 
 .mainMenu li a:hover {
+  text-decoration: none;
   background-color: rgba(0,0,0,0);
   border-top: rgba(0,0,0,0) 1px solid;
   border-right: rgba(0,0,0,0) 1px solid;
   border-left:rgba(0,0,0,0) 1px solid;
-  box-shadow: 0px 10px 0px #fe2
+  box-shadow: 0px 10px 0px #fff;
+
+}
+
+.mainMenu li a:active {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0);
+  border-top: rgba(0,0,0,0) 1px solid;
+  border-right: rgba(0,0,0,0) 1px solid;
+  border-left:rgba(0,0,0,0) 1px solid;
+  box-shadow: 0px 10px 0px #fff;
 
 }
 
@@ -143,16 +162,15 @@ main:after {
   display: block;
 }
 
+.activated {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0);
+  border-top: rgba(0,0,0,0) 1px solid;
+  border-right: rgba(0,0,0,0) 1px solid;
+  border-left:rgba(0,0,0,0) 1px solid;
+  box-shadow: 0px 10px 0px #fff;
 
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -188,7 +206,7 @@ main:after {
 
 body {
   height: 100%;
-  margin-top: -32px; /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! / removed pixel cause it's no whitespace anymore at my computer.. */
+  margin-top:-32px;/* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! / removed pixel cause it's no whitespace anymore at my computer.. */
 }
 main {
   min-height: 100%;
