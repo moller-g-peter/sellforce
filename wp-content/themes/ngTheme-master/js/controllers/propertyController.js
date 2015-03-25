@@ -2,7 +2,9 @@ app.controller("propertyController", ["$scope", "Property" ,"$routeParams", "SIT
 
   //Property.find() accepts an object with key->value pairs that
   //map to the search filters we need in our GET request
-  Property.found($routeParams);
+  console.log("routeParams 2 : ", $routeParams);
+  Property.found();
+  
   $scope.partialsDir = SITE_INFO.partials;
 
   //the interval for all carousels

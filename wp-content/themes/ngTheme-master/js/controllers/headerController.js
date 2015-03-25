@@ -8,12 +8,13 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
   //get the menuLinks for menuId 7 using WPRest
   Menus.get(4);
 
+  $scope.currUrl = $location.url().substring(1);
+
   $scope.getClass = function(path) {
 
     var lastlocation = path.substring(0, path.length - 1);
 
     var activeLocation = $location.$$url.substring($location.$$url.lastIndexOf("/")+1);
-    // console.log("lastlocation: ", lastlocation + " path: ",activeLocation);
 
     if (activeLocation === lastlocation) {
       // console.log("true");
@@ -35,6 +36,8 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
   $scope.goTo = function(url, hardReload) {
     //any relative path destined for hardReload 
     //gets http_root instead of initial "/"
+
+  console.log("currUrl: ", url);
     if (hardReload) {
       url = url.indexOf("/") === 0 ?
         SITE_INFO.http_root + url.substr(1) :

@@ -3,7 +3,7 @@ var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap", "ngSlider"]);
 //app config
 app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeProvider, $locationProvider, SITE_INFO) {
   //route config
-  console.log("when: ",$locationProvider);
+  // console.log("when: ",$locationProvider);
   $routeProvider
     .when("/", {
       redirectTo: "/hem"
@@ -21,10 +21,10 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       controller: "propertyController"
     })
     .when("/bostader", {
-      templateUrl: SITE_INFO.partials+"views/properties.html",
-      controller: "propertiesController"
+      templateUrl: SITE_INFO.partials+"views/allProperties.html",
+      controller: "allPropertiesController"
     })
-    .when("/search", {
+    .when("/sok", {
       templateUrl: SITE_INFO.partials+"views/search.html",
       controller: "searchController"
     })
