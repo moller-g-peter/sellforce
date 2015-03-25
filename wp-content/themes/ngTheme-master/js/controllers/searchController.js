@@ -1,15 +1,5 @@
 app.controller("searchController", ["$scope", "Pages", "$sce", function($scope, Pages, $sce) {
 
-// console.log("searchController working...");
-// Pages.get();
-// $scope.$on("gotPageData", function(event, data) {
-//     // console.log("searchController on: ", data);
-
-//     // $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
-//     $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
-//   });
-
-
 
 	$scope.priceValue = "0;8000000";
 	$scope.options1 = {
@@ -47,7 +37,24 @@ app.controller("searchController", ["$scope", "Pages", "$sce", function($scope, 
 	to: 8,
 	step: 1,
 	dimension: "",
-	scale: [1,2,3,4,5,6,7,8]
+	scale: [1, 2, 3, 4, 5, 6, 7, 8]
 	};
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }]);
