@@ -3,7 +3,7 @@ var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap", "ngSlider"]);
 //app config
 app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeProvider, $locationProvider, SITE_INFO) {
   //route config
-  console.log("when: ",$locationProvider);
+  // console.log("when: ",$locationProvider);
   $routeProvider
     .when("/", {
       redirectTo: "/hem"
@@ -12,7 +12,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/home.html",
       controller: "homeController"
     })
-    .when("/kontakter", {
+    .when("/om-oss", {
       templateUrl: SITE_INFO.partials+"views/contacts.html",
       controller: "contactsController"
     })
@@ -21,8 +21,8 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       controller: "propertyController"
     })
     .when("/bostader", {
-      templateUrl: SITE_INFO.partials+"views/properties.html",
-      controller: "propertiesController"
+      templateUrl: SITE_INFO.partials+"views/allProperties.html",
+      controller: "allPropertiesController"
     })
     .when("/sok", {
       templateUrl: SITE_INFO.partials+"views/search.html",
@@ -36,4 +36,3 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
 }])
 .constant('SITE_INFO', myLocalized)
 .constant('API_ROUTE', "wp-json");
-
