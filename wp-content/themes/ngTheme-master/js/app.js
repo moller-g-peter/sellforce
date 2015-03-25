@@ -24,7 +24,7 @@ app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeP
       templateUrl: SITE_INFO.partials+"views/properties.html",
       controller: "propertiesController"
     })
-    .when("/search", {
+    .when("/sok", {
       templateUrl: SITE_INFO.partials+"views/search.html",
       controller: "searchController"
     })
