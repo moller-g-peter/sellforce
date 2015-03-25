@@ -6,13 +6,11 @@ app.controller("homeController", ["$scope", "Pages", "$sce", "Property" ,"$route
   Property.found({name:"home"});
   $scope.partialsDir = SITE_INFO.partials;
 
-  console.log("routeParams :",$routeParams);
 
   //the interval for all carousels
   $scope.carouselInterval = 2000;
 
   $scope.$on("foundProperty", function(event, data) {
-    console.log("propertyController on foundProperty: ", data);
     if (!data) { return; }
     $scope.property = data[0];
   });
