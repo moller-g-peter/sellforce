@@ -2,8 +2,52 @@
   <div class="row">
     <div class="col-lg-12">
 
-      <div class="col-lg-4">
+      <div class="col-lg-2">
+        <form class="facilityFilters">
+          <h2 class="tillagg">BOSTAD</h2>
+          <input type="checkbox" name="filterbox" id="lagenhet_id" value="lagenhet"> 
+            <label for="lagenhet_id"> Lägenhet</label><br>
+          <input type="checkbox" name="filterbox" id="Villa_id" value="Villa"> 
+            <label for="Villa_id"> Villa</label><br>
+          <input type="checkbox" name="filterbox" id="Radhus_id" value="Radhus"> 
+            <label for="Radhus_id"> Radhus</label><br>
+          <input type="checkbox" name="filterbox" id="koloni_id" value="koloni"> 
+            <label for="koloni_id"> Koloniträdgård</label><br>
+          <input type="checkbox" name="filterbox" id="student_id" value="student"> 
+            <label for="student_id"> Studentlägenhet</label><br>
+          <input type="checkbox" name="filterbox" id="stuga_id" value="stuga"> 
+            <label for="stuga_id"> Stuga</label><br>
+          <input type="checkbox" name="filterbox" id="senior_id" value="senior"> 
+            <label for="senior_id"> Seniorboende</label><br>
+          <input type="checkbox" name="filterbox" id="ovrig_id" value="ovrig"> 
+            <label for="ovrig_id"> Övriga boenden</label><br>
+        </form>
+      </div>
+
+      <div class="col-lg-2">
+        <form class="accessoryFilters">
+          <h2 class="tillagg">TILLBEHÖR</h2>
+          <input type="checkbox" name="filterbox" id="balkong_id" value="balkong"> 
+            <label for="balkong_id"> Balkong</label><br>
+          <input type="checkbox" name="filterbox" id="badkar_id" value="badkar"> 
+            <label for="badkar_id"> Badkar</label><br>
+          <input type="checkbox" name="filterbox" id="hiss_id" value="hiss"> 
+            <label for="hiss_id"> Hiss</label><br>
+          <input type="checkbox" name="filterbox" id="terass_id" value="terass"> 
+            <label for="terass_id"> Terass</label><br>
+
+        <div class="roomSlider">
+          <h3>Antal rum</h3>
+          <h6>(justera slider för filtrering)</h6>
+          <input ng-model="roomValue" type="text" id="mySlider1" slider options="options4" />
+        </div>
+
+        </form>
+      </div>
+
+      <div class="col-lg-2">
         <form class="municipalityFilter">
+          <h2 class="omrade">OMRÅDE</h2>
           <input type="checkbox" name="filterbox" id="Annelund_id" value="Annelund"> 
             <label for="Annelund_id"> Annelund</label><br>
           <input type="checkbox" name="filterbox" id="Annetorp_id" value="Annetorp"> 
@@ -37,42 +81,34 @@
         </form>
       </div>
 
+
       <div class="col-lg-4">
         <form class="accessoryFilters">
-          <input type="checkbox" name="filterbox" id="balkong_id" value="balkong"> 
-            <label for="balkong_id"> Balkong</label><br>
-          <input type="checkbox" name="filterbox" id="badkar_id" value="badkar"> 
-            <label for="badkar_id"> Badkar</label><br>
-          <input type="checkbox" name="filterbox" id="hiss_id" value="hiss"> 
-            <label for="hiss_id"> Hiss</label><br>
-          <input type="checkbox" name="filterbox" id="terass_id" value="terass"> 
-            <label for="terass_id"> Terass</label><br>
-
-          <div class="jslider">
-            <input ng-model="value" type="text" id="mySlider1" slider options="options" />
+          <h2 class="extra">FILTER</h2><h4>(justera slider för filtrering)</h4>
+          <div class="priceSlider">
+            <h3>Pris/bostad</h3>
+            <input ng-model="priceValue" type="text" id="mySlider1" slider options="options1" />
+          </div>
+          
+          <div class="rentSlider">
+            <h3>Hyra/bostad</h3>
+            <input ng-model="rentValue" type="text" id="mySlider2" slider options="options2" />
           </div>
 
+          <div class="spaceSlider">
+            <h3>Yta/bostad</h3>
+            <input ng-model="spaceValue" type="text" id="mySlider3" slider options="options3" />
+          </div>
         </form>
+
+        <div class="col-lg-6 submitButton">
+          <button type="button" id="submit" class="btn btn-success resetButton" value="submit">SÖK</button>
+        </div>
+
+        <div class="col-lg-6 resetButton">
+          <button type="button" id="submit" class="btn btn-danger resetButton" value="submit">Återställ sök</button>
+        </div>
       </div>
-
-      <div class="col-lg-4 resetButton">
-        <button type="button" class="btn btn-default">Reset Search</button>
-      </div>
-   <!--    <button type="button" class="btn btn-primary" 
-         data-toggle="button">Single toggle
-      </button> -->
-
-  
-
     </div>
   </div>
 </section>
-
-
-<!-- <form name="myForm" ng-controller="ExampleController">
-  <input type="radio" ng-model="color.name" value="red">  Red <br/>
-  <input type="radio" ng-model="color.name" ng-value="specialValue"> Green <br/>
-  <input type="radio" ng-model="color.name" value="blue"> Blue <br/>
-  <tt>color = {{color.name | json}}</tt><br/>
-</form>
- -->

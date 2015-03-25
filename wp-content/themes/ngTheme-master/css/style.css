@@ -6808,21 +6808,72 @@ input[type='checkbox'] {
 }
 .municipalityFilter,
 .accessoryFilters,
-.resetButton {
-  margin-top: 430px;
+.facilityFilters,
+.extraFilters {
+  margin-top: 100px;
+  border-right: 1px solid white;
 }
 .municipalityFilter label:hover,
-.accessoryFilters label:hover {
+.accessoryFilters label:hover,
+.facilityFilters label:hover {
   cursor: pointer;
   color: #87ceeb;
-}
-.resetButton button:hover {
-  background-color: #87ceeb;
 }
 .propertySlider {
   height: 400px;
   overflow: hidden;
   margin-bottom: 20px;
+}
+.omrade,
+.tillagg,
+.extra {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.resetButton,
+.submitButton,
+h6 {
+  font-weight: bold;
+}
+.priceSlider,
+.rentSlider,
+.spaceSlider {
+  margin-bottom: 40px;
+  color: black;
+  width: 95%;
+}
+.priceSlider h3,
+.rentSlider h3,
+.spaceSlider h3,
+.roomSlider h3 {
+  color: #fff;
+}
+.priceSlider {
+  margin-top: 70px;
+}
+.roomSlider {
+  margin-top: 40px;
+  color: #000;
+  width: 89%;
+}
+.roomSlider h3,
+.accessoryFilters h4,
+.extra {
+  margin-bottom: 0;
+}
+h6,
+h4 {
+  color: #a9a9a9;
+  margin-top: 0;
+  margin-bottom: 17px;
+}
+h4 {
+  text-align: center;
+}
+.submitButton,
+.resetButton {
+  margin-top: 30px;
+  text-align: center;
 }
 .propertyMargin {
   margin-left: 5%;
