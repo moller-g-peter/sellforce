@@ -37,7 +37,7 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
     //any relative path destined for hardReload 
     //gets http_root instead of initial "/"
 
-  console.log("currUrl: ", url);
+  // console.log("currUrl: ", url);
     if (hardReload) {
       url = url.indexOf("/") === 0 ?
         SITE_INFO.http_root + url.substr(1) :

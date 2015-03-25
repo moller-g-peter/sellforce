@@ -1,12 +1,18 @@
-app.controller("allPropertiesController", ["$scope", "Property", "SITE_INFO", "$routeParams", "$location", function($scope, Property, SITE_INFO, $routeParams, $location) {
+app.controller("allPropertiesController", ["$scope", "Property", "SITE_INFO", "$routeParams",  function($scope, Property, SITE_INFO, $routeParams ) {
 
-  //get all pages
+
   console.log("routeParams 1: ", $routeParams);
-  Property.found();
+  
+  Property.found($routeParams);
+
   $scope.partials = SITE_INFO.partials;
-  // listening for the "gotPageData" broadcast on $http success
+  
+
+
+
+
   $scope.$on("foundProperty", function(event, data) {
-    console.log("allProperties data: ", data);
+    console.log("-- -- allPropertiesCTRL: ", data);
 
     $scope.allProperties = data;
 
