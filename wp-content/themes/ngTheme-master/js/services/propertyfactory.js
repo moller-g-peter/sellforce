@@ -1,7 +1,7 @@
 app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
   // console.log("property factory make noises");
   var propertyObjects = {
-    // endURL = last peace of the url.. 
+    
 
 
     // **Remember endUrl is equal an object! (not a string value)
@@ -38,13 +38,13 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
           var results = [];
 
           function asyncHandler(i , postData) { // it calls everytime we loop..
-            console.log("i: ",i);
+            // console.log("i: ",i);
             var myI = i; // needs to be stored in a varable to prevent losing "its data"
             var last = myI === postData.length-1; // why was it minus one?
             var post = postData[myI];
             // console.log("posts: ",postData);
             var propertySlug = post.terms.property ? post.terms.property[0].slug : false;
-            console.log("propertySlug: ", propertySlug);
+            // console.log("propertySlug: ", propertySlug);
             if (!propertySlug) { i++; return; }
 
             // console.log("read: ", last);

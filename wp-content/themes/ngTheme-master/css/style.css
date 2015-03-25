@@ -6824,3 +6824,6 @@ input[type='checkbox'] {
   overflow: hidden;
   margin-bottom: 20px;
 }
+.propertyMargin {
+  margin-left: 5%;
+}
