@@ -13,10 +13,19 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
       //searching with WP JSON REST API filter parameters
       //always only search for properties
       var callUrl = "/posts?filter[category_name]=properties";
-      //and add any additional parameters
-      for (var j in serchParam) {
-        callUrl += "&filter[" + j + "]=" + serchParam[j];
+      
+      for (var i in serchParam) {
+        //serchParam object keys are filter keys, 
+        //serchParam object values are filter values
+        if (serchParam[i].constructor.name != "Object") {
+          callUrl += "&filter["+i+"]="+serchParam[i];
+        } else {
+          for (var j in serchParam[i]) {
+            callUrl += "&filter["+i+"]["+j+"]="+serchParam[i][j];
+          }
+        }
       }
+
       // console.log("Property searching callUrl: " + callUrl);
       WPRest.restCall(callUrl, "GET", {}, {
         // send an disfunctional string to brodcastName
@@ -67,7 +76,6 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
                 });
 
                 if (last) {
-
                   return results;
                 }
               }
