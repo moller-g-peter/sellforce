@@ -1,13 +1,13 @@
-<div ng-repeat="property in allProperties" class="col-xs-10 col-sm-5  col-md-3 col-lg-3 row well propertyMargin">
+<div ng-repeat="property in allProperties"  class="col-xs-10 col-sm-5  col-md-3 col-lg-3 row well propertyMargin">
 
 
 
 	<h3>{{property.post.title}}</h3>
   <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 row">
  
-    <div ng-repeat="media in property.media" active="media.active">
-      <img ng-src="{{media.source}}" class="col-xs-10 col-sm-10  col-md-10 col-lg-4">
-    </div>
+    
+      <img ng-src="{{property.media[0].source}}" class="col-xs-12 col-sm-12  col-md-12 col-lg-12">
+
 
   </article>
 

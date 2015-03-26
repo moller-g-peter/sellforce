@@ -238,15 +238,15 @@ function ngwp_add_property_tax_to_posts() {
 add_action( 'init' , 'ngwp_add_property_tax_to_posts' );
 
 
-//when not logged in
-function addMetaSearch() {
-  global $wp;
+// This peace of code 
+// function addMetaSearch() {
+//   global $wp;
 
-  // Add additional key to support.
-  array_push($wp->public_query_vars, 'meta_key');
-  array_push($wp->public_query_vars, 'meta_value');
-}
-add_action("init", "addMetaSearch");
+//   // Add additional key to support.
+//   array_push($wp->public_query_vars, 'meta_key');
+//   array_push($wp->public_query_vars, 'meta_value');
+// }
+// add_action("init", "addMetaSearch");
 
 
 
@@ -265,6 +265,8 @@ add_filter( 'json_prepare_post', function ($data, $post, $context) {
     balkong
     typ
   */
+
+    
   //add a new property to the data that is going to AngularJS, 
   //and fill it with our metadata
   $data['property_data'] = array(
