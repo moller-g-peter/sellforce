@@ -1,30 +1,33 @@
-app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
-  // console.log("property factory make noises");
-  var propertyObjects = {
-    
-
-
-    // **Remember endUrl is equal an object! (not a string value)
+//this factory has two dependencies: "WPRest" and "$sce", 
+//which is a service we have created to handle all
+//REST communication to/from WordPress.
+app.factory("Property", ["WPRest", "$sce", function(WPRest, $sce) {
+  var propertyServant = {
     found : function(serchParam) {
-
+ 
+ 
       serchParam = serchParam ? serchParam : {};
-
-      //searching with WP JSON REST API filter parameters
-      //always only search for properties
+ 
+ 
       //we are always searching for posts
       //in the category "properties"
+      //we are always searching for posts
       var callUrl = "/properties";
 
       var first = true;
       //build a REST callUrl from search params, 
       for (var i in serchParam) {
-
-        //serchParam object values are filter values
+        //searchParams object keys are filter keys, 
+        //searchParams object values are filter values
         if (serchParam[i].constructor.name != "Object") {
-          callUrl += first ? "?filter["+i+"]="+serchParam[i] : "&filter["+i+"]="+serchParam[i];
+          callUrl += first ?
+            "?filter["+i+"]="+serchParam[i] :
+            "&filter["+i+"]="+serchParam[i];
         } else {
           for (var j in serchParam[i]) {
-            callUrl += first ? "?filter["+i+"]["+j+"]="+serchParam[i][j] : "&filter["+i+"]["+j+"]="+serchParam[i][j];
+            callUrl += first ?
+            "?filter["+i+"]["+j+"]="+serchParam[i][j] :
+            "&filter["+i+"]["+j+"]="+serchParam[i][j];
 
             first = false;
           }
@@ -32,16 +35,19 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
 
         first = false;
       }
-
-      // console.log("callUrl in prop fack: ",callUrl);
-
-      // console.log("Property searching callUrl: " + callUrl);
+   
+      console.log("Property find method will now call REST url: ", callUrl);
+ 
+      //and make the REST call using WPRest to get all property posts
       WPRest.restCall(callUrl, "GET", {}, {
-        // send an disfunctional string to brodcastName
-        broadcastName: "uslessName",// does this funky name run off for the async to prevent callvacfunction from run of before ig got its inparamter?
-        //send an object with the restCall = "callback" to deligate the acynk
+        broadcastName: "notImportant", //this broadcast is not important
         callback: function(postData) {
-          
+          //callback is triggered when we get data but 
+          //BEFORE we broadcast data throughout the app
+
+          // console.log("Property found property posts: ", postData);
+
+          //clean up bad postdata before we start
           for (var i = 0; i < postData.length; i++) {
             if (!postData[i].terms.property) {
               postData.splice(i, 1);
@@ -81,5 +87,5 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
     }
   };
  
-  return propertyObjects;
+  return propertyServant;
 }]);
