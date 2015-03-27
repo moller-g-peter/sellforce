@@ -6879,3 +6879,6 @@ h4 {
   margin-left: 5%;
   height: 380px;
 }
+.blackText {
+  color: black !important;
+}

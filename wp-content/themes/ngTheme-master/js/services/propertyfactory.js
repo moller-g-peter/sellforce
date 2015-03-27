@@ -15,7 +15,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
       var callUrl = "/posts?filter[category_name]=properties";
       
       for (var i in serchParam) {
-        //serchParam object keys are filter keys, 
+        //serchParam object keys are filter keys,
         //serchParam object values are filter values
         if (serchParam[i].constructor.name != "Object") {
           callUrl += "&filter["+i+"]="+serchParam[i];
@@ -35,7 +35,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
           // console.log("postData: ", postData);
 
           //if no results
-          if (!postData) { return; // if no postData, end this function cause its no use running.. 
+          if (!postData) { return; // if no postData, end this function cause its no use running..
           }
            // postData is the one post endURL gets on requests trew succes in callbacfunction in
            // file: apicervice.js
@@ -76,6 +76,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
                 });
 
                 if (last) {
+                  // console.log("results", results);
                   return results;
                 }
               }
@@ -85,6 +86,5 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
       });
     }
   };
-
   return propertyObjects;
 }]);
