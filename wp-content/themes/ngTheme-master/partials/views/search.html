@@ -5,21 +5,24 @@
       <div class="col-lg-2">
         <form class="facilityFilters">
           <h2 class="tillagg">BOSTAD</h2>
-          <input type="checkbox" name="filterbox" id="lagenhet_id" value="lagenhet"> 
+
+
+          <input type="checkbox" ng-model="cb_lagenhet" name="filterbox" id="lagenhet_id" value="lagenhet"> 
             <label for="lagenhet_id"> Lägenhet</label><br>
-          <input type="checkbox" name="filterbox" id="Villa_id" value="Villa"> 
+            <!-- <label for="lagenhet_id"> Lägenhet {{cb_lagenhet}}</label><br> -->
+          <input type="checkbox" ng-model="cb_villa" name="filterbox" id="Villa_id" value="Villa"> 
             <label for="Villa_id"> Villa</label><br>
-          <input type="checkbox" name="filterbox" id="Radhus_id" value="Radhus"> 
+          <input type="checkbox" ng-model="cb_radhus" name="filterbox" id="Radhus_id" value="Radhus"> 
             <label for="Radhus_id"> Radhus</label><br>
-          <input type="checkbox" name="filterbox" id="koloni_id" value="koloni"> 
+          <input type="checkbox" ng-model="cb_kolonitradgard" name="filterbox" id="koloni_id" value="koloni"> 
             <label for="koloni_id"> Koloniträdgård</label><br>
-          <input type="checkbox" name="filterbox" id="student_id" value="student"> 
+          <input type="checkbox" ng-model="cb_studentlagenhet" name="filterbox" id="student_id" value="student"> 
             <label for="student_id"> Studentlägenhet</label><br>
-          <input type="checkbox" name="filterbox" id="stuga_id" value="stuga"> 
+          <input type="checkbox" ng-model="cb_stuga" name="filterbox" id="stuga_id" value="stuga"> 
             <label for="stuga_id"> Stuga</label><br>
-          <input type="checkbox" name="filterbox" id="senior_id" value="senior"> 
+          <input type="checkbox" ng-model="cb_seniorboende" name="filterbox" id="senior_id" value="senior"> 
             <label for="senior_id"> Seniorboende</label><br>
-          <input type="checkbox" name="filterbox" id="ovrig_id" value="ovrig"> 
+          <input type="checkbox" ng-model="cb_ovriga" name="filterbox" id="ovrig_id" value="ovrig"> 
             <label for="ovrig_id"> Övriga boenden</label><br>
         </form>
       </div>
@@ -27,13 +30,13 @@
       <div class="col-lg-2">
         <form class="accessoryFilters">
           <h2 class="tillagg">TILLBEHÖR</h2>
-          <input type="checkbox" name="filterbox" id="balkong_id" value="balkong"> 
+          <input type="checkbox" ng-model="cb_balkong" name="filterbox" id="balkong_id" value="balkong"> 
             <label for="balkong_id"> Balkong</label><br>
-          <input type="checkbox" name="filterbox" id="badkar_id" value="badkar"> 
+          <input type="checkbox" ng-model="cb_badkar" name="filterbox" id="badkar_id" value="badkar"> 
             <label for="badkar_id"> Badkar</label><br>
-          <input type="checkbox" name="filterbox" id="hiss_id" value="hiss"> 
+          <input type="checkbox" ng-model="cb_hiss" name="filterbox" id="hiss_id" value="hiss"> 
             <label for="hiss_id"> Hiss</label><br>
-          <input type="checkbox" name="filterbox" id="terass_id" value="terass"> 
+          <input type="checkbox" ng-model="cb_terass" name="filterbox" id="terass_id" value="terass"> 
             <label for="terass_id"> Terass</label><br>
 
         <div class="roomSlider">
@@ -48,35 +51,35 @@
       <div class="col-lg-2">
         <form class="municipalityFilter">
           <h2 class="omrade">OMRÅDE</h2>
-          <input type="checkbox" name="filterbox" id="Annelund_id" value="Annelund"> 
+          <input type="checkbox" ng-model="cb_annelund" name="filterbox" id="Annelund_id" value="Annelund"> 
             <label for="Annelund_id"> Annelund</label><br>
-          <input type="checkbox" name="filterbox" id="Annetorp_id" value="Annetorp"> 
+          <input type="checkbox" ng-model="cb_annetorp" name="filterbox" id="Annetorp_id" value="Annetorp"> 
             <label for="Annetorp_id"> Annetorp</label><br>
-          <input type="checkbox" name="filterbox" id="Arlöv_id" value="Arlöv"> 
+          <input type="checkbox" ng-model="cb_arlov" name="filterbox" id="Arlöv_id" value="Arlöv"> 
             <label for="Arlöv_id"> Arlöv</label><br>          
-          <input type="checkbox" name="filterbox" id="Bellevue_id" value="Bellevue"> 
+          <input type="checkbox" ng-model="cb_bellevue" name="filterbox" id="Bellevue_id" value="Bellevue"> 
             <label for="Bellevue_id"> Bellevue</label><br>          
-          <input type="checkbox" name="filterbox" id="Bunkeflostrand_id" value="Bunkeflostrand"> 
+          <input type="checkbox" ng-model="cb_bunkeflostrand" name="filterbox" id="Bunkeflostrand_id" value="Bunkeflostrand"> 
             <label for="Bunkeflostrand_id"> Bunkeflostrand</label><br>          
-          <input type="checkbox" name="filterbox" id="Dammfri_id" value="Dammfri"> 
+          <input type="checkbox" ng-model="cb_dammfri" name="filterbox" id="Dammfri_id" value="Dammfri"> 
             <label for="Dammfri_id"> Dammfri</label><br>          
-          <input type="checkbox" name="filterbox" id="Husie_id" value="Husie"> 
+          <input type="checkbox" ng-model="cb_husie" name="filterbox" id="Husie_id" value="Husie"> 
             <label for="Husie_id"> Husie</label><br>          
-          <input type="checkbox" name="filterbox" id="Hyllie_id" value="Hyllie"> 
+          <input type="checkbox" ng-model="cb_hyllie" name="filterbox" id="Hyllie_id" value="Hyllie"> 
             <label for="Hyllie_id"> Hyllie</label><br>          
-          <input type="checkbox" name="filterbox" id="Limhamn_id" value="Limhamn"> 
+          <input type="checkbox" ng-model="cb_limhamn" name="filterbox" id="Limhamn_id" value="Limhamn"> 
             <label for="Limhamn_id"> Limhamn</label><br>          
-          <input type="checkbox" name="filterbox" id="Oxie_id" value="Oxie"> 
+          <input type="checkbox" ng-model="cb_oxie" name="filterbox" id="Oxie_id" value="Oxie"> 
             <label for="Oxie_id"> Oxie</label><br>          
-          <input type="checkbox" name="filterbox" id="Ribersborg_id" value="Ribersborg"> 
+          <input type="checkbox" ng-model="cb_ribersborg" name="filterbox" id="Ribersborg_id" value="Ribersborg"> 
             <label for="Ribersborg_id"> Ribersborg</label><br>          
-          <input type="checkbox" name="filterbox" id="Sibbarp_id" value="Sibbarp"> 
+          <input type="checkbox" ng-model="cb_sibbarp" name="filterbox" id="Sibbarp_id" value="Sibbarp"> 
             <label for="Sibbarp_id"> Sibbarp</label><br>          
-          <input type="checkbox" name="filterbox" id="Solbacken_id" value="Solbacken"> 
+          <input type="checkbox" ng-model="cb_solbacken" name="filterbox" id="Solbacken_id" value="Solbacken"> 
             <label for="Solbacken_id"> Solbacken</label><br>          
-          <input type="checkbox" name="filterbox" id="Toftanäs_id" value="Toftanäs"> 
+          <input type="checkbox" ng-model="cb_toftanas" name="filterbox" id="Toftanäs_id" value="Toftanäs"> 
             <label for="Toftanäs_id"> Toftanäs</label><br>          
-          <input type="checkbox" name="filterbox" id="Västra_Hamnen_id" value="Västra Hamnen"> 
+          <input type="checkbox" ng-model="cb_vastra" name="filterbox" id="Västra_Hamnen_id" value="Västra Hamnen"> 
             <label for="Västra_Hamnen_id"> Västra Hamnen</label><br>
         </form>
       </div>
@@ -102,7 +105,7 @@
         </form>
 
         <div class="col-lg-6 submitButton">
-          <button type="button" id="submit" class="btn btn-success resetButton" value="submit">SÖK</button>
+          <button type="button" ng-click="searchAndFind()" id="submit" class="btn btn-success resetButton" value="submit">SÖK</button>
         </div>
 
         <div class="col-lg-6 resetButton">

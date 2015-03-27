@@ -24,7 +24,6 @@ app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property
 	// console.log("dimension:", $scope.options1);
 	// console.log("scope", $scope);
 
-
 	$scope.rentValue = "0;20000";
 	$scope.options2 = {
 		from: 0,
@@ -61,8 +60,31 @@ app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property
 // });
 
 	$scope.$watch("priceValue", function() {
-		console.log("$scope.priceValue: ",$scope.priceValue);
-
+		// console.log("$scope.priceValue: ",$scope.priceValue);
 	});
 
+
+
+
+	$scope.cb_lagenhet = false;
+
+	$scope.searchAndFind = function() {
+		// console.log("sumethin wuukin", $scope.cb_lagenhet);
+		// console.log("sumethin wuukin", $scope.searchProperties);
+
+		var foundProperties = [];
+
+		for (var i = 0; i < $scope.searchProperties.length; i++) {
+			
+			if ($scope.cb_lagenhet){
+				// console.log("sumethin wuukin", $scope.cb_lagenhet);
+				if ($scope.searchProperties[i].propertyData.bostad == "Lägenhet"){
+					foundProperties.push($scope.searchProperties[i]);
+					console.log("pushed: ", $scope.searchProperties[i]);
+				}
+			}
+		}
+
+		$scope.searchResults = foundProperties;
+	};
 }]);
