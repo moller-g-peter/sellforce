@@ -2,13 +2,40 @@ app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property
 
 	Property.found($routeParams);
 
-	$scope.$on("foundProperty", function(event, values) {
-	// console.log("jkhdsfkjhsdkfj", values);
-		$scope.searchProperties = values;
-	});
+
 
 	$scope.searchDir = SITE_INFO.partials;
 
+	$scope.$on("foundProperty", function(event, values) {
+			console.log("valueS: ", values);
+		$scope.$watch("priceValue", function() {
+			
+			// $scope.searchProperties = values;
+
+			var setPriceVal = $scope.priceValue;
+			console.log("valda priser: ",setPriceVal);
+			var valueStructure = [];
+			for (var i = 0; i < values.length; i++) {
+				var controlNaNPrise = values[i].propertyData.pris /1;
+				var controlNANFrom = setPriceVal/1;
+
+				console.log("number? ",controlNaNPrise, "second: ",controlNANFrom);
+				if (controlNaNPrise > controlNANFrom){
+					console.log("befintliga priser: ",values[i].propertyData.pris);
+					valueStructure.push(values[i]);
+
+					console.log("true: ",valueStructure);
+
+				}
+				// else if (values[i].propertyData.pris === 0){
+				// console.log("false: ",valueStructure);
+
+				// }
+			}
+			$scope.searchProperties = valueStructure;
+			// console.log("valueStructure: ", valueStructure);
+		});
+	});
 
 	// $scope.search = data;
 
@@ -59,10 +86,7 @@ app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property
 
 // console.log("priceValue changed from ",oldVal);
 // });
-
-	$scope.$watch("priceValue", function() {
-		console.log("$scope.priceValue: ",$scope.priceValue);
-
-	});
+		
+			
 
 }]);
