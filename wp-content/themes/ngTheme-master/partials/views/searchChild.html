@@ -1,0 +1,28 @@
+<div ng-repeat="property in searchProperties"  class="col-xs-10 col-sm-5  col-md-3 col-lg-3 row well propertyMargin">
+
+
+
+  <h3>{{property.post.title}}</h3>
+  <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 row">
+ 
+    
+      <img ng-src="{{property.media[0].source}}" class="col-xs-12 col-sm-12  col-md-12 col-lg-12">
+
+
+  </article>
+
+  <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 row blackText">
+      <h4>Fakta</h4>
+      <ul>
+        <li>Stad: {{property.propertyData.stad}}</li>
+        <li>Pris: {{property.propertyData.pris}}:-</li>
+        <li>Yta: {{property.propertyData.yta}} m²</li>
+        <li>Rum: {{property.propertyData.rum}}</li>
+        <li>Balkong: {{property.propertyData.balkong/1 ? "Ja" : "Nej"}}</li>
+        <li>Typ av bostad: {{property.propertyData.bostad}}</li>
+      </ul>
+  </article>
+
+
+
+</div>

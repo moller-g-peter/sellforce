@@ -23,7 +23,7 @@ function ngThemes_stylesheets()
 {
   // Register the style like this for a theme:
   // wp_register_style( 'base-style', THEME_HTTP_ROOT . 'style.css', array(), '20150225', 'all' );
-  wp_register_style( 'slider-style', THEME_HTTP_ROOT . 'css/ng-slider.min.css', array(), '20150225', 'all' );
+  wp_register_style( 'slider-style', THEME_HTTP_ROOT . 'css/ng-slider.css', array(), '20150225', 'all' );
 
   wp_register_style( 'base-style', THEME_HTTP_ROOT . 'css/style.css', array(), '20150225', 'all' );
   // For either a plugin or a theme, you can then enqueue the style:
@@ -263,14 +263,14 @@ add_filter( 'json_prepare_post', function ($data, $post, $context) {
     trappor
     hiss
     balkong
-    typ
+    bostad
   */
 
     
   //add a new property to the data that is going to AngularJS, 
   //and fill it with our metadata
   $data['property_data'] = array(
-    'stad' => get_post_meta( $post['ID'], 'stad', true ),
+    // 'stad' => get_post_meta( $post['ID'], 'stad', true ),
     'region' => get_post_meta( $post['ID'], 'region', true ),
     'pris' => get_post_meta( $post['ID'], 'pris', true ),
     'hyra' => get_post_meta( $post['ID'], 'hyra', true ),
@@ -279,7 +279,7 @@ add_filter( 'json_prepare_post', function ($data, $post, $context) {
     'trappor' => get_post_meta( $post['ID'], 'trappor', true ),
     'hiss' => get_post_meta( $post['ID'], 'hiss', true ),
     'balkong' => get_post_meta( $post['ID'], 'balkong', true ),
-    'typ' => get_post_meta( $post['ID'], 'typ', true ),
+    'bostad' => get_post_meta( $post['ID'], 'bostad', true ),
   );
   return $data;
 }, 10, 3 );
