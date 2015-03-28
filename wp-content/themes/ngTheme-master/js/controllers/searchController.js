@@ -1,10 +1,37 @@
-app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property", "$sce", "SITE_INFO", function($scope, Pages, $routeParams, Property, $sce, SITE_INFO) {
+app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce", "SITE_INFO", function($scope, $routeParams, Property, $sce, SITE_INFO) {
+
 
 // run the "found" function from "propertyfactory.js" in the "services" folder(find all estates in the view)
 	Property.found();
 
+
 	$scope.searchDir = SITE_INFO.partials;
 
+	$scope.$on("foundProperty", function(event, values) {
+		console.log("valueS: ", values);// sometimes i got one in result but i shuld get three.. Async is messed up! 
+		$scope.$watch("priceValue", function() {
+			
+			// $scope.searchProperties = values;
+
+			var setPriceVal = $scope.priceValue;
+			console.log("valda priser: ",setPriceVal);
+			var valueStructure = [];
+				// console.log("number? ",checkNaNPrise, "second: ",checkNANFrom);
+			for (var i = 0; i < values.length; i++) {
+				var checkNaNPrise = values[i].propertyData.pris /1;
+				var checkNANFrom = setPriceVal/1;
+
+				if (checkNaNPrise > checkNANFrom){
+					console.log("befintliga priser: ",values[i].propertyData.pris);
+					valueStructure.push(values[i]);
+					console.log("true: ",valueStructure);
+
+				}
+			}
+			$scope.searchProperties = valueStructure;
+			// console.log("valueStructure: ", valueStructure);
+		});
+	});
 
 	// $scope.search = data;
 
@@ -48,13 +75,6 @@ app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property
 		dimension: "",
 		scale: [1, 2, 3, 4, 5, 6, 7, 8]
 	};
-
-
-// $scope.$watch("priceValue", function(newVal, oldVal) {
-
-// console.log("priceValue changed from ",oldVal);
-// });
-
 
 
 $scope.bostader = [
