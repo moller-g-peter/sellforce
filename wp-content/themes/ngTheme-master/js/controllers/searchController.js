@@ -7,31 +7,31 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 	$scope.searchDir = SITE_INFO.partials;
 
-	$scope.$on("foundProperty", function(event, values) {
-		console.log("valueS: ", values);// sometimes i got one in result but i shuld get three.. Async is messed up! 
-		$scope.$watch("priceValue", function() {
+	// $scope.$on("foundProperty", function(event, values) {
+
+	// 	$scope.$watch("priceValue", function() {
 			
-			// $scope.searchProperties = values;
+	// 		// $scope.searchProperties = values;
 
-			var setPriceVal = $scope.priceValue;
-			console.log("valda priser: ",setPriceVal);
-			var valueStructure = [];
-				// console.log("number? ",checkNaNPrise, "second: ",checkNANFrom);
-			for (var i = 0; i < values.length; i++) {
-				var checkNaNPrise = values[i].propertyData.pris /1;
-				var checkNANFrom = setPriceVal/1;
+	// 		var setPriceVal = $scope.priceValue;
 
-				if (checkNaNPrise > checkNANFrom){
-					console.log("befintliga priser: ",values[i].propertyData.pris);
-					valueStructure.push(values[i]);
-					console.log("true: ",valueStructure);
+	// 		var valueStructure = [];
+	// 			// console.log("number? ",checkNaNPrise, "second: ",checkNANFrom);
+	// 		for (var i = 0; i < values.length; i++) {
+	// 			var checkNaNPrise = values[i].propertyData.pris /1;
+	// 			var checkNANFrom = setPriceVal/1;
 
-				}
-			}
-			$scope.searchProperties = valueStructure;
-			// console.log("valueStructure: ", valueStructure);
-		});
-	});
+	// 			if (checkNaNPrise > checkNANFrom){
+
+	// 				valueStructure.push(values[i]);
+
+
+	// 			}
+	// 		}
+	// 		$scope.searchProperties = valueStructure;
+	// 		// console.log("valueStructure: ", valueStructure);
+	// 	});
+	// });
 
 	// $scope.search = data;
 
@@ -81,16 +81,15 @@ $scope.bostader = [
 	{val:false, name:"Lägenhet"},
 	{val:false, name:"Villa"},
 	{val:false, name:"Radhus"},
-	{val:false, name:"Koloni"},
 	{val:false, name:"Koloniträdgård"},
 	{val:false, name:"Studentlägenhet"},
 	{val:false, name:"Stuga"},
 	{val:false, name:"Seniorboende"},
 	{val:false, name:"Övriga"}
 ];
-
 	// "Property.found();" starts this function and get estates (= all properties)
 	$scope.$on("foundProperty", function(event, estates) {
+	console.log(".val", estates);
 		// when function starts, print all properties (in the view)
 		$scope.searchProperties = estates;
 		// function that starts when clicking "ng-click="searchAndFind()"" in view

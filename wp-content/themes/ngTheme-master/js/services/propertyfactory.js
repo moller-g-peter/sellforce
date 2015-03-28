@@ -41,7 +41,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         broadcastName: "uslessName",// does this funky name run off for the async to prevent callvacfunction from run of before ig got its inparamter?
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
-          console.log("asynk post: ", postData);
+          // console.log("asynk post: ", postData);
           
           for (var i = 0; i < postData.length; i++) {
             if (!postData[i].terms.property) {
@@ -65,7 +65,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
               broadcastName: last ? "foundProperty" : "notDone", //this broadcast is VERY important
               callback: function(mediaData) {
 
-                console.log("asynk media: ", postData);
+                // console.log("asynk media: ", postData);
 
                 resultsToBroadcast.push({
                   "media": mediaData,
@@ -73,7 +73,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
                   "propertyData": post.property_data
                 });
                 if (last) {
-                  console.log("last: ",last);
+                  // console.log("last: ",last);
                   return resultsToBroadcast;
                 }
               }

@@ -8,15 +8,17 @@
 
 
 
+          <article ng-repeat="bostad in bostader">
+            <label>
+              <input
+              type="checkbox"
+              value="¨{{bostad.name}}"
+              ng-model="bostad.val" 
+              >{{bostad.name}}<br/>
+                <!-- <label for="lagenhet_id"> Lägenhet</label><br> -->
+            </label>
 
-        <label ng-repeat="bostad in bostader">
-          <input
-          type="checkbox"
-          value="¨{{bostad.name}}"
-          ng-model="bostad.val" 
-          >{{bostad.name}}
-            <!-- <label for="lagenhet_id"> Lägenhet</label><br> -->
-        </label>
+          </article>
 
 
 
