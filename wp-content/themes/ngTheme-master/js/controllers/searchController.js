@@ -1,13 +1,13 @@
-app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property", "$sce", "SITE_INFO", function($scope, Pages, $routeParams, Property, $sce, SITE_INFO) {
+app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce", "SITE_INFO", function($scope, $routeParams, Property, $sce, SITE_INFO) {
 
-	Property.found($routeParams);
+	Property.found();
 
 
 
 	$scope.searchDir = SITE_INFO.partials;
 
 	$scope.$on("foundProperty", function(event, values) {
-			console.log("valueS: ", values);
+		console.log("valueS: ", values);// sometimes i got one in result but i shuld get three.. Async is messed up! 
 		$scope.$watch("priceValue", function() {
 			
 			// $scope.searchProperties = values;
@@ -15,22 +15,17 @@ app.controller("searchController", ["$scope", "Pages", "$routeParams", "Property
 			var setPriceVal = $scope.priceValue;
 			console.log("valda priser: ",setPriceVal);
 			var valueStructure = [];
+				// console.log("number? ",checkNaNPrise, "second: ",checkNANFrom);
 			for (var i = 0; i < values.length; i++) {
-				var controlNaNPrise = values[i].propertyData.pris /1;
-				var controlNANFrom = setPriceVal/1;
+				var checkNaNPrise = values[i].propertyData.pris /1;
+				var checkNANFrom = setPriceVal/1;
 
-				console.log("number? ",controlNaNPrise, "second: ",controlNANFrom);
-				if (controlNaNPrise > controlNANFrom){
+				if (checkNaNPrise > checkNANFrom){
 					console.log("befintliga priser: ",values[i].propertyData.pris);
 					valueStructure.push(values[i]);
-
 					console.log("true: ",valueStructure);
 
 				}
-				// else if (values[i].propertyData.pris === 0){
-				// console.log("false: ",valueStructure);
-
-				// }
 			}
 			$scope.searchProperties = valueStructure;
 			// console.log("valueStructure: ", valueStructure);
