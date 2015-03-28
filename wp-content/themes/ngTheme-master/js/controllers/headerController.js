@@ -24,7 +24,7 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
       return "";
 
     }
-};
+  };
   //listen to the broadcast "gotMenuLinks"
   $scope.$on("gotMenuLinks", function(event, data) {
     // console.log("headerController on gotMenuLinks: ", data);

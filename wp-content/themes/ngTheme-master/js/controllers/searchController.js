@@ -1,7 +1,8 @@
 app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce", "SITE_INFO", function($scope, $routeParams, Property, $sce, SITE_INFO) {
 
-	Property.found();
 
+// run the "found" function from "propertyfactory.js" in the "services" folder(find all estates in the view)
+	Property.found();
 
 
 	$scope.searchDir = SITE_INFO.partials;
@@ -46,7 +47,6 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	// console.log("dimension:", $scope.options1);
 	// console.log("scope", $scope);
 
-
 	$scope.rentValue = "0;20000";
 	$scope.options2 = {
 		from: 0,
@@ -77,11 +77,65 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	};
 
 
-// $scope.$watch("priceValue", function(newVal, oldVal) {
+$scope.bostader = [
+	{val:false, name:"Lägenhet"},
+	{val:false, name:"Villa"},
+	{val:false, name:"Radhus"},
+	{val:false, name:"Koloni"},
+	{val:false, name:"Koloniträdgård"},
+	{val:false, name:"Studentlägenhet"},
+	{val:false, name:"Stuga"},
+	{val:false, name:"Seniorboende"},
+	{val:false, name:"Övriga"}
+];
 
-// console.log("priceValue changed from ",oldVal);
-// });
-		
-			
+	// "Property.found();" starts this function and get estates (= all properties)
+	$scope.$on("foundProperty", function(event, estates) {
+		// when function starts, print all properties (in the view)
+		$scope.searchProperties = estates;
+		// function that starts when clicking "ng-click="searchAndFind()"" in view
+		$scope.searchAndFind = function() {
+			// declare an empty array EACH time the "ng-click="searchAndFind()" button is clicked
+			var foundProperties = [];
+			// everytime this function runs, "count" equals zero
+			var count = 0;
+			// looping through the array (consisting of objects) "bostader"
+			for (var i = 0; i < $scope.bostader.length; i++) {
+				// if any object in "bostader"s .val (false/true) is true...
+				if ($scope.bostader[i].val){
+					// ...loop through all estates that is true (checked in the view)
+					for (var j = 0; j < estates.length; j++) {
+						// if the estate name (from WP_DB) is equal to the specific type of name in the array "bostader" declared above...
+						if (estates[j].propertyData.bostad == $scope.bostader[i].name){
+							// ...then put (=push) each estate in the array "foundProperties" declared above...
+							foundProperties.push(estates[j]);
+							// ...and rewrite "searchProperties" declared above with the requested amount of estates
+							$scope.searchProperties = foundProperties;
+						}
+					}
+				}
+				else{
+					// let "count" add an int (+1) for each false .val it finds from the array "bostader" above...
+					count += 1;
+					// ...and if "count" adds up to 9 false(s)...
+					if (count === 9){
+						// ...then run the "found" function from "propertyfactory.js" in the "services" folder
+						Property.found();
+					}
+				}
+			}
+		};
+	});
+
+	// function that resets the view when clicking "ng-click="resetSearch()"" in view
+	$scope.resetSearch = function() {
+		// loop through the array (consisting of objects) "bostader"...
+		for (var i = 0; i < $scope.bostader.length; i++) {
+			// ...and make every bostader.val declared above to false 
+			$scope.bostader[i].val = false;
+		}
+		// ...then run the "found" function from "propertyfactory.js" in the "services" folder(find all estates again in the view)
+		Property.found();
+	};
 
 }]);
