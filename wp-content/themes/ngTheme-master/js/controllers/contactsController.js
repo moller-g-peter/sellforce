@@ -7,7 +7,7 @@ $scope.$on("gotPageData", function(event, data) {
 
     // console.log("contactsController on: ", data);
 
-    console.log("- - - contactsController on: ", data);
+    console.log(" on: ", data);
 
 
     $scope.trustedHtml = $sce.trustAsHtml(data[0].content);
@@ -21,8 +21,8 @@ $scope.$on("gotPageData", function(event, data) {
 // $scope.$on("foundPages", function(event, data) {
 //     console.log("fffffffooterController on foundPages: ", data);
 //     if (firstSearch) {
-//     	// $scope.footerContent = $sce.trustAsHtml(data[0].content);
-//     	firstSearch = false;
+//		// $scope.footerContent = $sce.trustAsHtml(data[0].content);
+//				firstSearch = false;
 //     }
 //     $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
 //   });
