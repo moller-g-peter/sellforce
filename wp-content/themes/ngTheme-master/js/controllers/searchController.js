@@ -79,22 +79,22 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 	$scope.$on("foundProperty", function(event, estates) {
 		console.log(".val", estates);
+		
+		$scope.bostader = [
+			{val:false, name:"Lägenhet"},
+			{val:false, name:"Villa"},
+			{val:false, name:"Radhus"},
+			{val:false, name:"Kolonistuga"},
+			{val:false, name:"Studentlägenhet"},
+			{val:false, name:"Stuga"},
+			{val:false, name:"Seniorboende"},
+			{val:false, name:"Övriga"}
+		];
 
-$scope.bostader = [
-	{val:false, name:"Lägenhet"},
-	{val:false, name:"Villa"},
-	{val:false, name:"Radhus"},
-	{val:false, name:"Kolonistuga"},
-	{val:false, name:"Studentlägenhet"},
-	{val:false, name:"Stuga"},
-	{val:false, name:"Seniorboende"},
-	{val:false, name:"Övriga"}
-];
-
-$scope.tillbehor = [
-	{val:false, name:"Balkong"},
-	{val:false, name:"Hiss"}
-];
+		$scope.tillbehor = [
+			{val:false, name:"Balkong"},
+			{val:false, name:"Hiss"}
+		];
 	// "Property.found();" starts this function and get estates (= all properties)
 		// when function starts, print all properties (in the view)
 		$scope.searchProperties = estates;
