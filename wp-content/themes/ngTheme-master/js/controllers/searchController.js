@@ -81,7 +81,7 @@ $scope.bostader = [
 	{val:false, name:"Lägenhet"},
 	{val:false, name:"Villa"},
 	{val:false, name:"Radhus"},
-	{val:false, name:"Koloniträdgård"},
+	{val:false, name:"kolonistuga"},
 	{val:false, name:"Studentlägenhet"},
 	{val:false, name:"Stuga"},
 	{val:false, name:"Seniorboende"},
