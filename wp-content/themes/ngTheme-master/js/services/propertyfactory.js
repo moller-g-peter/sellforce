@@ -42,7 +42,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
           // console.log("asynk post: ", postData);
-          console.log("whats in post data?: ", postData);
+
           
           for (var i = 0; i < postData.length; i++) {
             if (!postData[i].terms.property) {
