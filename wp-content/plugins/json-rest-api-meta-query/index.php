@@ -58,6 +58,6 @@ function addMetaQuerySupport($data){
   return $args;
 }
 
-add_filter('json_query_var-meta_query', 'addMetaQuerySupport', 10, 1);
+add_filter('json_query_var-meta_query', 'addMetaQuerySupport', 100, 1);
 
 

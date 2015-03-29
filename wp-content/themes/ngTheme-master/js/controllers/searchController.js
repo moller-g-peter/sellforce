@@ -1,4 +1,4 @@
-app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce", "SITE_INFO", function($scope, $routeParams, Property, $sce, SITE_INFO) {
+app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce", "SITE_INFO", "$location", function($scope, $routeParams, Property, $sce, SITE_INFO,$location) {
 
 
 // run the "found" function from "propertyfactory.js" in the "services" folder(find all estates in the view)
@@ -89,8 +89,9 @@ $scope.bostader = [
 ];
 	// "Property.found();" starts this function and get estates (= all properties)
 	$scope.$on("foundProperty", function(event, estates) {
-	console.log(".val", estates);
+	// console.log(".val", estates);
 		// when function starts, print all properties (in the view)
+		 console.log("estate: ", estates);
 		$scope.searchProperties = estates;
 		// function that starts when clicking "ng-click="searchAndFind()"" in view
 		$scope.searchAndFind = function() {
@@ -110,6 +111,7 @@ $scope.bostader = [
 							foundProperties.push(estates[j]);
 							// ...and rewrite "searchProperties" declared above with the requested amount of estates
 							$scope.searchProperties = foundProperties;
+							console.log("foundProperties: ",foundProperties);
 						}
 					}
 				}
@@ -136,5 +138,31 @@ $scope.bostader = [
 		// ...then run the "found" function from "propertyfactory.js" in the "services" folder(find all estates again in the view)
 		Property.found();
 	};
+
+
+
+	$scope.goTo = function(url , hardReload) {
+    //any relative path destined for hardReload 
+    //gets http_root instead of initial "/"
+    console.log("click!! ");
+   console.log("currUrl: ", url, " reloder param: ",hardReload);
+    if (hardReload) {
+      url = url.indexOf("/") === 0 ?
+        SITE_INFO.http_root + url.substr(1) :
+        SITE_INFO.http_root + url;
+    }
+
+    if (hardReload) {
+      //hard reloads use traditional JS window.location.href 
+      //to change url
+      window.location.href = url;
+      return;
+
+    }
+
+    //all "soft" reloads (location change within app) use
+    //angulars $location.url() to change url using push/pop-state
+    $location.url(url);
+  };
 
 }]);

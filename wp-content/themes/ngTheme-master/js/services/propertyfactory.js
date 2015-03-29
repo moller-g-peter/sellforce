@@ -42,6 +42,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
           // console.log("asynk post: ", postData);
+          console.log("whats in post data?: ", postData);
           
           for (var i = 0; i < postData.length; i++) {
             if (!postData[i].terms.property) {
@@ -63,17 +64,14 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
 
             WPRest.restCall(mediaCallUrl, "GET", {}, {
               broadcastName: last ? "foundProperty" : "notDone", //this broadcast is VERY important
+              
               callback: function(mediaData) {
-
-                // console.log("asynk media: ", postData);
-
                 resultsToBroadcast.push({
                   "media": mediaData,
                   "post": post,
                   "propertyData": post.property_data
                 });
                 if (last) {
-                  // console.log("last: ",last);
                   return resultsToBroadcast;
                 }
               }
