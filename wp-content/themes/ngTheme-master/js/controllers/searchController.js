@@ -3,6 +3,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 // run the "found" function from "propertyfactory.js" in the "services" folder(find all estates in the view)
 	Property.found();
+	// console.log("values:", data);
 
 
 	$scope.searchDir = SITE_INFO.partials;
@@ -76,20 +77,25 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 		scale: [1, 2, 3, 4, 5, 6, 7, 8]
 	};
 
+	$scope.$on("foundProperty", function(event, estates) {
+		console.log(".val", estates);
 
 $scope.bostader = [
 	{val:false, name:"Lägenhet"},
 	{val:false, name:"Villa"},
 	{val:false, name:"Radhus"},
-	{val:false, name:"kolonistuga"},
+	{val:false, name:"Kolonistuga"},
 	{val:false, name:"Studentlägenhet"},
 	{val:false, name:"Stuga"},
 	{val:false, name:"Seniorboende"},
 	{val:false, name:"Övriga"}
 ];
+
+$scope.tillbehor = [
+	{val:false, name:"Balkong"},
+	{val:false, name:"Hiss"}
+];
 	// "Property.found();" starts this function and get estates (= all properties)
-	$scope.$on("foundProperty", function(event, estates) {
-	console.log(".val", estates);
 		// when function starts, print all properties (in the view)
 		$scope.searchProperties = estates;
 		// function that starts when clicking "ng-click="searchAndFind()"" in view
@@ -109,7 +115,8 @@ $scope.bostader = [
 							// ...then put (=push) each estate in the array "foundProperties" declared above...
 							foundProperties.push(estates[j]);
 							// ...and rewrite "searchProperties" declared above with the requested amount of estates
-							$scope.searchProperties = foundProperties;
+							// $scope.searchProperties = foundProperties;
+							filterFunction(foundProperties);
 						}
 					}
 				}
@@ -124,6 +131,14 @@ $scope.bostader = [
 				}
 			}
 		};
+		var count = 0;
+		var sortedEstates = [];
+		filterFunction = function(data) {
+			count += 1;
+			if(count ){
+
+			}
+		};
 	});
 
 	// function that resets the view when clicking "ng-click="resetSearch()"" in view
@@ -136,5 +151,11 @@ $scope.bostader = [
 		// ...then run the "found" function from "propertyfactory.js" in the "services" folder(find all estates again in the view)
 		Property.found();
 	};
+
+
+
+
+
+
 
 }]);

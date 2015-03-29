@@ -9,7 +9,7 @@
             <label>
               <input
               type="checkbox"
-              value="¨{{bostad.name}}"
+              value="{{bostad.name}}"
               ng-model="bostad.val" 
               >{{bostad.name}}<br/>
                 <!-- <label for="lagenhet_id"> Lägenhet</label><br> -->
@@ -21,15 +21,21 @@
       <div class="col-lg-2">
         <form class="accessoryFilters">
           <h2 class="tillagg">TILLBEHÖR</h2>
-          <input type="checkbox" ng-model="cb_balkong" name="filterbox" id="balkong_id" value="balkong"> 
+          <article ng-repeat="accessory in tillbehor">
+            <label>
+              <input
+              type="checkbox"
+              value="{{accessory.name}}"
+              ng-model="accessory.val" 
+              >{{accessory.name}}<br/>
+                <!-- <label for="lagenhet_id"> Lägenhet</label><br> -->
+            </label>
+          </article>
+          <!-- <input type="checkbox" ng-model="cb_balkong" name="filterbox" id="balkong_id" value="balkong"> 
             <label for="balkong_id"> Balkong</label><br>
-          <input type="checkbox" ng-model="cb_badkar" name="filterbox" id="badkar_id" value="badkar"> 
-            <label for="badkar_id"> Badkar</label><br>
           <input type="checkbox" ng-model="cb_hiss" name="filterbox" id="hiss_id" value="hiss"> 
-            <label for="hiss_id"> Hiss</label><br>
-          <input type="checkbox" ng-model="cb_terass" name="filterbox" id="terass_id" value="terass"> 
-            <label for="terass_id"> Terass</label><br>
-
+            <label for="hiss_id"> Hiss</label><br> -->
+   
         <div class="roomSlider">
           <h3>Antal rum</h3>
           <h6>(justera slider för filtrering)</h6>
