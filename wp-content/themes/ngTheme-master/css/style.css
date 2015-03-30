@@ -6594,17 +6594,12 @@ footer {
 footer .clearBoth {
   clear: both;
 }
-footer ul {
+footer div {
   float: left;
-  padding: 30px;
 }
 footer ul li {
   list-style-type: none;
   font-size: 15px;
-}
-footer li > ul {
-  float: left;
-  padding: 0 0 0 10px;
 }
 footer a {
   color: white;
@@ -6620,9 +6615,6 @@ footer a {
 }
 .fullImage {
   padding-top: 300px;
-}
-section {
-  padding-top: 130px;
 }
 header {
   position: absolute;
@@ -6738,25 +6730,15 @@ footer {
 footer .clearBoth {
   clear: both;
 }
-footer ul {
-  float: left;
-  padding: 30px;
-}
-footer ul li {
-  list-style-type: none;
-  font-size: 15px;
-}
-footer li > ul {
-  float: left;
-  padding: 0 0 0 10px;
-}
 footer a {
   color: white;
+}
+footer div ul {
+  padding: 50px 0 0 10px;
 }
 .footerLogo {
   height: 150px;
   margin-left: 30px;
-  position: absolute;
 }
 .fullImage {
   height: 100vh;

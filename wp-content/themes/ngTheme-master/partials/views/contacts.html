@@ -1,100 +1,23 @@
 <section class="container">
   <div class="row">
 
-    <h2>Om Sellforce</h2>
-    <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.</p>
+    <article>
+      <h2>Om Sellforce</h2>
+      <div ng-bind-html="page" class="well"></div>
+    </article>
 
     <h2>Kontakt info</h2>
 
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="wp-content/themes/ngTheme-master/img/sellforce-logo.jpg" alt="...">
-        <!-- <div class="caption" ng-bind-html="trustedHtml">
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div> -->
-        <div class="caption">
-          <p>SELLFORCE</p>
-          <p><a href="mailto:sellforce@sellforce.se">sellforce@sellforce.se</a></p>
-          <p>+46 40 33 54 67</p>
-          <p>Sellforcesgatan 44<br>444 44 Lund</p>
-        </div>    
+    <section class="container">
+      <div class="row">
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <article ng-include="directPartial+'views/contactsChild.html'">
+          </article>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="wp-content/themes/ngTheme-master/img/agent_shadow.jpg" alt="...">
-        <!-- <div class="caption" ng-bind-html="trustedHtml">
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div> -->
-        <div class="caption">
-          <p>Mohammed Ali</p>
-          <p><a href="mailto:m.ali@ali.se">m.ali@ali.se</a></p>
-          <p>+46 723 388 390</p>
-          <p>M.Alisgatan 55<br>248 39 Malmö</p>
-        </div>    
-      </div>
-    </div>
 
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="wp-content/themes/ngTheme-master/img/agent_shadow.jpg" alt="...">
-        <!-- <div class="caption" ng-bind-html="trustedHtml">
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div> -->
-        <div class="caption">
-          <p>Dennis Lampert</p>
-          <p><a href="mailto:deniss@lampert.se">deniss@lampert.se</a></p>
-          <p>+46 745 756 343</p>
-          <p>Dennisgatan 23<br>248 39 Malmö</p>
-        </div>    
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="wp-content/themes/ngTheme-master/img/agent_shadow.jpg" alt="...">
-        <!-- <div class="caption" ng-bind-html="trustedHtml">
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div> -->
-        <div class="caption">
-          <p>Petter Moller</p>
-          <p><a href="mailto:petter@moller.se">petter@moller.se</a></p>
-          <p>+46 722 435 333</p>
-          <p>Pettersgatan 77<br>248 39 Malmö</p>
-        </div>    
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="wp-content/themes/ngTheme-master/img/agent_shadow.jpg" alt="...">
-        <!-- <div class="caption" ng-bind-html="trustedHtml">
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div> -->
-        <div class="caption">
-          <p>Ben</p>
-          <p><a href="mailto:ben@ben.se">ben@ben.se</a></p>
-          <p>+46 722 435 222</p>
-          <p>Bensgatan 22<br>266 64 Malmö</p>
-        </div>    
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="wp-content/themes/ngTheme-master/img/agent_shadow.jpg" alt="...">
-        <!-- <div class="caption" ng-bind-html="trustedHtml">
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div> -->
-        <div class="caption">
-          <p>OSV ...</p>
-          <p><a href="mailto:">.....</a></p>
-          <p>.....</p>
-          <p>.....<br>...</p>
-        </div>    
-      </div>
-    </div>
 
   </div>
 </section>
