@@ -1,39 +1,42 @@
 app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
+
+  var resultsToBroadcast = [];
   // console.log("property factory make noises");
   var propertyObjects = {
     
 
-
+    // allProperties : [],
     // **Remember endUrl is equal an object! (not a string value)
-    found : function(serchParam) {
+    found : function(serchParam, pageNo, startOver) {
+      pageNo = pageNo ? pageNo : 1;
 
       serchParam = serchParam ? serchParam : {};
+
+      if (startOver || pageNo === 1) {
+        // propertyObjects.allProperties.length = 0;
+        resultsToBroadcast.length = 0;
+      }
 
       //searching with WP JSON REST API filter parameters
       //always only search for properties
       //we are always searching for posts
       //in the category "properties"
-      var callUrl = "/properties";
+      var callUrl = "/properties?page="+pageNo;
 
-      var first = true;
       //build a REST callUrl from search params, 
       for (var i in serchParam) {
 
         //serchParam object values are filter values
         if (serchParam[i].constructor.name != "Object") {
-          callUrl += first ? "?filter["+i+"]="+serchParam[i] : "&filter["+i+"]="+serchParam[i];
+          callUrl += "&filter["+i+"]="+serchParam[i];
         } else {
           for (var j in serchParam[i]) {
-            callUrl += first ? "?filter["+i+"]["+j+"]="+serchParam[i][j] : "&filter["+i+"]["+j+"]="+serchParam[i][j];
-
-            first = false;
+            callUrl += "&filter["+i+"]["+j+"]="+serchParam[i][j];
           }
         }
-
-        first = false;
       }
 
-      // console.log("callUrl in prop fack: ",callUrl);
+      console.log("callUrl in prop fack: ",callUrl);
 
       // console.log("Property searching callUrl: " + callUrl);
       WPRest.restCall(callUrl, "GET", {}, {
@@ -42,14 +45,13 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
           // console.log("asynk post: ", postData);
-          
-          for (var i = 0; i < postData.length; i++) {
+          for (var i = postData.length - 1; i > 0; i--) {
             if (!postData[i].terms.property) {
               postData.splice(i, 1);
             }
           }
 
-          var resultsToBroadcast = [];
+          // var resultsToBroadcast = [];
           var i = 0;
           postData.forEach(function(post) {
   
@@ -63,9 +65,13 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
 
             WPRest.restCall(mediaCallUrl, "GET", {}, {
               broadcastName: last ? "foundProperty" : "notDone", //this broadcast is VERY important
+              
               callback: function(mediaData) {
-
-                // console.log("asynk media: ", postData);
+                // propertyObjects.allProperties.push({
+                //   "media": mediaData,
+                //   "post": post,
+                //   "propertyData": post.property_data
+                // });
 
                 resultsToBroadcast.push({
                   "media": mediaData,
@@ -73,7 +79,6 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
                   "propertyData": post.property_data
                 });
                 if (last) {
-                  // console.log("last: ",last);
                   return resultsToBroadcast;
                 }
               }

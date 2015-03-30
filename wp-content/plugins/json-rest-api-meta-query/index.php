@@ -34,6 +34,7 @@ function addMetaQuerySupport($data){
 
   foreach ($data as $key=>$value) {
     $value = urldecode($value);
+    $value = str_replace('\"', '"', $value);
 
       if ( 'relation' === $key ) {
           $args['relation'] = $data['relation'];
@@ -58,6 +59,6 @@ function addMetaQuerySupport($data){
   return $args;
 }
 
-add_filter('json_query_var-meta_query', 'addMetaQuerySupport', 10, 1);
+add_filter('json_query_var-meta_query', 'addMetaQuerySupport', 100, 1);
 
 

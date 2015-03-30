@@ -88,7 +88,6 @@ add_action( 'init' , 'ngwp_add_property_tax_to_posts' );
  */
 
 add_filter( 'json_prepare_property', function ($data, $post, $context) {
-
   /*
     stad'
     region
@@ -117,3 +116,8 @@ add_filter( 'json_prepare_property', function ($data, $post, $context) {
   );
   return $data;
 }, 10, 3 );
+
+
+
+
+

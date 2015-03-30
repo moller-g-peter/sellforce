@@ -116,6 +116,6 @@ class WP_JSON_Property extends WP_JSON_CustomPostType {
       $_post['meta']['links']['up'] = json_url( $this->base . '/' . get_page_uri( (int) $post['post_parent'] ) );
     }
 
-    return apply_filters( 'json_prepare_page', $_post, $post, $context );
+    return apply_filters( 'json_prepare_property', $_post, $post, $context );
   }
 }

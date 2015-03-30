@@ -3,7 +3,7 @@ app.controller("propertyController", ["$scope", "Property" ,"$routeParams", "SIT
   //Property.find() accepts an object with key->value pairs that
   //map to the search filters we need in our GET request
   console.log("routeParams 2 : ", $routeParams);
-  Property.found();
+  Property.found($routeParams);
   
   $scope.partialsDir = SITE_INFO.partials;
 

@@ -16,6 +16,9 @@ define(THEME_FILE_ROOT, trailingslashit($themeDir));
 define(THEME_HTTP_ROOT, trailingslashit(get_template_directory_uri()));
 
 
+//remove canonical redirects
+remove_action("template_redirect", "redirect_canonical");
+
 
 /**
  * Register the required stylesheets for this theme.
@@ -77,6 +80,16 @@ function ngTheme_scripts() {
       wp_enqueue_script(
         $scriptName[0],
         THEME_HTTP_ROOT . 'js/controllers/'.$controller
+      );
+    }
+  }
+  $allFilters = scandir(THEME_FILE_ROOT."js/filter");
+  foreach ($allFilters as $filter) {
+    if (stripos($filter, ".js") !== false) {
+      $scriptName = explode(".js", $filter);
+      wp_enqueue_script(
+        $scriptName[0],
+        THEME_HTTP_ROOT . 'js/filter/'.$filter
       );
     }
   }
