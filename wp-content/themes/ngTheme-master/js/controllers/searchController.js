@@ -2,7 +2,8 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 // run the "found" function from "propertyfactory.js" in the "services" folder(find all estates in the view)
-	Property.found();
+ 	var pageNo = 1;
+	Property.found($routeParams, pageNo, true);
 	// console.log("values:", data);
 
 
@@ -96,8 +97,11 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 	$scope.$on("foundProperty", function(event, estates) {
+		
 		// when function starts, print all properties (in the view)
 		// console.log("estate: ", estates);
+		 pageNo++;
+  	Property.found($routeParams, pageNo);
 		$scope.searchProperties = estates;
 		// function that starts when clicking "ng-click="searchAndFind()"" in view
 		$scope.searchAndFind = function() {
