@@ -33,7 +33,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         first = false;
       }
 
-      // console.log("callUrl in prop fack: ",callUrl);
+      console.log("callUrl in prop fack: ",callUrl);
 
       // console.log("Property searching callUrl: " + callUrl);
       WPRest.restCall(callUrl, "GET", {}, {
@@ -42,8 +42,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
           // console.log("asynk post: ", postData);
-          
-          for (var i = 0; i < postData.length; i++) {
+          for (var i = postData.length - 1; i > 0; i--) {
             if (!postData[i].terms.property) {
               postData.splice(i, 1);
             }

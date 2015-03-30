@@ -54,41 +54,43 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 
+	$scope.bostader = [
+		{val:false, name:"Lägenhet"},
+		{val:false, name:"Villa"},
+		{val:false, name:"Radhus"},
+		{val:false, name:"Kolonistuga"},
+		{val:false, name:"Studentlägenhet"},
+		{val:false, name:"Stuga"},
+		{val:false, name:"Seniorboende"},
+		{val:false, name:"Övriga"}
+	];
 
+	$scope.tillbehor = [
+		{val:false, name:"Balkong"},
+		{val:false, name:"Hiss"}
+	];
+	$scope.omroden = [
+		{val:false, name:"Annelund"},
+		{val:false, name:"Annetorp"},
+		{val:false, name:"Arlöv"},
+		{val:false, name:"Bellevue"},
+		{val:false, name:"Bunkeflostrand"},
+		{val:false, name:"Dammfri"},
+		{val:false, name:"Husie"},
+		{val:false, name:"Hyllie"},
+		{val:false, name:"Limhamn"},
+		{val:false, name:"Oxie"},
+		{val:false, name:"Ribersborg"},
+		{val:false, name:"Sibbarp"},
+		{val:false, name:"Solbacken"},
+		{val:false, name:"Toftanäs"},
+		{val:false, name:"Västra Hamnen"}
+	];
 
 	$scope.checkboxCategory = [
-		$scope.bostader = [
-			{val:false, name:"Lägenhet"},
-			{val:false, name:"Villa"},
-			{val:false, name:"Radhus"},
-			{val:false, name:"Kolonistuga"},
-			{val:false, name:"Studentlägenhet"},
-			{val:false, name:"Stuga"},
-			{val:false, name:"Seniorboende"},
-			{val:false, name:"Övriga"}
-		],
-
-		$scope.tillbehor = [
-			{val:false, name:"Balkong"},
-			{val:false, name:"Hiss"}
-		],
-		$scope.omroden = [
-			{val:false, name:"Annelund"},
-			{val:false, name:"Annetorp"},
-			{val:false, name:"Arlöv"},
-			{val:false, name:"Bellevue"},
-			{val:false, name:"Bunkeflostrand"},
-			{val:false, name:"Dammfri"},
-			{val:false, name:"Husie"},
-			{val:false, name:"Hyllie"},
-			{val:false, name:"Limhamn"},
-			{val:false, name:"Oxie"},
-			{val:false, name:"Ribersborg"},
-			{val:false, name:"Sibbarp"},
-			{val:false, name:"Solbacken"},
-			{val:false, name:"Toftanäs"},
-			{val:false, name:"Västra Hamnen"}
-		]
+		$scope.bostader,
+		$scope.tillbehor,
+		$scope.omroden
 	];
 
 
