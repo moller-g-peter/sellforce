@@ -80,6 +80,16 @@ function ngTheme_scripts() {
       );
     }
   }
+  $allFilters = scandir(THEME_FILE_ROOT."js/filter");
+  foreach ($allFilters as $filter) {
+    if (stripos($filter, ".js") !== false) {
+      $scriptName = explode(".js", $filter);
+      wp_enqueue_script(
+        $scriptName[0],
+        THEME_HTTP_ROOT . 'js/filter/'.$filter
+      );
+    }
+  }
 
   //autoload all services
   $allServices = scandir(THEME_FILE_ROOT."js/services");

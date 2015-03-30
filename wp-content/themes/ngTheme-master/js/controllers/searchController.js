@@ -47,77 +47,78 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	};
 
 	// "Property.found();" starts this function and get estates (= all properties)
-		$scope.checkboxCategory = [
-			$scope.bostader = [
-				{val:false, name:"Lägenhet"},
-				{val:false, name:"Villa"},
-				{val:false, name:"Radhus"},
-				{val:false, name:"Kolonistuga"},
-				{val:false, name:"Studentlägenhet"},
-				{val:false, name:"Stuga"},
-				{val:false, name:"Seniorboende"},
-				{val:false, name:"Övriga"}
-			],
+	
 
-			$scope.tillbehor = [
-				{val:false, name:"Balkong"},
-				{val:false, name:"Hiss"}
-			],
-			$scope.omroden = [
-				{val:false, name:"Annelund"},
-				{val:false, name:"Annetorp"},
-				{val:false, name:"Arlöv"},
-				{val:false, name:"Bellevue"},
-				{val:false, name:"Bunkeflostrand"},
-				{val:false, name:"Dammfri"},
-				{val:false, name:"Husie"},
-				{val:false, name:"Hyllie"},
-				{val:false, name:"Limhamn"},
-				{val:false, name:"Oxie"},
-				{val:false, name:"Ribersborg"},
-				{val:false, name:"Sibbarp"},
-				{val:false, name:"Solbacken"},
-				{val:false, name:"Toftanäs"},
-				{val:false, name:"Västra Hamnen"}
-			]
-		];
+
+
+
+
+
+
+
+	$scope.checkboxCategory = [
+		$scope.bostader = [
+			{val:false, name:"Lägenhet"},
+			{val:false, name:"Villa"},
+			{val:false, name:"Radhus"},
+			{val:false, name:"Kolonistuga"},
+			{val:false, name:"Studentlägenhet"},
+			{val:false, name:"Stuga"},
+			{val:false, name:"Seniorboende"},
+			{val:false, name:"Övriga"}
+		],
+
+		$scope.tillbehor = [
+			{val:false, name:"Balkong"},
+			{val:false, name:"Hiss"}
+		],
+		$scope.omroden = [
+			{val:false, name:"Annelund"},
+			{val:false, name:"Annetorp"},
+			{val:false, name:"Arlöv"},
+			{val:false, name:"Bellevue"},
+			{val:false, name:"Bunkeflostrand"},
+			{val:false, name:"Dammfri"},
+			{val:false, name:"Husie"},
+			{val:false, name:"Hyllie"},
+			{val:false, name:"Limhamn"},
+			{val:false, name:"Oxie"},
+			{val:false, name:"Ribersborg"},
+			{val:false, name:"Sibbarp"},
+			{val:false, name:"Solbacken"},
+			{val:false, name:"Toftanäs"},
+			{val:false, name:"Västra Hamnen"}
+		]
+	];
+
+
+
 	$scope.$on("foundProperty", function(event, estates) {
-
-		
-		
-
-
 		// when function starts, print all properties (in the view)
 		// console.log("estate: ", estates);
 		$scope.searchProperties = estates;
 		// function that starts when clicking "ng-click="searchAndFind()"" in view
 		$scope.searchAndFind = function() {
-			console.log("klick");
 			// declare an empty array EACH time the "ng-click="searchAndFind()" button is clicked
-			var foundProperties = [];
 			// everytime this function runs, "count" equals zero
 			var count = 0;
 			// looping through the array (consisting of objects) "bostader"
 
 			for (var k = 0; k < $scope.checkboxCategory.length; k++) {
-				// console.log("checkboxCategory[k]: ",$scope.checkboxCategory[k]);
-					console.log("checkboxCategory[k]: ",$scope.checkboxCategory[k]);
-				filterFunction($scope.checkboxCategory[k])
+			var foundProperties = [];
+				filterEveryChecbox($scope.checkboxCategory[k])
 			}
 
-			function filterFunction(data) {
-				console.log("filterFunction got dtata: ",data);
+			function filterEveryChecbox(data) {
+				console.log("filterEveryChecbox got dtata: ",data);
 				if (data.length == 1){
 					$scope.searchProperties = data;
 					return;
 				}
 				for (var i = 0; i < data.length; i++) {
-					// console.log("data.val: ",data[i].val);
 					//if any object in "bostader"s .val (false/true) is true...
 					if (data[i].val){
 
-					// console.log("checkboxCategory: ",data[i]);
-						
 						for (var j = 0; j < estates.length; j++) {
 							// console.log("data[i].name: ",estates[j]);
 							// if the estate name (from WP_DB) is equal to the specific type of name in the array "bostader" declared above...
@@ -125,12 +126,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 								console.log("true is: ",estates[j]);
 								// ...then put (=push) each estate in the array "foundProperties" declared above...
 								foundProperties.push(estates[j]);
-
-								// filter = foundProperties;
-							  // $scope.searchProperties = foundProperties;
-							  // console.log("foundProperties: ",foundProperties);
-								validateResult(foundProperties);
-
+								validateFilter(foundProperties);
 							}
 						}
 					}
@@ -147,46 +143,23 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 					}
 				}
 			}
+
 			var result = [];
-			function validateResult(data) {
-			console.log("validateResult alive data: ",data, "result: ",result);
+			function validateFilter(data) {
+				console.log("result: ",result);
 				if (data < result){
 					console.log(" if data < result: ",result);
-					var restore;
-					restore = result.pop();
-					$scope.searchProperties = restore;
-					filterFunction(data);
-					data = result;
-				// console.log("data: ",data , " result: ",result);
+					result.push(data);
+					$scope.searchProperties = result.pop();
+					filterEveryChecbox(data);
 				}
 				else if(!result){
-					result = [data , data];
-					console.log("else if result...");
-					filterFunction(data);
+					result = data;
+					filterEveryChecbox(data);
 				}
-
 			}
 		};
-
-
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	// function that resets the view when clicking "ng-click="resetSearch()"" in view
