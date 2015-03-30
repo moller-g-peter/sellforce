@@ -29,22 +29,10 @@ app.factory("Posts", ["WPRest" ,"$sce", function (WPRest, $sce) {
             data.excerpt = $sce.trustAsHtml(data.excerpt);
             data.content = $sce.trustAsHtml(data.content);
           }
-
+          console.log("get post data", data);
           return data;
         }
       });
-    },
-    post : function(data) {
-      var callUrl = "/posts";
-      WPRest.restCall(callUrl, "POST", data, "savedNewPost");
-    },
-    put : function(postId, data) {
-      var callUrl = "/posts/"+postId;
-      WPRest.restCall(callUrl, "PUT", data, "updatedPost");
-    },
-    delete : function(postId) {
-      var callUrl = "/posts/"+postId;
-      WPRest.restCall(callUrl, "DELETE", {}, "deletedPost");
     }
   };
 
