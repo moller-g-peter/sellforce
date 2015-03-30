@@ -18,7 +18,6 @@ app.filter("bostaderFilter", [function(){
 
 		for (var i = 0; i < estates.length; i++) {
 			var estate = estates[i];
-			console.log("estate: ",estate);
 			for (var j = 0; j < bostadsTyper.length; j++) {
 				if (bostadsTyper[j].val && bostadsTyper[j].name == estate.propertyData.bostad) {
 					result.push(estate);

@@ -1,36 +1,39 @@
 app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
+
+  var resultsToBroadcast = [];
   // console.log("property factory make noises");
   var propertyObjects = {
     
 
-
+    // allProperties : [],
     // **Remember endUrl is equal an object! (not a string value)
-    found : function(serchParam) {
+    found : function(serchParam, pageNo, startOver) {
+      pageNo = pageNo ? pageNo : 1;
 
       serchParam = serchParam ? serchParam : {};
+
+      if (startOver || pageNo === 1) {
+        // propertyObjects.allProperties.length = 0;
+        resultsToBroadcast.length = 0;
+      }
 
       //searching with WP JSON REST API filter parameters
       //always only search for properties
       //we are always searching for posts
       //in the category "properties"
-      var callUrl = "/properties";
+      var callUrl = "/properties?page="+pageNo;
 
-      var first = true;
       //build a REST callUrl from search params, 
       for (var i in serchParam) {
 
         //serchParam object values are filter values
         if (serchParam[i].constructor.name != "Object") {
-          callUrl += first ? "?filter["+i+"]="+serchParam[i] : "&filter["+i+"]="+serchParam[i];
+          callUrl += "&filter["+i+"]="+serchParam[i];
         } else {
           for (var j in serchParam[i]) {
-            callUrl += first ? "?filter["+i+"]["+j+"]="+serchParam[i][j] : "&filter["+i+"]["+j+"]="+serchParam[i][j];
-
-            first = false;
+            callUrl += "&filter["+i+"]["+j+"]="+serchParam[i][j];
           }
         }
-
-        first = false;
       }
 
       console.log("callUrl in prop fack: ",callUrl);
@@ -48,7 +51,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
             }
           }
 
-          var resultsToBroadcast = [];
+          // var resultsToBroadcast = [];
           var i = 0;
           postData.forEach(function(post) {
   
@@ -64,6 +67,12 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
               broadcastName: last ? "foundProperty" : "notDone", //this broadcast is VERY important
               
               callback: function(mediaData) {
+                // propertyObjects.allProperties.push({
+                //   "media": mediaData,
+                //   "post": post,
+                //   "propertyData": post.property_data
+                // });
+
                 resultsToBroadcast.push({
                   "media": mediaData,
                   "post": post,

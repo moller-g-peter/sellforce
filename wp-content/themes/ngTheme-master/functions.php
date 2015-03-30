@@ -16,6 +16,9 @@ define(THEME_FILE_ROOT, trailingslashit($themeDir));
 define(THEME_HTTP_ROOT, trailingslashit(get_template_directory_uri()));
 
 
+//remove canonical redirects
+remove_action("template_redirect", "redirect_canonical");
+
 
 /**
  * Register the required stylesheets for this theme.
