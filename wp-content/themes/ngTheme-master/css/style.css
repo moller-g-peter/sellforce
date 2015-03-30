@@ -6753,6 +6753,11 @@ footer li > ul {
 footer a {
   color: white;
 }
+.footerLogo {
+  height: 150px;
+  margin-left: 30px;
+  position: absolute;
+}
 .fullImage {
   height: 100vh;
   width: 100%;
