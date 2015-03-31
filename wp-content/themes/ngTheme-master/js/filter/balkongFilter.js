@@ -1,5 +1,5 @@
 app.filter("balkongFilter", [function(){
-			console.log("estates II:");
+			// console.log("estates II:");
 	return function(estates, balkong){
 		if (!estates || typeof balkong.val != "boolean") { return estates; }
 		var result = [];

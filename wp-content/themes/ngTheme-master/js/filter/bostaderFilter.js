@@ -1,6 +1,6 @@
 app.filter("bostaderFilter", [function(){
 	return function(estates, bostadsTyper){
-			console.log("estates II: ", estates, " bostader: ", bostadsTyper);
+			// console.log("estates II: ", estates, " bostader: ", bostadsTyper);
 		if (!estates) { return estates; }
 		var result = [];
 

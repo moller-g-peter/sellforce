@@ -1,5 +1,5 @@
 app.filter("hissFilter", [function(){
-			console.log("estates II:");
+			// console.log("estates II:");
 	return function(estates, hiss){
 		if (!estates || typeof hiss.val != "boolean") { return estates; }
 		var result = [];
