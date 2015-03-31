@@ -1,13 +1,12 @@
-<div ng-repeat="property in allProperties"  class="col-xs-10 col-sm-5  col-md-3 col-lg-3 row well propertyMargin">
+<div id="balblabla" ng-repeat="property in allProperties"  class="col-xs-10 col-sm-5  col-md-3 col-lg-3 row well propertyMargin">
 
 
 
-	<h3>{{property.post.title}}</h3>
+    <a href="" ng-click="goTo('property/'+property.post.slug)">
+  <h3>{{property.post.title}}</h3>
   <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 row">
  
-    
       <img ng-src="{{property.media[0].source}}" class="col-xs-12 col-sm-12  col-md-12 col-lg-12">
-
 
   </article>
 
@@ -21,6 +20,7 @@
         <li>Balkong: {{property.propertyData.balkong/1 ? "Ja" : "Nej"}}</li>
         <li>Typ av bostad: {{property.propertyData.typ}}</li>
       </ul>
-  </article>x
+  </article>
+    </a>
 
 </div>

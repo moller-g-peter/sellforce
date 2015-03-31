@@ -180,31 +180,4 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	};
 
 
-
-// This is the function to lokate where the klick is going....
-	$scope.goTo = function(url , hardReload) {
-    //any relative path destined for hardReload 
-    //gets http_root instead of initial "/"
-    console.log("click!! ");
-   console.log("currUrl: ", url, " reloder param: ",hardReload);
-    if (hardReload) {
-      url = url.indexOf("/") === 0 ?
-        SITE_INFO.http_root + url.substr(1) :
-        SITE_INFO.http_root + url;
-    }
-
-    if (hardReload) {
-      //hard reloads use traditional JS window.location.href 
-      //to change url
-      window.location.href = url;
-      return;
-
-    }
-
-    //all "soft" reloads (location change within app) use
-    //angulars $location.url() to change url using push/pop-state
-    $location.url(url);
-  };
-
-
 }]);
