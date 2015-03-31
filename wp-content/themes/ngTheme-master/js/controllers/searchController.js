@@ -181,7 +181,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 
-
+// This is the function to lokate where the klick is going....
 	$scope.goTo = function(url , hardReload) {
     //any relative path destined for hardReload 
     //gets http_root instead of initial "/"

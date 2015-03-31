@@ -6616,10 +6616,14 @@ footer a {
 .fullImage {
   padding-top: 300px;
 }
+main > section {
+  padding-top: 130px;
+}
 header {
   position: absolute;
   top: 50px;
   height: 100px;
+  z-index: 1;
 }
 header .mainMenu {
   z-index: 10;
@@ -6697,6 +6701,7 @@ main {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -300px;
+  z-index: 3;
 }
 main:after {
   content: "";
