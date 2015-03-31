@@ -2,7 +2,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 // run the "found" function from "propertyfactory.js" in the "services" folder(find all estates in the view)
-	var pageNo = 1;
+ 	var pageNo = 1;
 	Property.found($routeParams, pageNo, true);
 	// console.log("values:", data);
 
@@ -56,39 +56,36 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 	$scope.bostader = [
-		{val:true, name:"Lägenhet"},
-		{val:true, name:"Villa"},
-		{val:true, name:"Radhus"},
-		{val:true, name:"Kolonistuga"},
-		{val:true, name:"Studentlägenhet"},
-		{val:true, name:"Stuga"},
-		{val:true, name:"Seniorboende"},
-		{val:true, name:"Övriga"}
+		{val:false, name:"Lägenhet"},
+		{val:false, name:"Villa"},
+		{val:false, name:"Radhus"},
+		{val:false, name:"Kolonistuga"},
+		{val:false, name:"Studentlägenhet"},
+		{val:false, name:"Stuga"},
+		{val:false, name:"Seniorboende"},
+		{val:false, name:"Övriga"}
 	];
 
 	$scope.tillbehor = [
 		{val:false, name:"Balkong"},
 		{val:false, name:"Hiss"}
 	];
-
-
-
 	$scope.omroden = [
-		{val:true, name:"Annelund"},
-		{val:true, name:"Annetorp"},
-		{val:true, name:"Arlöv"},
-		{val:true, name:"Bellevue"},
-		{val:true, name:"Bunkeflostrand"},
-		{val:true, name:"Dammfri"},
-		{val:true, name:"Husie"},
-		{val:true, name:"Hyllie"},
-		{val:true, name:"Limhamn"},
-		{val:true, name:"Oxie"},
-		{val:true, name:"Ribersborg"},
-		{val:true, name:"Sibbarp"},
-		{val:true, name:"Solbacken"},
-		{val:true, name:"Toftanäs"},
-		{val:true, name:"Västra Hamnen"}
+		{val:false, name:"Annelund"},
+		{val:false, name:"Annetorp"},
+		{val:false, name:"Arlöv"},
+		{val:false, name:"Bellevue"},
+		{val:false, name:"Bunkeflostrand"},
+		{val:false, name:"Dammfri"},
+		{val:false, name:"Husie"},
+		{val:false, name:"Hyllie"},
+		{val:false, name:"Limhamn"},
+		{val:false, name:"Oxie"},
+		{val:false, name:"Ribersborg"},
+		{val:false, name:"Sibbarp"},
+		{val:false, name:"Solbacken"},
+		{val:false, name:"Toftanäs"},
+		{val:false, name:"Västra Hamnen"}
 	];
 
 	$scope.checkboxCategory = [
@@ -101,72 +98,73 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 	$scope.$on("foundProperty", function(event, estates) {
 		
-		pageNo++;
-		Property.found($routeParams, pageNo);
+		// when function starts, print all properties (in the view)
+		// console.log("estate: ", estates);
+		 pageNo++;
+  	Property.found($routeParams, pageNo);
 		$scope.searchProperties = estates;
-		// console.log("searchprops: ", $scope.searchProperties);
-		// console.log("estates amigo! ", estates);		// här finns nu alla 70 bostäder ("estates") som objekt i en array 
+		// function that starts when clicking "ng-click="searchAndFind()"" in view
+		$scope.searchAndFind = function() {
+			// declare an empty array EACH time the "ng-click="searchAndFind()" button is clicked
+			// everytime this function runs, "count" equals zero
+			var count = 0;
+			// looping through the array (consisting of objects) "bostader"
 
-		// $scope.searchAndFind = function() {
+			for (var k = 0; k < $scope.checkboxCategory.length; k++) {
+			var foundProperties = [];
+				filterEveryChecbox($scope.checkboxCategory[k])
+			}
 
-		// 	var count = 0;
+			function filterEveryChecbox(data) {
+				console.log("filterEveryChecbox got dtata: ",data);
+				if (data.length == 1){
+					$scope.searchProperties = data;
+					return;
+				}
+				for (var i = 0; i < data.length; i++) {
+					//if any object in "bostader"s .val (false/true) is true...
+					if (data[i].val){
 
-		// 	for (var k = 0; k < $scope.checkboxCategory.length; k++) {
-		// 	var foundProperties = [];
-		// 		filterEveryChecbox($scope.checkboxCategory[k]);
-		// 			// console.log("$scope.checkboxCategory :", $scope.checkboxCategory); // här finns 3 arrayer med "bostader, tillbehor, omroden"
-		// 		}
+						for (var j = 0; j < estates.length; j++) {
+							// console.log("data[i].name: ",estates[j]);
+							// if the estate name (from WP_DB) is equal to the specific type of name in the array "bostader" declared above...
+							if (estates[j].propertyData.bostad === data[i].name ||  estates[j].propertyData.stadsdel === data[i].name){
+								console.log("true is: ",estates[j]);
+								// ...then put (=push) each estate in the array "foundProperties" declared above...
+								foundProperties.push(estates[j]);
+								validateFilter(foundProperties);
+							}
+						}
+					}
+					else{
+						// let "count" add an int (+1) for each false .val it finds from the array "bostader" above...
+						count += 1;
+						// console.log("count: ",count);
+						// ...and if "count" adds up to 9 false(s)...
+						if (count === 200){
+							console.log("all false..");
+							// ...then run the "found" function from "propertyfactory.js" in the "services" folder
+							Property.found();
+						}
+					}
+				}
+			}
 
-		// 		function filterEveryChecbox(data) {
-		// 		// console.log("filterEveryChecbox got dtata: ",data);
-		// 			// console.log("searchProp. data: ", data);
-
-		// 		// om en ruta är checkad så spottas den typen ut i "data"
-		// 		if (data.length == 1){
-		// 			$scope.searchProperties = data;
-		// 			// console.log("estates amigo! ", estates); // vid det här läget är "estates" intakt och innehåller fortfarande 70 bostäder!!!!
-		// 			// console.log("data: ", data);  // här innehåller nu "data" tex stugor
-		// 			return;
-		// 		}
-		// 		for (var i = 0; i < data.length; i++) {
-		// 			if (data[i].val){
-
-		// 				for (var j = 0; j < estates.length; j++) {
-		// 					// console.log("estates: ", estates);  // 70 bostäder
-
-		// 					if (estates[j].propertyData.bostad === data[i].name || estates[j].propertyData.stadsdel === data[i].name){
-		// 						// console.log("true is: ",estates[j]);
-		// 						foundProperties.push(estates[j]);
-		// 						validateFilter(foundProperties);
-		// 					}
-		// 				}
-		// 			}
-		// 			else{
-		// 				count += 1;
-
-		// 				if (count === 200){
-		// 					// console.log("all false..");
-		// 					Property.found();
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-
-		// 	var result = [];
-		// 	function validateFilter(data) {
-		// 		// console.log("result: ",result);
-		// 		if (data < result){
-		// 			// console.log(" if data < result: ",result);
-		// 			result.push(data);
-		// 			$scope.searchProperties = result.pop();
-		// 			filterEveryChecbox(data);
-		// 		}
-		// 		else if(!result){
-		// 			result = data;
-		// 			filterEveryChecbox(data);
-		// 		}
-		// 	}
-		// };
+			var result = [];
+			function validateFilter(data) {
+				console.log("result: ",result);
+				if (data < result){
+					console.log(" if data < result: ",result);
+					result.push(data);
+					$scope.searchProperties = result.pop();
+					filterEveryChecbox(data);
+				}
+				else if(!result){
+					result = data;
+					filterEveryChecbox(data);
+				}
+			}
+		};
 	});
 
 
@@ -182,34 +180,4 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	};
 
 
-<<<<<<< HEAD
-
-
-	$scope.goTo = function(url , hardReload) {
-    //any relative path destined for hardReload 
-    //gets http_root instead of initial "/"
-    // console.log("click!! ");
-   // console.log("currUrl: ", url, " reloder param: ",hardReload);
-    if (hardReload) {
-      url = url.indexOf("/") === 0 ?
-        SITE_INFO.http_root + url.substr(1) :
-        SITE_INFO.http_root + url;
-    }
-
-    if (hardReload) {
-      //hard reloads use traditional JS window.location.href 
-      //to change url
-      window.location.href = url;
-      return;
-
-    }
-
-    //all "soft" reloads (location change within app) use
-    //angulars $location.url() to change url using push/pop-state
-    $location.url(url);
-  };
-
-
-=======
->>>>>>> origin/master
 }]);
