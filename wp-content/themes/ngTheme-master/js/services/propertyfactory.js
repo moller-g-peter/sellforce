@@ -36,7 +36,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         }
       }
 
-      console.log("callUrl in prop fack: ",callUrl);
+      // console.log("callUrl in prop fack: ",callUrl);
 
       // console.log("Property searching callUrl: " + callUrl);
       WPRest.restCall(callUrl, "GET", {}, {
