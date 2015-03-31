@@ -152,3 +152,18 @@ if ( function_exists( 'register_nav_menus' ) ) {
       )
     );
 }
+
+//create a custom taxonomy called placement
+function placement_init() {
+  // create a new taxonomy
+  register_taxonomy(
+    'placement',
+    'attachment', //default content type this taxonomy belongs to
+    array(
+      'label' => __( 'Placement' ),
+      'rewrite' => array( 'slug' => 'placement' ),
+    )
+  );
+}
+
+add_action( 'init', 'placement_init' );

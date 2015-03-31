@@ -182,6 +182,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	};
 
 
+<<<<<<< HEAD
 
 
 	$scope.goTo = function(url , hardReload) {
@@ -209,4 +210,6 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
   };
 
 
+=======
+>>>>>>> origin/master
 }]);

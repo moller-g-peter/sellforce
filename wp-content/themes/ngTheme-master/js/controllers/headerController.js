@@ -1,5 +1,5 @@
 //"ngTheme" controller.
-app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO", function($scope, $location, Menus, SITE_INFO) {
+app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO","$rootScope", function($scope, $location, Menus, SITE_INFO, $rootScope) {
   $scope.partialsDir = SITE_INFO.partials;
 
   // console.log("headerController is alive!");
@@ -33,7 +33,7 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
 
 
   //a simple $scope method for changing urls using ng-click in views
-  $scope.goTo = function(url, hardReload) {
+  $rootScope.goTo = function(url, hardReload) {
     //any relative path destined for hardReload 
     //gets http_root instead of initial "/"
 

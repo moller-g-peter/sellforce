@@ -1,4 +1,4 @@
-app.controller("allPropertiesController", ["$scope", "Property", "SITE_INFO", "$routeParams",  function($scope, Property, SITE_INFO, $routeParams ) {
+app.controller("allPropertiesController", ["$scope", "Property", "SITE_INFO", "$routeParams", "$location",  function($scope, Property, SITE_INFO, $routeParams, $location ) {
 
   var pageNo = 1;
 
