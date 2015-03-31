@@ -98,12 +98,14 @@ footer a{
 
 
 // This is where i work with menus styling!
+main > section{
+ padding-top: 130px;
+}
 header {
   position: absolute;
   top: 50px;
   height: 100px;
-  
-}
+  z-index: 1;}
 
 header .navAlign {
   
@@ -211,7 +213,9 @@ main {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -300px;
+  z-index: 3;
 }
+
 main:after {
   content: "";
   display: block;
@@ -405,4 +409,8 @@ h4 {
 
 .blackText {
   color: black !important;
+}
+
+.kontakterDiv div ul li{
+  list-style-type:none;
 }

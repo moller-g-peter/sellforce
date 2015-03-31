@@ -1,7 +1,14 @@
 //"ngTheme" home controller.
 //dependent on $scope && WPService being injected to run
-app.controller("homeController", ["$scope", "Pages", "$sce", "Property" ,"$routeParams", "SITE_INFO", function($scope, Pages, $sce, Property, $routeParams, SITE_INFO) {
+app.controller("homeController", ["$scope", "Pages", "$sce", "Property" ,"$routeParams", "SITE_INFO", "Media",
+  function($scope, Pages, $sce, Property, $routeParams, SITE_INFO, Media) {
   // console.log("homeController alive!");
+
+  Media.found({name : "home"});
+
+  $scope.$on("gotMedia", function(event, data) {
+    console.log("homeController gotMedia: ", data);
+  });
 
   Property.found({name:"hem"});
   $scope.partialsDir = SITE_INFO.partials;

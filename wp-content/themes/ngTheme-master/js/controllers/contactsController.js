@@ -5,25 +5,25 @@ app.controller("contactsController", ["$scope", "Pages", "$sce", "$location", "P
   $scope.directPartial = SITE_INFO.partials;
 
   $scope.$on("gotPostData", function(event, data) {
-    $scope.kontakts = data;
+    $scope.kontakts = data.reverse();
     console.log("gotPostData contriller: ",data);
   });
 
-Pages.search({name:"om-oss"});
-var count = 0;
+  Pages.search({name:"om-oss"});
+  var count = 0;
 
 
 
 
-$scope.$on("foundPages", function(event, data) {
-// console.log(" hjgjygjgjkgjh: ", data[1]);
+  $scope.$on("foundPages", function(event, data) {
+  // console.log(" hjgjygjgjkgjh: ", data[1]);
     console.log("jojojojojojojojoooooo: ", data);
-    if (count >=0) {
-      count += 1;
-      console.log("firstSearch1> ",data);
-      if (count === 2){
-        $scope.page = $sce.trustAsHtml(data[0].content);
-      }
+
+    var primitiveClone = data[0].content;
+    if (data[0].slug == "om-oss"){
+      $scope.page = $sce.trustAsHtml(primitiveClone);
+    } else if (data[0].slug == "footer") {
+      $scope.footer = $sce.trustAsHtml(primitiveClone);
     }
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });
