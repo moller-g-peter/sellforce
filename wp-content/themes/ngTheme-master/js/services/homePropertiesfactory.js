@@ -19,11 +19,9 @@ app.factory("HomeProperties", ["WPRest", "$sce", function (WPRest, $sce) {
         } else {
           for (var j in serchParam[i]) {
             callUrl += first ? "?filter["+i+"]["+j+"]="+serchParam[i][j] : "&filter["+i+"]["+j+"]="+serchParam[i][j];
-
             first = false;
           }
         }
-
         first = false;
       }
 
