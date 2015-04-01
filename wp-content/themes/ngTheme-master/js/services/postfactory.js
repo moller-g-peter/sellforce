@@ -36,6 +36,5 @@ app.factory("Posts", ["WPRest" ,"$sce", function (WPRest, $sce) {
     }
   };
 
-  //.factory() services MUST return an object
   return postServant;
 }]);

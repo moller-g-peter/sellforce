@@ -38,14 +38,13 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
 
       // console.log("callUrl in prop fack: ",callUrl);
 
-      // console.log("Property searching callUrl: " + callUrl);
       WPRest.restCall(callUrl, "GET", {}, {
         // send an disfunctional string to brodcastName
         broadcastName: "uslessName",// does this funky name run off for the async to prevent callvacfunction from run of before ig got its inparamter?
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
           // console.log("asynk post: ", postData);
-          for (var i = postData.length - 1; i > 0; i--) {
+          for (var i = postData.length - 1; i >= 0; i--) {
             if (!postData[i].terms.property) {
               postData.splice(i, 1);
             }
