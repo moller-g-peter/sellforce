@@ -23,12 +23,12 @@ app.factory("Media", ["WPRest", function (WPRest) {
 
 
 			WPRest.restCall(callUrl, "GET", {}, {broadcastName: "gotMedia", 
-				callback: function(placementData){
-					for (var i = 0; i < placementData.length; i++) {
+				callback: function(mediaData){
+					for (var i = 0; i < mediaData.length; i++) {
 					
 						result.push({
-							"source": placementData[i].source,
-							"propertySlug": placementData[i].terms.property[0].slug
+							"source": mediaData[i].source,
+							"propertySlug": mediaData[i].terms.property[0].slug
 						});
 					}
 					return result;

@@ -8,7 +8,6 @@ function($scope, Pages, $sce, Property, $routeParams, SITE_INFO, Media) {
 
 
   $scope.$on("gotMedia", function(event, data) {
-    console.log("homeController gotMedia: ", data);
     $scope.hemMedia = data;
 
 
