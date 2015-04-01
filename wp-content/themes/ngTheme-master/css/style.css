@@ -6623,21 +6623,10 @@ header {
   position: absolute;
   top: 50px;
   height: 100px;
-  width: 100%;
   z-index: 1;
 }
-header nav div{
-  text-align: center;
-}
-header nav ul{
-  padding: 0;
-}
-header nav ul li{
-  display: inline-block;
-  padding: 0 15px;
-}
-header nav ul li a{
-  margin: 0 !important;
+header nav {
+  color: black !important;
 }
 header .mainMenu {
   z-index: 10;
@@ -6797,6 +6786,7 @@ footer div ul {
   border-top: 23px solid #696969;
 }
 .searchImage {
+  height: 100vh;
   width: 100%;
   background: url(../img/searchform.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -6816,7 +6806,7 @@ input[type='checkbox'] {
 .facilityFilters,
 .extraFilters {
   margin-top: 100px;
-  /*border-right: 1px solid white;*/
+  border-right: 1px solid white;
 }
 .municipalityFilter label:hover,
 .accessoryFilters label:hover,
@@ -6832,7 +6822,7 @@ input[type='checkbox'] {
 .omrade,
 .tillagg,
 .extra {
-  /*text-align: center;*/
+  text-align: center;
   margin-bottom: 50px;
 }
 .resetButton,
@@ -6890,6 +6880,3 @@ h4 {
 .kontakterDiv div ul li {
   list-style-type: none;
 }
-
-
-/* nav responsiv*/
