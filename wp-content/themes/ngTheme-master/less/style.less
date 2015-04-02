@@ -6714,8 +6714,13 @@ body {
 main {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -300px;
+  margin-bottom: -200px;
   z-index: 3;
+}
+@media screen and (max-width: 500px) {
+  main {
+    margin-bottom: -300px;
+  }
 }
 main:after {
   content: "";
@@ -6723,7 +6728,13 @@ main:after {
 }
 footer,
 main:after {
-  height: 300px;
+  height: 200px;
+}
+@media screen and (max-width: 500px) {
+  footer,
+  main:after {
+    height: 300px;
+  }
 }
 footer {
   background: #0e0e0e;
@@ -6896,19 +6907,7 @@ nav ul li {
 
 }
 
-//the LESS way
-nav {
-  ul {
-    li {
-
-    }
-  }
-}
-
-
-@white-color:#fff;
-@black-color:#000;
-
+// backgroound img om oss/ bosrader
 .backImage {
   width: 100%;
   background: url(../img/searchform.jpg) no-repeat center center fixed;
