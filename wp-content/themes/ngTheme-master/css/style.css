@@ -6643,22 +6643,7 @@ html,
 body {
   position: relative;
   height: 100%;
-  background: #eeeeee;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #eeeeee 0%, #cccccc 100%);
-  /* IE10+ */
-  background: linear-gradient(to right, #eeeeee 0%, #cccccc 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=1);
-  /* IE6-9 */
+  background: #000;
 }
 footer,
 main:after {
@@ -6802,7 +6787,7 @@ main:after {
 /* Sticky footer */
 body {
   height: 100%;
-  margin-top: -32px;
+  margin-top: -47px;
   /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! / removed pixel cause it's no whitespace anymore at my computer.. */
 }
 main {
@@ -7026,6 +7011,7 @@ h4 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  padding: 100px 0 50px 0;
 }
 .blackColor {
   color: #000;
