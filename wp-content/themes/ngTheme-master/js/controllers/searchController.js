@@ -102,7 +102,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 	$scope.$on("foundProperty", function(event, estates) {
-		
+		console.log("estates: ", estates);
 		pageNo++;
 		Property.found($routeParams, pageNo);
 		$scope.searchProperties = estates;

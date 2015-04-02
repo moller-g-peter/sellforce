@@ -24,18 +24,14 @@
       <div class="col-xs-6 col-ms-6 col-md-5 col-lg-6">
         <form class="accessoryFilters">
           <h2 class="tillagg">TILLBEHÖR</h2>
-          <article ng-repeat="accessory in tillbehor">
-            <label>
-              <input
-              type="checkbox"
-              value="{{accessory.name}}"
-              ng-model="accessory.val" 
-              >{{accessory.name}}<br/>
-                <!-- <label for="lagenhet_id"> Lägenhet</label><br> -->
-            </label>
-          </article>
+          <label>Hiss</label>
+          <select class="form-control" ng-model="hiss" ng-options="opt.name for opt in accessoryOptions">
+          </select>
+          <label>Balkong</label>
+          <select class="form-control" ng-model="balkong" ng-options="opt.name for opt in accessoryOptions">
+          </select>
           <!-- <input type="checkbox" ng-model="cb_balkong" name="filterbox" id="balkong_id" value="balkong"> 
-            <label for="balkong_id"> Balkong</label><br>
+            <label foHissr="balkong_id"> Balkong</label><br>
           <input type="checkbox" ng-model="cb_hiss" name="filterbox" id="hiss_id" value="hiss"> 
             <label for="hiss_id"> Hiss</label><br> -->
    
