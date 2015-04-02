@@ -62,7 +62,6 @@ app.factory("Pages", ["WPRest" ,"$sce", function (WPRest, $sce) {
           "&filter["+i+"]=" + searchParams[i]; //if false
         first = false;
       }
-      // console.log("pages searching for: ", callUrl);
 
       WPRest.restCall(callUrl, "GET", {}, "foundPages");
     }

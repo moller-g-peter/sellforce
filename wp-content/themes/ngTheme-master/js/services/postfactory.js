@@ -21,7 +21,6 @@ app.factory("Posts", ["WPRest" ,"$sce", function (WPRest, $sce) {
             data.excerpt = $sce.trustAsHtml(data.excerpt);
             data.content = $sce.trustAsHtml(data.content);
           }
-          console.log("get post data", data);
           return data;
         }
       });
