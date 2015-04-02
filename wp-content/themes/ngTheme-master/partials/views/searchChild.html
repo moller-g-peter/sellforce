@@ -1,8 +1,6 @@
-<div ng-repeat="property in searchProperties | bostaderFilter:bostader | hissFilter:tillbehor[1] | balkongFilter:tillbehor[0] | omradesFilter:omroden | prisSliderFilter:options1"  class="col-xs-10 col-sm-5  col-md-3 col-lg-3 container well propertyMargin">
+<div ng-repeat="property in searchProperties | bostaderFilter:bostader | hissFilter:hiss | balkongFilter:balkong | omradesFilter:omroden | prisSliderFilter:priceValue | rumSliderFilter:roomValue | hyraSliderFilter:rentValue | ytaSliderFilter:spaceValue"  class="col-xs-10 col-sm-5  col-md-3 col-lg-3 container well propertyMargin">
   <a href="" ng-click="goTo('property/'+property.post.slug)">
   <!-- this a element is the klick event, us this tay, observr where it ends.. -->
-
- 
 
   <h3>{{property.post.title}}</h3>
   <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 ">
@@ -18,7 +16,9 @@
         <li>Typ av bostad: {{property.propertyData.bostad}}</li>
         <li>Stadsdel: {{property.propertyData.stadsdel}}</li>
         <li>Pris: {{property.propertyData.pris}}:-</li>
+        <li>Hyra: {{property.propertyData.hyra}}</li>
         <li>Yta: {{property.propertyData.yta}} m²</li>
+        <li>Våning: {{property.propertyData.trappor}}</li>
         <li>Rum: {{property.propertyData.rum}}</li>
         <li>Balkong: {{property.propertyData.balkong/1 ? "Ja" : "Nej"}}</li>
         <li>Hiss: {{property.propertyData.hiss/1 ? "Ja" : "Nej"}}</li>
@@ -29,3 +29,8 @@
 
   </a>
 </div>
+
+
+
+
+<!--  | prisSliderFilter:priceValue | rumSliderFilter:roomValue | hyraSliderFilter:rentValue | ytaSliderFilter:spaceValue -->
