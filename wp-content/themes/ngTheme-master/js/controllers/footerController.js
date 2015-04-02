@@ -3,13 +3,13 @@ app.controller("footerController", ["$scope", "Pages", "$sce", "$location", func
 
   // console.log("footerController is alive!");
 Pages.search({name:"footer"});
-var firstSearch = true;
+
 
 $scope.$on("foundPages", function(event, data) {
-    // console.log("footerController on foundPages: ", data);
-    if (firstSearch) {
+    console.log("footerController on foundPages: ", data);
+    if (data[0].slug === "footer") {
 			$scope.footerContent = $sce.trustAsHtml(data[0].content);
-			firstSearch = false;
+
     }
     // $scope.trustedHtml = $sce.trustAsHtml(data[0].title);
   });

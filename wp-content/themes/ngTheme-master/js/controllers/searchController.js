@@ -9,7 +9,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 	$scope.searchDir = SITE_INFO.partials;
 
-	$scope.priceValue = "0";
+	$scope.priceValue = "0;8000000";
 	$scope.options1 = {
 		from: 0,
 		to: 8000000,
@@ -28,10 +28,10 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	};
 
 
-	$scope.spaceValue = "0;300";
+	$scope.spaceValue = "0;200";
 	$scope.options3 = {
 		from: 0,
-		to: 300,
+		to: 200,
 		step: 5,
 		dimension: " kvm",
 		scale: [20,'|',40,'|',60,'|',80,'|',100,'|',120,'|',140,'|',160,'|',180,'|',200]
@@ -52,7 +52,15 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 
+	$scope.accessoryOptions = [
+		{name: "Both", val: ""},
+		{name: "Yes", val: true},
+		{name: "No", val: false}
+	];
 
+
+	$scope.balkong = $scope.accessoryOptions[0];
+	$scope.hiss = $scope.accessoryOptions[0];
 
 
 	$scope.bostader = [
@@ -65,12 +73,6 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 		{val:true, name:"Seniorboende"},
 		{val:true, name:"Övriga"}
 	];
-
-	$scope.tillbehor = [
-		{val:false, name:"Balkong"},
-		{val:false, name:"Hiss"}
-	];
-
 
 
 	$scope.omroden = [
@@ -100,73 +102,10 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 	$scope.$on("foundProperty", function(event, estates) {
-		
+		console.log("estates: ", estates);
 		pageNo++;
 		Property.found($routeParams, pageNo);
 		$scope.searchProperties = estates;
-		// console.log("searchprops: ", $scope.searchProperties);
-		// console.log("estates amigo! ", estates);		// här finns nu alla 70 bostäder ("estates") som objekt i en array 
-
-		// $scope.searchAndFind = function() {
-
-		// 	var count = 0;
-
-		// 	for (var k = 0; k < $scope.checkboxCategory.length; k++) {
-		// 	var foundProperties = [];
-		// 		filterEveryChecbox($scope.checkboxCategory[k]);
-		// 			// console.log("$scope.checkboxCategory :", $scope.checkboxCategory); // här finns 3 arrayer med "bostader, tillbehor, omroden"
-		// 		}
-
-		// 		function filterEveryChecbox(data) {
-		// 		// console.log("filterEveryChecbox got dtata: ",data);
-		// 			// console.log("searchProp. data: ", data);
-
-		// 		// om en ruta är checkad så spottas den typen ut i "data"
-		// 		if (data.length == 1){
-		// 			$scope.searchProperties = data;
-		// 			// console.log("estates amigo! ", estates); // vid det här läget är "estates" intakt och innehåller fortfarande 70 bostäder!!!!
-		// 			// console.log("data: ", data);  // här innehåller nu "data" tex stugor
-		// 			return;
-		// 		}
-		// 		for (var i = 0; i < data.length; i++) {
-		// 			if (data[i].val){
-
-		// 				for (var j = 0; j < estates.length; j++) {
-		// 					// console.log("estates: ", estates);  // 70 bostäder
-
-		// 					if (estates[j].propertyData.bostad === data[i].name || estates[j].propertyData.stadsdel === data[i].name){
-		// 						// console.log("true is: ",estates[j]);
-		// 						foundProperties.push(estates[j]);
-		// 						validateFilter(foundProperties);
-		// 					}
-		// 				}
-		// 			}
-		// 			else{
-		// 				count += 1;
-
-		// 				if (count === 200){
-		// 					// console.log("all false..");
-		// 					Property.found();
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-
-		// 	var result = [];
-		// 	function validateFilter(data) {
-		// 		// console.log("result: ",result);
-		// 		if (data < result){
-		// 			// console.log(" if data < result: ",result);
-		// 			result.push(data);
-		// 			$scope.searchProperties = result.pop();
-		// 			filterEveryChecbox(data);
-		// 		}
-		// 		else if(!result){
-		// 			result = data;
-		// 			filterEveryChecbox(data);
-		// 		}
-		// 	}
-		// };
 	});
 
 
