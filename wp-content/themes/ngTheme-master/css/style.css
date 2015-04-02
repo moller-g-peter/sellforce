@@ -6992,6 +6992,18 @@ h4 {
 .blackText {
   color: black !important;
 }
+.blackText div {
+  height: 500px;
+}
+@media only screen and (min-width: 550px) and (max-width: 770px) {
+  .blackText div {
+    height: 600px;
+  }
+}
+.blackText div a {
+  color: black !important;
+  font-size: 15px;
+}
 .kontakterDiv div {
   height: 500px;
 }
