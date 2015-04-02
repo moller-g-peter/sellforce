@@ -6989,6 +6989,9 @@ h4 {
 .blackText {
   color: black !important;
 }
+.kontakterDiv div {
+  height: 500px;
+}
 .kontakterDiv div ul li {
   list-style-type: none;
 }
