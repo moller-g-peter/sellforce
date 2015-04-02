@@ -7,6 +7,9 @@ html {
 body {
   margin: 0;
 }
+body li{
+  list-style-type: none;
+}
 article,
 aside,
 details,
@@ -6714,8 +6717,13 @@ body {
 main {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -300px;
+  margin-bottom: -200px;
   z-index: 3;
+}
+@media screen and (max-width: 500px) {
+  main {
+    margin-bottom: -300px;
+  }
 }
 main:after {
   content: "";
@@ -6723,7 +6731,13 @@ main:after {
 }
 footer,
 main:after {
-  height: 300px;
+  height: 200px;
+}
+@media screen and (max-width: 500px) {
+  footer,
+  main:after {
+    height: 300px;
+  }
 }
 footer {
   background: #0e0e0e;
@@ -6887,42 +6901,63 @@ h4 {
 .blackText {
   color: black !important;
 }
+.kontakterDiv div{
+  height: 500px;
+}
 .kontakterDiv div ul li {
   list-style-type: none;
 }
 
-//the old way...
-nav ul li {
-
-}
-
-//the LESS way
-nav {
-  ul {
-    li {
-
-    }
-  }
-}
 
 
-@white-color:#fff;
-@black-color:#000;
-
+// backgroound img om oss/ bosrader
 .backImage {
   width: 100%;
-  background: url(../img/searchform.jpg) no-repeat center center fixed;
+  background: url(../img/backimg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   color: #fff;
 }
+.backImageSlider {
+  width: 100%;
+  background: url(../img/backimg.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .blackColor{
   color: #000;
 }
 
+// div holder - Bostader
+.bostadDivHolder div div{
+  height: 500px;
+}
+@media screen and (max-width: 775px) {
+  .bostadDivHolder div div{
+  height: 620px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .bostadDivHolder div div{
+  height: 530px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .bostadDivHolder div div{
+  height: 500px;
+  }
+}
+.bostadDivHolder div a{
+  color: #000;
+}
 
+.whiteColor{
+  color: #000;
+}
 
 
 
