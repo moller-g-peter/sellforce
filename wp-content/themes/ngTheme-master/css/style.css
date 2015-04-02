@@ -7007,3 +7007,9 @@ h4 {
 .blackColor {
   color: #000;
 }
+.bostadDivHolder div a {
+  color: #000;
+}
+.bostadDivHolder div li {
+  list-style-type: none;
+}
