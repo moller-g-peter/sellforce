@@ -5,9 +5,9 @@ app.factory("Media", ["WPRest", function (WPRest) {
 	source: "link to picture"
 	propertySlug: "link to its property"
 	*/
-	var result = [];
 	var mediaObject =  {
 		found : function(searcParam) {
+		var result = [];
 			// console.log("hello i'm alive!  got routparam: ", searcParam);
 			searcParam = searcParam ? searcParam : {};
 			var callUrl = "/media";
