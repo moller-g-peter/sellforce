@@ -16,7 +16,7 @@ function($scope, Pages, $sce, Property, $routeParams, SITE_INFO, Media) {
   $scope.partialsDir = SITE_INFO.partials;
 
   //the interval for all carousels
-  $scope.carouselInterval = 2000;
+  $scope.carouselInterval = 4000;
 
   $scope.$on("foundProperty", function(event, data) {
     if (!data) { return; }
