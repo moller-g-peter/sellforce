@@ -21,7 +21,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
       //always only search for properties
       //we are always searching for posts
       //in the category "properties"
-      var callUrl = "/properties?page="+serchParam;
+      var callUrl = "/properties?page="+pageNo;
 
       //build a REST callUrl from search params, 
       for (var i in serchParam) {

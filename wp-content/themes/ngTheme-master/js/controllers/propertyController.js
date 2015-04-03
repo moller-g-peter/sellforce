@@ -13,7 +13,7 @@ app.controller("propertyController", ["$scope", "Property" ,"$routeParams", "SIT
     $scope.$on("foundProperty", function(event, data) {
       for (var i = 0; i < data.length; i++) {
         if(data[i].post.slug === $routeParams.name) {
-          console.log("true: ")
+          console.log("true: ",data);
 
           $scope.property = data[i];
         }
