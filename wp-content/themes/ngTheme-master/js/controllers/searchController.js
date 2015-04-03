@@ -53,9 +53,9 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 	$scope.accessoryOptions = [
-		{name: "Both", val: ""},
-		{name: "Yes", val: true},
-		{name: "No", val: false}
+		{name: "Alla", val: ""},
+		{name: "Ja", val: true},
+		{name: "Nej", val: false}
 	];
 
 
