@@ -28,7 +28,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
 
         //serchParam object values are filter values
         if (serchParam[i].constructor.name != "Object") {
-          callUrl += "&filter["+i+"]="+serchParam[i];
+          callUrl += "&filter["+i+"]="+serchParam[i];nu in i
         } 
         else {
           for (var j in serchParam[i]) {
