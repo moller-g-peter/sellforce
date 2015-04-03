@@ -50,9 +50,9 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 	// "Property.found();" starts this function and get estates (= all properties)
 	
 	$scope.accessoryOptions = [
-		{name: "Alla", val: ""},
-		{name: "Ja", val: true},
-		{name: "Nej", val: false}
+		{name: "Both", val: ""},
+		{name: "Yes", val: true},
+		{name: "No", val: false}
 	];
 
 
