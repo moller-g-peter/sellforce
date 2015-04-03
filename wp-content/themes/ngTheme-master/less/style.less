@@ -6832,7 +6832,7 @@ input[type='checkbox'] {
 .tillagg,
 .extra {
   /*text-align: center;*/
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .resetButton,
 .submitButton,
@@ -6871,9 +6871,9 @@ h4 {
   margin-top: 0;
   margin-bottom: 17px;
 }
-h4 {
-  text-align: center;
-}
+// h4 {
+//   text-align: center;
+// }
 .submitButton,
 .resetButton {
   margin-top: 30px;
@@ -6934,9 +6934,29 @@ h4 {
 .bostadDivHolder div div{
   height: 500px;
 }
+
+@media screen and (max-width: 1000px) {
+  .accessoryFilters {
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+  .municipalityFilter {
+    margin-top: -160px;
+    // margin-bottom: 100px;
+  }
+}
+
 @media screen and (max-width: 775px) {
   .bostadDivHolder div div{
   height: 620px;
+  }
+  .accessoryFilters {
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+  .municipalityFilter {
+    margin-top: -150px;
+    // margin-bottom: 100px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -6956,4 +6976,22 @@ h4 {
 .whiteColor{
   color: #000;
 }
+
+.sliderFilterBox {
+  margin-top: -150px;
+  margin-bottom: 100px;
+}
+
+.whiteBox {
+  margin-bottom: 50px;
+}
+
+// @media screen and (max-width: 500px) {
+//   .municipalityFilter {
+//     margin-top: 0;
+//     margin-bottom: 100px;
+//   }
+// }
+
+
 

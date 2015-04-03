@@ -1,6 +1,6 @@
 <section class="container searchImage">
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-ms-10 col-ms-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+    <div class="col-xs-10 col-xs-offset-1 col-ms-10 col-ms-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-2">
 
       <div class="col-xs-6 col-ms-6 col-md-4 col-lg-3">
         <form class="facilityFilters">
@@ -18,27 +18,26 @@
         </form>
       </div>
 
-      <div class="col-xs-6 col-ms-6 col-md-5 col-lg-6">
-        <form class="accessoryFilters">
-          <h2 class="tillagg">TILLBEHÖR</h2>
-          <label>Hiss</label>
-          <select class="form-control" ng-model="hiss" ng-options="opt.name for opt in accessoryOptions">
-          </select>
-          <label>Balkong</label>
-          <select class="form-control" ng-model="balkong" ng-options="opt.name for opt in accessoryOptions">
-          </select>
-          <!-- <input type="checkbox" ng-model="cb_balkong" name="filterbox" id="balkong_id" value="balkong"> 
-            <label foHissr="balkong_id"> Balkong</label><br>
-          <input type="checkbox" ng-model="cb_hiss" name="filterbox" id="hiss_id" value="hiss"> 
-            <label for="hiss_id"> Hiss</label><br> -->
-   
-        <div class="roomSlider">
-          <h3>Antal rum</h3>
-          <h6>(justera slider för filtrering)</h6>
-          <input ng-model="roomValue" type="text" id="mySlider1" slider options="options4" />
-        </div>
 
-        </form>
+      <div class="col-xs-6 col-ms-6 col-md-5 col-lg-4">
+        <div class="col-ms-12 col-md-8 col-lg-10">
+          <form class="accessoryFilters">
+            <h2 class="tillagg">TILLBEHÖR</h2>
+            <label>Hiss</label>
+            <select class="form-control" ng-model="hiss" ng-options="opt.name for opt in accessoryOptions">
+            </select><br>
+            <label>Balkong</label>
+            <select class="form-control" ng-model="balkong" ng-options="opt.name for opt in accessoryOptions">
+            </select>
+     
+            <div class="roomSlider">
+              <h3>Antal rum</h3>
+              <h6>(justera slider för filtrering)</h6>
+              <input ng-model="roomValue" type="text" id="mySlider1" slider options="options4" />
+            </div>
+          </form>
+
+        </div>
       </div>
 
       <div class="col-xs-12 col-ms-12 col-md-3 col-lg-3">
@@ -55,9 +54,7 @@
         </form>
       </div>
 
-
-
-      <div class="col-xs-12 col-ms-12 col-md-12 col-lg-12">
+      <div class="col-xs-12 col-ms-12 col-md-12 col-lg-9 sliderFilterBox">
         <form class="accessoryFilters">
           <h2 class="extra">FILTER</h2><h4>(justera slider för filtrering)</h4>
           <div class="priceSlider">
@@ -75,21 +72,13 @@
             <input ng-model="spaceValue" type="text" id="mySlider3" slider options="options3" />
           </div>
         </form>
-
-    <!--     <div class="col-xs-6 col-ms-6 col-md-6 col-lg-6 submitButton">
-          <button type="button" ng-click="searchAndFind()" id="submit" class="btn btn-success resetButton" value="submit">SÖK</button>
-        </div>
-
-        <div class="col-xs-6 col-ms-6 col-md-6 col-lg-6 resetButton">
-          <button type="button" id="submit" ng-click="resetSearch()" class="btn btn-danger resetButton" value="submit">Återställ sök</button>
-        </div> -->
       </div>
 
-      <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blackText">
+
+    </div>
+      <article class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1 blackText">
         <article ng-include="searchDir+'views/searchChild.html'">
         </article>
       </article>
-
-    </div>
   </div>
 </section>
