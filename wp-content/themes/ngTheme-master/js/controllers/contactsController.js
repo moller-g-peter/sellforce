@@ -6,7 +6,7 @@ app.controller("contactsController", ["$scope", "Pages", "$sce", "$location", "P
 
   $scope.$on("gotPostData", function(event, data) {
     $scope.kontakts = data.reverse();
-    console.log("gotPostData contriller: ",data);
+    // console.log("gotPostData contriller: ",data);
   });
 
   Pages.search({name:"om-oss"});
@@ -17,7 +17,7 @@ app.controller("contactsController", ["$scope", "Pages", "$sce", "$location", "P
 
   $scope.$on("foundPages", function(event, data) {
   // console.log(" hjgjygjgjkgjh: ", data[1]);
-    console.log("jojojojojojojojoooooo: ", data);
+    // console.log("jojojojojojojojoooooo: ", data);
 
     var primitiveClone = data[0].content;
     if (data[0].slug == "om-oss"){
