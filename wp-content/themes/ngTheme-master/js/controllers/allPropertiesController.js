@@ -8,7 +8,7 @@ app.controller("allPropertiesController", ["$scope", "Property", "SITE_INFO", "$
   
 
   $scope.$on("foundProperty", function(event, data) {
-    console.log("allPropertiesCTRL: ", data);
+    // console.log("allPropertiesCTRL: ", data);
     
     $scope.allProperties = data;
 

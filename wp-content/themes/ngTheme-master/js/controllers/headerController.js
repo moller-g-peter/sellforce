@@ -34,6 +34,7 @@ app.controller("headerController", ["$scope", "$location", "Menus", "SITE_INFO",
 
   //a simple $scope method for changing urls using ng-click in views
   $rootScope.goTo = function(url, hardReload) {
+
     //any relative path destined for hardReload 
     //gets http_root instead of initial "/"
 

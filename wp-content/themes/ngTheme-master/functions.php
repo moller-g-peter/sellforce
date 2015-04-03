@@ -118,17 +118,6 @@ function ngTheme_scripts() {
     }
   }
 
-  //autoload all custom scripts
-  $allCustomScripts = scandir(THEME_FILE_ROOT."js/custom");
-  foreach ($allCustomScripts as $script) {
-    if (stripos($script, ".js") !== false) {
-      $scriptName = explode(".js", $script);
-      wp_enqueue_script(
-        $scriptName[0],
-        THEME_HTTP_ROOT . 'js/custom/'.$script
-      );
-    }
-  }
 
   wp_localize_script(
     'appjs',

@@ -6,7 +6,6 @@ Pages.search({name:"footer"});
 
 
 $scope.$on("foundPages", function(event, data) {
-    console.log("footerController on foundPages: ", data);
     if (data[0].slug === "footer") {
 			$scope.footerContent = $sce.trustAsHtml(data[0].content);
 

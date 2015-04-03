@@ -21,7 +21,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
       //always only search for properties
       //we are always searching for posts
       //in the category "properties"
-      var callUrl = "/properties?page="+pageNo;
+      var callUrl = "/properties?page="+serchParam;
 
       //build a REST callUrl from search params, 
       for (var i in serchParam) {
@@ -29,7 +29,8 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         //serchParam object values are filter values
         if (serchParam[i].constructor.name != "Object") {
           callUrl += "&filter["+i+"]="+serchParam[i];
-        } else {
+        } 
+        else {
           for (var j in serchParam[i]) {
             callUrl += "&filter["+i+"]["+j+"]="+serchParam[i][j];
           }
@@ -41,7 +42,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         broadcastName: "uslessName",// does this funky name run off for the async to prevent callvacfunction from run of before ig got its inparamter?
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
-
+          // console.log("postData: ",postData);
           for (var i = postData.length - 1; i >= 0; i--) {
             if (!postData[i].terms.property) {
               postData.splice(i, 1);

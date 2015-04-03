@@ -27,7 +27,7 @@ app.filter("ytaSliderFilter", [function () {
     if (range.length === 0) {
       return properties;
     }
-      console.log("properties: ", properties);
+      // console.log("properties: ", properties);
 
     for (var i = 0; i < properties.length; i++) {
       var property = properties[i];

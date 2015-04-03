@@ -22,7 +22,7 @@ app.service("WPRest", ["$http", "$rootScope", "SITE_INFO", "API_ROUTE", function
           broadcastInstructions.callback(data) //function to call BEFORE broadcasting
         );
 
-      } else {
+      }else {
         //using $rootScope.$broadcast() to broadcast throughout our app (module)
         //to any $on() listeners in controllers and services
         broadcastInstructions = broadcastInstructions ? broadcastInstructions : "restSuccess";

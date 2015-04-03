@@ -2,16 +2,23 @@ app.controller("propertyController", ["$scope", "Property" ,"$routeParams", "SIT
 
   //Property.find() accepts an object with key->value pairs that
   //map to the search filters we need in our GET request
-  console.log("routeParams 2 : ", $routeParams);
-  Property.found($routeParams);
-  
-  $scope.partialsDir = SITE_INFO.partials;
 
-  //the interval for all carousels
-  $scope.carouselInterval = 2000;
-  $scope.$on("foundProperty", function(event, data) {
+    Property.found($routeParams);
+    
+    $scope.partialsDir = SITE_INFO.partials;
 
-    if (!data) { return; }
-    $scope.property = data[0];
-  });
+
+    //the interval for all carousels
+    $scope.carouselInterval = 4000;
+    $scope.$on("foundProperty", function(event, data) {
+      for (var i = 0; i < data.length; i++) {
+        if(data[i].post.slug === $routeParams.name) {
+          console.log("true: ")
+
+          $scope.property = data[i];
+        }
+        
+      };
+      
+    });
 }]);

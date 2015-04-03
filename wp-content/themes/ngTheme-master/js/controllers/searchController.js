@@ -49,9 +49,6 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 	// "Property.found();" starts this function and get estates (= all properties)
 	
-
-
-
 	$scope.accessoryOptions = [
 		{name: "Both", val: ""},
 		{name: "Yes", val: true},
@@ -102,7 +99,7 @@ app.controller("searchController", ["$scope", "$routeParams", "Property", "$sce"
 
 
 	$scope.$on("foundProperty", function(event, estates) {
-		console.log("estates: ", estates);
+		// console.log("estates: ", estates);
 		pageNo++;
 		Property.found($routeParams, pageNo);
 		$scope.searchProperties = estates;
