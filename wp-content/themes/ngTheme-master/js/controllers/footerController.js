@@ -1,7 +1,6 @@
 
 app.controller("footerController", ["$scope", "Pages", "$sce", "$location", function($scope, Pages, $sce, $location) {
 
-  // console.log("footerController is alive!");
 Pages.search({name:"footer"});
 
 

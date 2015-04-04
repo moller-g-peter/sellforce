@@ -23,12 +23,10 @@ app.filter("omradesFilter", [function(){
 			// ];
 		
 
-			// console.log("estates I: ", estates);
 		for (var i = 0; i < estates.length; i++) {
 
 			var estate = estates[i];
 			for (var j = 0; j < omraden.length; j++) {
-				// console.log("estates I: ", estate);
 				if (omraden[j].val && omraden[j].name == estate.propertyData.stadsdel) {
 					result.push(estate);
 

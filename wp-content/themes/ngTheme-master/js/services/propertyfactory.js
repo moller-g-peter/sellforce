@@ -29,7 +29,7 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         //serchParam object values are filter values
         if (serchParam[i].constructor.name != "Object") {
           callUrl += "&filter["+i+"]="+serchParam[i];
-        } 
+        }
         else {
           for (var j in serchParam[i]) {
             callUrl += "&filter["+i+"]["+j+"]="+serchParam[i][j];
@@ -42,7 +42,6 @@ app.factory("Property", ["WPRest", "$sce", function (WPRest, $sce) {
         broadcastName: "uslessName",// does this funky name run off for the async to prevent callvacfunction from run of before ig got its inparamter?
         //send an object with the restCall = "callback" to deligate the acynk
         callback: function(postData) {
-          // console.log("postData: ",postData);
           for (var i = postData.length - 1; i >= 0; i--) {
             if (!postData[i].terms.property) {
               postData.splice(i, 1);

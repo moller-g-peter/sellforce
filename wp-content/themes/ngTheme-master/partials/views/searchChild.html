@@ -2,13 +2,13 @@
   <!-- this a element is the klick event, us this tay, observr where it ends.. -->
 
   <a href="" ng-click="goTo('property/'+property.post.slug)">
-    <h3>{{property.post.title}}</h3>
+    <h3 class="strongText">{{property.post.title}}</h3>
     <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 ">
         <img ng-src="{{property.media[0].source}}" class="col-xs-12 col-sm-12  col-md-12 col-lg-12">
     </article>
 
     <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 ">
-      <h4>Fakta</h4>
+      <h4 class="faktaTitle">Fakta</h4>
       <ul>
         <li><strong>Typ av bostad</strong> {{property.propertyData.bostad}}</li>
         <li><strong>Stadsdel:</strong> {{property.propertyData.stadsdel}}</li>

@@ -8,12 +8,10 @@ app.controller("allPropertiesController", ["$scope", "Property", "SITE_INFO", "$
   
 
   $scope.$on("foundProperty", function(event, data) {
-    // console.log("allPropertiesCTRL: ", data);
     
     $scope.allProperties = data;
-
-  	pageNo++;
-  	Property.found($routeParams, pageNo);
+    pageNo++;
+    Property.found($routeParams, pageNo);
 
   });
   

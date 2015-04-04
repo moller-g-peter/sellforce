@@ -3,7 +3,6 @@ var app = angular.module("ngTheme", ["ngRoute", "ui.bootstrap", "ngSlider"]);
 //app config
 app.config(["$routeProvider", "$locationProvider", "SITE_INFO", function($routeProvider, $locationProvider, SITE_INFO) {
   //route config
-  // console.log("when: ",$locationProvider);
   $routeProvider
     .when("/", {
       redirectTo: "/hem"

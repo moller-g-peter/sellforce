@@ -8,7 +8,7 @@ app.factory("Media", ["WPRest", function (WPRest) {
 	var mediaObject =  {
 		found : function(searcParam) {
 		var result = [];
-			// console.log("hello i'm alive!  got routparam: ", searcParam);
+
 			searcParam = searcParam ? searcParam : {};
 			var callUrl = "/media";
 			var first = true;
@@ -17,12 +17,9 @@ app.factory("Media", ["WPRest", function (WPRest) {
 					"?filter[" + i + "]=" + searcParam[i] :
 					"&filter[" + i + "]=" + searcParam[i];
 			}
-			// console.log("searcParam[i]: ",searcParam[i])
-			// console.log("callurl: ",callUrl);
 
 
-
-			WPRest.restCall(callUrl, "GET", {}, {broadcastName: "gotMedia", 
+			WPRest.restCall(callUrl, "GET", {}, {broadcastName: "gotMedia",
 				callback: function(mediaData){
 					for (var i = 0; i < mediaData.length; i++) {
 					
@@ -37,7 +34,7 @@ app.factory("Media", ["WPRest", function (WPRest) {
 
 			});
 		}
-	}
+	};
 
 	return mediaObject;
 }]);
