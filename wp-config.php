@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'sellforce');
+define('DB_NAME', 'wu14g4_database');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'wu14g4_user');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'mysql');
+define('DB_PASSWORD', 'paleface');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

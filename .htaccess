@@ -2,11 +2,10 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /sellforce/
-RewriteRule ^index\.php$ - [L]
+RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /sellforce/index.php [L]
+RewriteRule . /index.php [L] 
 </IfModule>
 
 # END WordPress
