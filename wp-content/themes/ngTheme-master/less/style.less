@@ -6553,11 +6553,20 @@ body {
   position: relative;
   height: 100%;
   background: #000;
+  height: 100%;
+  margin-top: -46px;
 }
-footer,
-main:after {
-  height: 200px;
+
+main {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -200px;
+  z-index: 3;
 }
+// footer,
+// main:after {
+//   height: 200px;
+// }
 footer {
   background: #0e0e0e;
   /* Old browsers */
@@ -6610,8 +6619,9 @@ main > section {
 header {
   position: absolute;
   top: 50px;
-  height: 100px;
+  // height: 100px;
   width: 100%;
+
   z-index: 1;
 }
 header nav div{
@@ -6622,7 +6632,7 @@ header nav ul{
 }
 header nav ul li{
   display: inline-block;
-  padding: 0 15px;
+  padding: 0 8px;
 }
 header nav ul li a{
   margin: 0 !important;
@@ -6694,17 +6704,7 @@ main:after {
   margin: 10px;
 }
 /* Sticky footer */
-body {
-  height: 100%;
-  // margin-top: -32px;
-  /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! / removed pixel cause it's no whitespace anymore at my computer.. */
-}
-main {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -200px;
-  z-index: 3;
-}
+
 @media screen and (max-width: 500px) {
   main {
     margin-bottom: -300px;
@@ -6795,16 +6795,16 @@ footer div ul {
   border-right: 40px solid transparent;
   border-top: 23px solid #696969;
 }
-.searchImage {
-  width: 100%;
-  background: url(../img/searchform.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #fff;
-  font-size: 20px;
-}
+// .searchImage {
+//   width: 100%;
+//   background: url(../img/searchform.jpg) no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   color: #fff;
+//   font-size: 20px;
+// }
 input[type='checkbox'] {
   vertical-align: -3px;
   width: 20px;
@@ -6881,7 +6881,10 @@ h4 {
 }
 .propertyMargin {
   margin-left: 5%;
-  height: 600px;
+  // height: 600px;
+    article ul {
+    padding-left:0;
+    }
 }
 .blackText {
   color: black !important;
@@ -6909,13 +6912,13 @@ h4 {
 
 // backgroound img om oss/ bosrader
 .backImage {
-  width: 100%;
-  background: url(../img/backimg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #fff;
+  // width: 100%;
+  // background: url(../img/backimg.jpg) no-repeat center center fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+  // color: #fff;
 }
 .backImageSlider {
   width: 100%;
@@ -6932,7 +6935,7 @@ h4 {
 
 // div holder - Bostader
 .bostadDivHolder div div{
-  height: 500px;
+  height: 440px;
 }
 .form-control {
   width: 150px;
@@ -6947,6 +6950,7 @@ h4 {
 .strongText {
   font-weight: bold;
   margin-top: 0;
+  font-size: 1.5rem;
 }
 
 .filterSlidersBox {
@@ -6972,19 +6976,35 @@ h4 {
     margin-top: 40px;
   }
 }
+@media screen and (max-width: 1000px) {
+  .bostadDivHolder div div{
+    height: 500px;
+  }
+
+}
 @media screen and (max-width: 775px) {
   .bostadDivHolder div div{
-  height: 620px;
+    height: 800px;
   }
+    .propertyMargin {
+    margin-left: 1%;
+  }
+
 }
 @media screen and (max-width: 600px) {
   .bostadDivHolder div div{
-  height: 530px;
+    height: 720px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
   }
 }
 @media screen and (max-width: 500px) {
   .bostadDivHolder div div{
-  height: 500px;
+    height: 510px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
   }
 }
 .bostadDivHolder div a{
@@ -6994,3 +7014,6 @@ h4 {
 .whiteColor{
   color: #000;
 }
+
+
+
