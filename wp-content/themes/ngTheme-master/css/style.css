@@ -7057,3 +7057,7 @@ h4 {
 .whiteColor {
   color: #000;
 }
+.mainLink {
+  font-weight: bold;
+  margin: auto auto;
+}
