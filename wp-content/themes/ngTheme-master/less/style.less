@@ -1097,7 +1097,7 @@ figure {
 img {
   vertical-align: middle;
 }
-.img-responsive,
+.,
 .thumbnail > img,
 .thumbnail a > img,
 .carousel-inner > .item > img,
@@ -6823,11 +6823,9 @@ input[type='checkbox'] {
   cursor: pointer;
   color: #87ceeb;
 }
-.propertySlider {
-  height: 400px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+
+//
+
 .omrade,
 .tillagg,
 .extra {
@@ -6934,9 +6932,6 @@ h4 {
 }
 
 // div holder - Bostader
-.bostadDivHolder div div{
-  height: 440px;
-}
 .form-control {
   width: 150px;
   margin-bottom: 40px;
@@ -6969,32 +6964,44 @@ h4 {
   text-shadow: 0px -4px 7px rgba(0, 0, 0, 0.9);
 }
 
+// White well size around all and serch properties
+.bostadDivHolder div div{
+  height: 440px;
+}
+// @media screen and (max-width: 1000px) {
+
+// }
+
+.propertySlider {
+  height: 600px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
 @media screen and (max-width: 1000px) {
-  .filterSlidersBox {
+  .propertySlider {
+    height: 600px;
+  }
+  .bostadDivHolder div div{
+    height: 420px;
+  }
+    .filterSlidersBox {
     margin-top: 40px;
   }
   .municipalityFilter {
     margin-top: 40px;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 767px) {
   .bostadDivHolder div div{
-    height: 500px;
+    height: 750px;
   }
-
-}
-@media screen and (max-width: 775px) {
-  .bostadDivHolder div div{
-    height: 800px;
-  }
-    .propertyMargin {
+  .propertyMargin {
     margin-left: 1%;
   }
-
 }
 @media screen and (max-width: 600px) {
   .bostadDivHolder div div{
-    height: 720px;
+    height: 625px;
   }
   .propertyMargin {
     margin-left: 1%;
@@ -7002,7 +7009,7 @@ h4 {
 }
 @media screen and (max-width: 500px) {
   .bostadDivHolder div div{
-    height: 510px;
+    height: 545px;
   }
   .propertyMargin {
     margin-left: 1%;
@@ -7021,4 +7028,3 @@ h4 {
   margin: auto auto;
   // color: red;
 }
-
