@@ -36,7 +36,5 @@ function($scope, Pages, $sce, Property, $routeParams, SITE_INFO, Media) {
   });
 
 
-  
 }]);
-
 
