@@ -7044,16 +7044,15 @@ h4 {
 @media screen and (max-width: 1300px) {
   .carusellParent {
     height: 650px;
-    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 1000px) {
   .carusellParent {
-    height: 500px;
+    height: 550px;
     margin-bottom: 20px;
   }
   .bostadDivHolder div div {
-    height: 420px;
+    height: 500px;
   }
   .filterSlidersBox {
     margin-top: 40px;
