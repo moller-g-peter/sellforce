@@ -6691,8 +6691,8 @@ main:after {
   font-size: 100px;
   color: white;
   text-align: center;
-  padding-top: 30vh;
-  text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
+  // padding-top: 30vh;
+  // text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
 }
 .slogan p {
   font-size: 60px;
@@ -6773,8 +6773,10 @@ footer div ul {
   font-size: 100px;
   color: white;
   text-align: center;
-  padding-top: 30vh;
-  text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
+  // padding-top: 30vh;
+  padding-top: 5vh;
+  // text-shadow: -1px -2px 7px rgba(0, 0, 0, 0.9);
+  font-family: "Times New Roman";
 }
 .slogan p {
   font-size: 60px;
@@ -6788,7 +6790,7 @@ footer div ul {
   box-shadow: 40px 0px 100px 50px white;
   position: absolute;
   bottom: 100px;
-  left: 47%;
+  // left: 45vw;
 }
 .arrow-down {
   width: 0;
@@ -6797,16 +6799,17 @@ footer div ul {
   border-right: 40px solid transparent;
   border-top: 23px solid #696969;
 }
-// .searchImage {
-//   width: 100%;
-//   background: url(../img/searchform.jpg) no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-//   color: #fff;
-//   font-size: 20px;
-// }
+.searchImage {
+  width: 100%;
+  // background: url(../img/searchform.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  font-size: 20px;
+}
+
 input[type='checkbox'] {
   vertical-align: -3px;
   width: 20px;
@@ -6914,17 +6917,17 @@ h4 {
 
 // backgroound img om oss/ bosrader
 .backImage {
-  // width: 100%;
+  width: 100%;
   // background: url(../img/backimg.jpg) no-repeat center center fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-  // color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
 }
 .backImageSlider {
   width: 100%;
-  background: url(../img/backimg.jpg) no-repeat center center;
+  // background: url(../img/backimg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6975,6 +6978,10 @@ h4 {
   display: none;
 }
 
+.logoForSmallDevice {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) {
   .filterSlidersBox {
     margin-top: 40px;
@@ -6993,7 +7000,7 @@ h4 {
   .bostadDivHolder div div{
     height: 800px;
   }
-    .propertyMargin {
+  .propertyMargin {
     margin-left: 1%;
   }
 
@@ -7041,5 +7048,8 @@ h4 {
   .logoGIF {
     display: block;
   }
+  .logoForSmallDevice {
+    display: block;
 
+  }
 }
