@@ -17,7 +17,7 @@
           <li><strong>Typ av bostad</strong> {{property.propertyData.bostad}}</li>
           <li><strong>Stadsdel:</strong> {{property.propertyData.stadsdel}}</li>
           <li><strong>Pris:</strong> {{property.propertyData.pris}}:-</li>
-          <li><strong>Hyra:</strong> {{property.propertyData.hyra}}</li>
+          <li><strong>Hyra:</strong> {{property.propertyData.hyra/1 ? property.propertyData.hyra+":-" : "Nej" }}</li>
           <li><strong>Yta:</strong> {{property.propertyData.yta}} m²</li>
           <li><strong>Våning:</strong> {{property.propertyData.trappor}}</li>
           <li><strong>Rum:</strong> {{property.propertyData.rum}}</li>
