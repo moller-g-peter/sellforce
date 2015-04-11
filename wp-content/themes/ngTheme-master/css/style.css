@@ -6642,12 +6642,14 @@ button.close {
 html,
 body {
   position: relative;
-  height: 100%;
   background: #000;
+  height: 100%;
 }
-footer,
-main:after {
-  height: 200px;
+main {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -200px;
+  z-index: 3;
 }
 footer {
   background: #0e0e0e;
@@ -6701,7 +6703,6 @@ main > section {
 header {
   position: absolute;
   top: 50px;
-  height: 100px;
   width: 100%;
   z-index: 1;
 }
@@ -6713,7 +6714,7 @@ header nav ul {
 }
 header nav ul li {
   display: inline-block;
-  padding: 0 15px;
+  padding: 0 8px;
 }
 header nav ul li a {
   margin: 0 !important;
@@ -6785,16 +6786,6 @@ main:after {
   margin: 10px;
 }
 /* Sticky footer */
-body {
-  height: 100%;
-  /* !!!!!!!!!! added -32 pixels to adjust for white space on top !!!!!!! / removed pixel cause it's no whitespace anymore at my computer.. */
-}
-main {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -200px;
-  z-index: 3;
-}
 @media screen and (max-width: 500px) {
   main {
     margin-bottom: -300px;
@@ -6851,7 +6842,7 @@ footer div ul {
 .fullImage {
   height: 100vh;
   width: 100%;
-  background: url(../img/home_page_img.jpg) no-repeat center center fixed;
+  background: url(../img/home_page_img1.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6884,16 +6875,6 @@ footer div ul {
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   border-top: 23px solid #696969;
-}
-.searchImage {
-  width: 100%;
-  background: url(../img/searchform.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #fff;
-  font-size: 20px;
 }
 input[type='checkbox'] {
   vertical-align: -3px;
@@ -6968,7 +6949,9 @@ h4 {
 }
 .propertyMargin {
   margin-left: 5%;
-  height: 600px;
+}
+.propertyMargin article ul {
+  padding-left: 0;
 }
 .blackText {
   color: black !important;
@@ -6991,15 +6974,6 @@ h4 {
 .kontakterDiv div ul li {
   list-style-type: none;
 }
-.backImage {
-  width: 100%;
-  background: url(../img/backimg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #fff;
-}
 .backImageSlider {
   width: 100%;
   background: url(../img/backimg.jpg) no-repeat center center;
@@ -7012,7 +6986,7 @@ h4 {
   color: #000;
 }
 .bostadDivHolder div div {
-  height: 500px;
+  height: 440px;
 }
 .form-control {
   width: 150px;
@@ -7025,6 +6999,7 @@ h4 {
 .strongText {
   font-weight: bold;
   margin-top: 0;
+  font-size: 1.5rem;
 }
 .filterSlidersBox {
   margin-top: -70px;
@@ -7038,6 +7013,9 @@ h4 {
   color: #fff;
   text-shadow: 0px -4px 7px rgba(0, 0, 0, 0.9);
 }
+.logoGIF {
+  display: none;
+}
 @media screen and (max-width: 1000px) {
   .filterSlidersBox {
     margin-top: 40px;
@@ -7046,19 +7024,33 @@ h4 {
     margin-top: 40px;
   }
 }
+@media screen and (max-width: 1000px) {
+  .bostadDivHolder div div {
+    height: 500px;
+  }
+}
 @media screen and (max-width: 775px) {
   .bostadDivHolder div div {
-    height: 620px;
+    height: 800px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
   }
 }
 @media screen and (max-width: 600px) {
   .bostadDivHolder div div {
-    height: 530px;
+    height: 720px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
   }
 }
 @media screen and (max-width: 500px) {
   .bostadDivHolder div div {
-    height: 500px;
+    height: 510px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
   }
 }
 .bostadDivHolder div a {
@@ -7070,4 +7062,18 @@ h4 {
 .mainLink {
   font-weight: bold;
   margin: auto auto;
+}
+@media screen and (max-width: 870px) {
+  .fullImage {
+    height: 100vh;
+    width: 100%;
+    background: url(../img/home_page_img_small.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .logoGIF {
+    display: block;
+  }
 }
