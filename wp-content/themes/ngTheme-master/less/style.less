@@ -6758,15 +6758,17 @@ footer div ul {
   height: 150px;
   margin-left: 30px;
 }
+
 .fullImage {
   height: 100vh;
   width: 100%;
-  background: url(../img/home_page_img.jpg) no-repeat center center fixed;
+  background: url(../img/home_page_img1.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
 .slogan h1 {
   font-size: 100px;
   color: white;
@@ -6927,8 +6929,8 @@ h4 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
 }
+
 .blackColor{
   color: #000;
 }
@@ -6967,6 +6969,10 @@ h4 {
   text-align: center;
   color: #fff;
   text-shadow: 0px -4px 7px rgba(0, 0, 0, 0.9);
+}
+
+.logoGIF {
+  display: none;
 }
 
 @media screen and (max-width: 1000px) {
@@ -7022,3 +7028,18 @@ h4 {
   // color: red;
 }
 
+@media screen and (max-width: 870px) {
+  .fullImage {
+    height: 100vh;
+    width: 100%;
+    background: url(../img/home_page_img_small.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .logoGIF {
+    display: block;
+  }
+
+}
