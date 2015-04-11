@@ -6828,11 +6828,9 @@ input[type='checkbox'] {
   cursor: pointer;
   color: #87ceeb;
 }
-.propertySlider {
-  height: 400px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
+
+//
+
 .omrade,
 .tillagg,
 .extra {
@@ -6939,9 +6937,6 @@ h4 {
 }
 
 // div holder - Bostader
-.bostadDivHolder div div{
-  height: 440px;
-}
 .form-control {
   width: 150px;
   margin-bottom: 40px;
@@ -6974,15 +6969,48 @@ h4 {
   text-shadow: 0px -4px 7px rgba(0, 0, 0, 0.9);
 }
 
-.logoGIF {
-  display: none;
+// White well size around all and serch properties
+.bostadDivHolder div div{
+  height: 440px;
 }
 
-.logoForSmallDevice {
-  display: none;
-}
 
+// home carusell styling
+.carusellParent {
+  height:700px;
+  margin-bottom: 20px;
+
+}
+.propertySlider {
+  height:100%;
+  overflow: hidden;
+}
+  .logoGIF {
+    display: none;
+  }
+  .logoForSmallDevice {
+    display: none;
+
+  }
+@media screen and (max-width: 1150px) {
+  .carusellParent {
+    height:550px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .carusellParent {
+    height:650px;
+  }
+}
 @media screen and (max-width: 1000px) {
+  .carusellParent {
+    height:550px;
+    margin-bottom: 20px;
+  }
+  .bostadDivHolder div div{
+    height: 500px;
+  }
   .filterSlidersBox {
     margin-top: 40px;
   }
@@ -6990,56 +7018,12 @@ h4 {
     margin-top: 40px;
   }
 }
-@media screen and (max-width: 1000px) {
-  .bostadDivHolder div div{
-    height: 500px;
-  }
-
-}
-@media screen and (max-width: 775px) {
-  .bostadDivHolder div div{
-    height: 800px;
-  }
-  .propertyMargin {
-    margin-left: 1%;
-  }
-
-}
-@media screen and (max-width: 600px) {
-  .bostadDivHolder div div{
-    height: 720px;
-  }
-  .propertyMargin {
-    margin-left: 1%;
-  }
-}
-@media screen and (max-width: 500px) {
-  .bostadDivHolder div div{
-    height: 510px;
-  }
-  .propertyMargin {
-    margin-left: 1%;
-  }
-}
-.bostadDivHolder div a{
-  color: #000;
-}
-
-.whiteColor{
-  color: #000;
-}
-
-.mainLink {
-  font-weight: bold;
-  margin: auto auto;
-  // color: red;
-}
-
 @media screen and (max-width: 870px) {
+
   .fullImage {
     height: 100vh;
     width: 100%;
-    background: url(../img/home_page_img_small.jpg) no-repeat center center fixed;
+    // background: url(../img/home_page_img_small.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -7052,4 +7036,62 @@ h4 {
     display: block;
 
   }
+
+}
+@media screen and (max-width: 767px) {
+  .carusellParent {
+    height:350px;
+    margin-bottom: 20px;
+  }
+  .bostadDivHolder div div{
+    height: 750px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .carusellParent {
+    height:300px;
+    margin-bottom: 20px;
+  }
+  .bostadDivHolder div div{
+    height: 625px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .carusellParent {
+    height:200px;
+    margin-bottom: 20px;
+  }
+  .bostadDivHolder div div{
+    height: 545px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .carusellParent {
+    height:150px;
+    margin-bottom: 20px;
+  }
+}
+
+.bostadDivHolder div a{
+  color: #000;
+}
+
+.whiteColor{
+  color: #000;
+}
+
+
+.mainLink {
+  font-weight: bold;
+  margin: auto auto;
+  // color: red;
 }

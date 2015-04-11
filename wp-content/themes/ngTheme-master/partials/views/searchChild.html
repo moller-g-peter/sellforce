@@ -3,7 +3,7 @@
 
   <a href="" ng-click="goTo('property/'+property.post.slug)">
     <h3 class="strongText">{{property.post.title}}</h3>
-    <article class="col-xs-12 col-sm-12  col-md-12 col-lg-12 ">
+    <article class=" ">
         <img ng-src="{{property.media[0].source}}" class="col-xs-12 col-sm-12  col-md-12 col-lg-12">
     </article>
 
@@ -13,7 +13,7 @@
         <li><strong>Typ av bostad</strong> {{property.propertyData.bostad}}</li>
         <li><strong>Stadsdel:</strong> {{property.propertyData.stadsdel}}</li>
         <li><strong>Pris:</strong> {{property.propertyData.pris}}:-</li>
-        <li><strong>Hyra:</strong> {{property.propertyData.hyra}}</li>
+        <li><strong>Hyra:</strong> {{property.propertyData.hyra/1 ? property.propertyData.hyra+":-" : "Nej"}}</li>
         <li><strong>Yta:</strong> {{property.propertyData.yta}} m²</li>
         <li><strong>Våning:</strong> {{property.propertyData.trappor}}</li>
         <li><strong>Rum:</strong> {{property.propertyData.rum}}</li>
@@ -23,8 +23,3 @@
     </article>
   </a>
 </div>
-
-
-
-
-<!--  | prisSliderFilter:priceValue | rumSliderFilter:roomValue | hyraSliderFilter:rentValue | ytaSliderFilter:spaceValue -->
