@@ -1,20 +1,24 @@
 <section class="fullImage container">
-	<div class="slogan">
-		<button type="button" class="btn btn-default" aria-label="Left Align">
-		  <span class="glyphicon glyphicon-edit" aria-hidden="true"><a class="mainLink" href="https://sv.surveymonkey.com/s/FKDCDH3"> Enkät undersökning</a></span>
-		</button>
-	  <img class="logoGIF" ng-src="{{partialsDir+'../img/SF_logo.gif'}}">
+	<button type="button" class="btn btn-default" aria-label="Left Align">
+	  <span class="glyphicon glyphicon-edit" aria-hidden="true"><a class="mainLink" href="https://sv.surveymonkey.com/s/FKDCDH3"> Enkät undersökning</a></span>
+	</button>
+	<div class="row slogan">
+		<h1 class="logoForSmallDevice">It's Yours!</h1>
+	  <img class="img-responsive center-block logoGIF" ng-src="{{partialsDir+'../img/SF_logo.gif'}}">
 	</div>
 	<!-- arrow-down -->
-	<div class="arrow-down-shadow">
-		<div class="arrow-down"></div>
-	</div>
 </section>
+
+	<div class="row col-lg-12 col-lg-offset-5">
+		<div class="arrow-down-shadow">
+			<div class="arrow-down"></div>
+		</div>
+	</div>
+
 <section class="container backImageSlider">
 	<h1 class="homeImageSliderText">Hetaste bostäderna på marknaden.</h1>
   <div class="row">
     <article ng-include="partialsDir+'views/homeChild.html'">
-
     </article>
   </div>
 </section>
