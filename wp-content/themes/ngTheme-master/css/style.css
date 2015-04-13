@@ -7030,6 +7030,9 @@ h4 {
 .logoForSmallDevice {
   display: none;
 }
+.fixedImgSize {
+  height: 22vh;
+}
 @media screen and (max-width: 2000px) {
   .bostadDivHolder div div {
     height: 530px;
@@ -7122,6 +7125,9 @@ h4 {
   .slogan h1 {
     font-size: 60px;
   }
+  .fixedImgSize {
+    height: 27vh;
+  }
 }
 @media screen and (max-width: 330px) {
   .carusellParent {
@@ -7147,9 +7153,6 @@ h4 {
 }
 .footerLogo {
   display: none;
-}
-.fixedImgSize {
-  height: 22vh;
 }
 .fixedArticleSize {
   text-align: center;
