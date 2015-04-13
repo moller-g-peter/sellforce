@@ -7002,6 +7002,9 @@ h4 {
   margin-top: 0;
   font-size: 1.5rem;
 }
+.filterSlidersBox {
+  margin-bottom: 60px;
+}
 .faktaTitle {
   margin-top: 11px;
 }
@@ -7138,4 +7141,15 @@ h4 {
 .mainLink {
   font-weight: bold;
   margin: auto auto;
+}
+.footerLogo {
+  display: none;
+}
+.fixedImgSize {
+  height: 22vh;
+}
+.fixedArticleSize {
+  text-align: center;
+  height: 200px;
+  overflow: hidden;
 }
