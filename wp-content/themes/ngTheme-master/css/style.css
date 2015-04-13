@@ -7140,6 +7140,9 @@ h4 {
   .slogan h1 {
     font-size: 60px;
   }
+  .fixedImgSize {
+    height: 37vh;
+  }
 }
 .bostadDivHolder div a {
   color: #000;
