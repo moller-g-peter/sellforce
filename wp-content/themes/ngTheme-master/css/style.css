@@ -7187,6 +7187,9 @@ h4 {
 .footerLogo {
   display: none;
 }
+.fixedImgSize {
+  height: 22vh;
+}
 .fixedArticleSize {
   text-align: center;
   height: 200px;
