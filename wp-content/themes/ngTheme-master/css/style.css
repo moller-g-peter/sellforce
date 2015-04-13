@@ -6688,7 +6688,7 @@ footer a {
 .fullImage {
   height: 100vh;
   width: 100%;
-  background: url(../img/home_page_img1.jpg) no-repeat center center fixed;
+  background: url(../img/home_page_img.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7098,6 +7098,12 @@ h4 {
   .fixedImgSize {
     height: 70vh;
   }
+  .logoForSmallDevice {
+    margin-top: -200px;
+  }
+  .slogan h1 {
+    font-size: 60px;
+  }
 }
 @media screen and (max-width: 600px) {
   .carusellParent {
@@ -7123,7 +7129,28 @@ h4 {
     margin-left: 1%;
   }
   .logoForSmallDevice {
-    margin-top: -150px;
+    margin-top: -240px;
+  }
+  .slogan h1 {
+    font-size: 60px;
+  }
+  .fixedImgSize {
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 568px) {
+  .carusellParent {
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  .bostadDivHolder div div {
+    height: 545px;
+  }
+  .propertyMargin {
+    margin-left: 1%;
+  }
+  .logoForSmallDevice {
+    margin-top: -200px;
   }
   .slogan h1 {
     font-size: 60px;
@@ -7138,7 +7165,7 @@ h4 {
     margin-bottom: 20px;
   }
   .logoForSmallDevice {
-    margin-top: -150px;
+    margin-top: -160px;
   }
   .slogan h1 {
     font-size: 60px;
