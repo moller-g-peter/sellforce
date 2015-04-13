@@ -1,4 +1,4 @@
-<div ng-repeat="property in searchProperties | bostaderFilter:bostader | hissFilter:hiss | balkongFilter:balkong | omradesFilter:omroden | prisSliderFilter:priceValue | rumSliderFilter:roomValue | hyraSliderFilter:rentValue | ytaSliderFilter:spaceValue"  class="col-xs-10 col-sm-5  col-md-3 col-lg-3 container well propertyMargin ">
+<div ng-repeat="property in searchProperties | bostaderFilter:bostader | hissFilter:hiss | balkongFilter:balkong | omradesFilter:omroden | prisSliderFilter:priceValue | rumSliderFilter:roomValue | hyraSliderFilter:rentValue | ytaSliderFilter:spaceValue"  class="col-xs-12 col-sm-5  col-md-3 col-lg-3 container well propertyMargin ">
   <!-- this a element is the klick event, us this tay, observr where it ends.. -->
 
   <a href="" ng-click="goTo('property/'+property.post.slug)">
