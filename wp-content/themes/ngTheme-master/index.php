@@ -11,8 +11,10 @@
     <header ng-include="'<?php echo(THEME_HTTP_ROOT)?>partials/header.html'" ng-controller="headerController">
     </header>
    
-    <main ng-view>
-    </main>
+    <div class="minHeightWrap">
+      <main ng-view>
+      </main>
+    </div>
    
     <footer ng-include="'<?php echo(THEME_HTTP_ROOT)?>partials/footer.html'" ng-controller="footerController">
     </footer>
